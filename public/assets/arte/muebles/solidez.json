@@ -1,0 +1,330 @@
+{
+ "cama": {
+  "solido": 30,
+  "pasable": false
+ },
+ "cocina": {
+  "solido": 22,
+  "pasable": false
+ },
+ "mesa": {
+  "solido": 14,
+  "pasable": false
+ },
+ "librero": {
+  "solido": 10,
+  "pasable": false
+ },
+ "planta": {
+  "solido": 6,
+  "pasable": false
+ },
+ "planta-grande": {
+  "solido": 6,
+  "pasable": false
+ },
+ "lampara": {
+  "solido": 4,
+  "pasable": false
+ },
+ "alfombra": {
+  "solido": 0,
+  "pasable": true
+ },
+ "alfombra-verde": {
+  "solido": 0,
+  "pasable": true
+ },
+ "tele": {
+  "solido": 12,
+  "pasable": false
+ },
+ "caja": {
+  "solido": 10,
+  "pasable": false
+ },
+ "caja-abierta": {
+  "solido": 10,
+  "pasable": false
+ },
+ "tocadiscos": {
+  "solido": 8,
+  "pasable": false
+ },
+ "sofa-casa-abrazo": {
+  "solido": 10,
+  "pasable": false
+ },
+ "sofa-casa-siesta": {
+  "solido": 10,
+  "pasable": false
+ },
+ "sofa-casa-imperio": {
+  "solido": 10,
+  "pasable": false
+ },
+ "sofa-viejo": {
+  "solido": 10,
+  "pasable": false
+ },
+ "ventana": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cuadro": {
+  "solido": 0,
+  "pasable": true
+ },
+ "retrato-familiar": {
+  "solido": 0,
+  "pasable": true
+ },
+ "escritorio-oficial": {
+  "solido": 16,
+  "pasable": false
+ },
+ "bandera": {
+  "solido": 4,
+  "pasable": false
+ },
+ "banca-espera": {
+  "solido": 8,
+  "pasable": false
+ },
+ "letrero-registro": {
+  "solido": 0,
+  "pasable": true
+ },
+ "mesa-comedor": {
+  "solido": 16,
+  "pasable": false
+ },
+ "sillon": {
+  "solido": 10,
+  "pasable": false
+ },
+ "canasto-ropa": {
+  "solido": 8,
+  "pasable": false
+ },
+ "platos-sucios": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cuentas": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cama-perro": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-banco": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cama-doble": {
+  "solido": 30,
+  "pasable": false
+ },
+ "cuna": {
+  "solido": 10,
+  "pasable": false
+ },
+ "guagua": {
+  "solido": 0,
+  "pasable": true
+ },
+ "mamadera": {
+  "solido": 0,
+  "pasable": true
+ },
+ "panales": {
+  "solido": 0,
+  "pasable": true
+ },
+ "juguetes": {
+  "solido": 0,
+  "pasable": true
+ },
+ "mesa-redonda": {
+  "solido": 14,
+  "pasable": false
+ },
+ "dispensador": {
+  "solido": 6,
+  "pasable": false
+ },
+ "pizarra-dibujos": {
+  "solido": 0,
+  "pasable": true
+ },
+ "reloj": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-mediacion": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cuadro-paisaje": {
+  "solido": 0,
+  "pasable": true
+ },
+ "colchon": {
+  "solido": 8,
+  "pasable": false
+ },
+ "maleta": {
+  "solido": 8,
+  "pasable": false
+ },
+ "dibujo-familia": {
+  "solido": 0,
+  "pasable": true
+ },
+ "estrado": {
+  "solido": 18,
+  "pasable": false
+ },
+ "mesa-parte-a": {
+  "solido": 10,
+  "pasable": false
+ },
+ "mesa-parte-b": {
+  "solido": 10,
+  "pasable": false
+ },
+ "escudo-pared": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-tribunal": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cama-hospital": {
+  "solido": 30,
+  "pasable": false
+ },
+ "monitor": {
+  "solido": 4,
+  "pasable": false
+ },
+ "biombo": {
+  "solido": 6,
+  "pasable": false
+ },
+ "cuna-hospital": {
+  "solido": 8,
+  "pasable": false
+ },
+ "cuadro-ciguena": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-maternidad": {
+  "solido": 0,
+  "pasable": true
+ },
+ "archivador": {
+  "solido": 6,
+  "pasable": false
+ },
+ "pila-expedientes": {
+  "solido": 6,
+  "pasable": false
+ },
+ "escritorio-abogado": {
+  "solido": 14,
+  "pasable": false
+ },
+ "mostrador": {
+  "solido": 14,
+  "pasable": false
+ },
+ "turnos": {
+  "solido": 4,
+  "pasable": false
+ },
+ "estante-codigos": {
+  "solido": 8,
+  "pasable": false
+ },
+ "silla-oficina": {
+  "solido": 4,
+  "pasable": false
+ },
+ "maquina-cafe": {
+  "solido": 6,
+  "pasable": false
+ },
+ "pizarra-plazos": {
+  "solido": 0,
+  "pasable": true
+ },
+ "escudo-municipal": {
+  "solido": 0,
+  "pasable": true
+ },
+ "maqueta": {
+  "solido": 12,
+  "pasable": false
+ },
+ "plano": {
+  "solido": 0,
+  "pasable": true
+ },
+ "hoyo": {
+  "solido": 0,
+  "pasable": true
+ },
+ "cono": {
+  "solido": 3,
+  "pasable": false
+ },
+ "valla": {
+  "solido": 4,
+  "pasable": false
+ },
+ "letrero-alcaldia": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-partes": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-juridica": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-atencion": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-fiscalizacion": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-contraloria": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-corte": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-juzgado": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-tc": {
+  "solido": 0,
+  "pasable": true
+ },
+ "letrero-concejo": {
+  "solido": 0,
+  "pasable": true
+ }
+}

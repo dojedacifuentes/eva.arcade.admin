@@ -1,0 +1,303 @@
+// Módulo 11 · El Tribunal Constitucional · Supremacía constitucional, composición, atribuciones,
+// inaplicabilidad e inconstitucionalidad. Fuentes: iuspublic (definición de supremacía, cloze del
+// quórum, comisión c-tc); el resto es contenido nuevo escrito desde el texto de la Constitución.
+// Normas verificadas contra el XML de la BCN (cpr.xml) el 12-10-2026: arts. 6, 7, 63, 92, 93, 94 y 99.
+import type { BancoModulo } from "../tipos";
+
+export const BANCO_M11: BancoModulo = {
+  modulo: 11,
+
+  hallazgos: [
+    {
+      id: "m11-supremacia", modulo: 11,
+      titulo: "Hasta la ley tiene un juez",
+      texto: "Los órganos del Estado deben someter su acción a la Constitución y a las normas dictadas conforme a ella. Sus preceptos obligan a los titulares de esos órganos y a toda persona, institución o grupo; la infracción genera las responsabilidades y sanciones que determine la ley.",
+      norma: "Art. 6 CPR",
+      simple: "La Constitución es la jefa de todas las leyes, y las leyes también rinden cuentas.",
+    },
+    {
+      id: "m11-composicion", modulo: 11,
+      titulo: "Diez ministros, tres puertas",
+      texto: "El Tribunal Constitucional tiene diez miembros: tres los designa el Presidente de la República, cuatro los elige el Congreso (dos el Senado directamente y dos propuestos por la Cámara de Diputados, con dos tercios) y tres la Corte Suprema en votación secreta. Duran nueve años, se renuevan por parcialidades cada tres, no pueden ser reelegidos y cesan a los 75 años.",
+      norma: "Art. 92 CPR",
+      simple: "Nueve años de cargo y ninguna reelección: el único tribunal donde nadie hace campaña.",
+    },
+    {
+      id: "m11-inaplicabilidad", modulo: 11,
+      titulo: "Inaplicabilidad: esta ley, en este juicio, no",
+      texto: "El TC resuelve, por la mayoría de sus miembros en ejercicio, la inaplicabilidad de un precepto legal cuya aplicación en una gestión pendiente ante un tribunal resulte contraria a la Constitución. La pueden pedir cualquiera de las partes o el juez que conoce del asunto; una sala declara la admisibilidad si hay gestión pendiente, el precepto puede ser decisivo y la impugnación está fundada razonablemente.",
+      norma: "Art. 93 N.º 6 e inc. 11 CPR",
+      simple: "No se derrota a la ley: se le pide que se quede afuera de este juicio en particular.",
+    },
+    {
+      id: "m11-inconstitucionalidad", modulo: 11,
+      titulo: "Inconstitucionalidad: la ley se va para todos",
+      texto: "Después de una sentencia de inaplicabilidad, hay acción pública para pedir al TC que declare inconstitucional el precepto, y el propio Tribunal puede hacerlo de oficio. Se necesitan cuatro quintos de los integrantes en ejercicio. El precepto se entiende derogado desde la publicación de la sentencia en el Diario Oficial, sin efecto retroactivo.",
+      norma: "Art. 93 N.º 7 e inc. 12 CPR; art. 94 inc. 3 CPR",
+      simple: "Primero se le pide a la ley que se retire de un juicio; después, que se retire del ordenamiento.",
+    },
+    {
+      id: "m11-preventivo", modulo: 11,
+      titulo: "Control antes de nacer",
+      texto: "Las leyes interpretativas de la Constitución, las orgánicas constitucionales y los tratados sobre materias de LOC pasan por el TC antes de promulgarse: control preventivo obligatorio. Las cuestiones de constitucionalidad durante la tramitación de un proyecto las plantean el Presidente, cualquiera de las Cámaras o un cuarto de sus miembros en ejercicio, antes de la promulgación: control preventivo facultativo.",
+      norma: "Art. 93 N.º 1 y N.º 3 CPR",
+      simple: "Algunas leyes se revisan en la sala de partos; otras, sólo si alguien reclama a tiempo.",
+    },
+    {
+      id: "m11-decretos", modulo: 11,
+      titulo: "El TC y los decretos: sólo los supremos",
+      texto: "El TC conoce de decretos sólo en dos casos: el decreto o resolución del Presidente que la Contraloría representó por inconstitucional, cuando el Presidente lo requiere; y los decretos supremos, cualquiera sea el vicio, a requerimiento de cualquiera de las Cámaras o de un cuarto de sus miembros. Un decreto alcaldicio no llega al TC: se controla por Contraloría, por el reclamo de ilegalidad y por los tribunales.",
+      norma: "Art. 93 N.º 9 y N.º 16 CPR; art. 99 CPR",
+      simple: "Para que tu decreto llegue al TC tendrías que ser Presidenta de la República; Alcaldesa no alcanza.",
+    },
+    {
+      id: "m11-efectos", modulo: 11,
+      titulo: "Sin recurso y sin retroactividad",
+      texto: "Contra las resoluciones del TC no procede recurso alguno, salvo la rectificación de errores de hecho. Lo declarado inconstitucional no puede convertirse en ley; el decreto supremo impugnado por el N.º 16 queda sin efecto de pleno derecho; y el precepto legal declarado inconstitucional se entiende derogado desde la publicación de la sentencia en el Diario Oficial, sin efecto retroactivo.",
+      norma: "Art. 94 CPR",
+      simple: "El TC no devuelve el pasado: lo que pagaste bajo una ley inconstitucional, pagado está.",
+    },
+  ],
+
+  afirmaciones: [
+    { id: "m11-af-01", modulo: 11, hallazgo: "m11-supremacia", texto: "Los preceptos de la Constitución obligan sólo a los órganos del Estado, no a los particulares.", verdad: false, porque: "Art. 6 inc. 2 CPR: obligan tanto a los titulares de los órganos como a toda persona, institución o grupo." },
+    { id: "m11-af-02", modulo: 11, hallazgo: "m11-supremacia", texto: "Los órganos del Estado deben garantizar el orden institucional de la República.", verdad: true, porque: "Art. 6 inc. 1 CPR." },
+    { id: "m11-af-03", modulo: 11, hallazgo: "m11-composicion", texto: "La Corte Suprema elige a tres ministros del Tribunal Constitucional en votación secreta.", verdad: true, porque: "Art. 92 inc. 1 letra c) CPR." },
+    { id: "m11-af-04", modulo: 11, hallazgo: "m11-composicion", texto: "Los ministros del TC duran ocho años y pueden ser reelegidos una vez.", verdad: false, porque: "Duran nueve años, se renuevan por parcialidades cada tres y no pueden ser reelegidos, salvo el reemplazante que ejerció menos de cinco años (art. 92 CPR)." },
+    { id: "m11-af-05", modulo: 11, hallazgo: "m11-inaplicabilidad", texto: "Sólo el juez de la causa puede pedir la inaplicabilidad; las partes no.", verdad: false, porque: "Art. 93 inc. 11 CPR: la cuestión puede plantearla cualquiera de las partes o el juez que conoce del asunto." },
+    { id: "m11-af-06", modulo: 11, hallazgo: "m11-inaplicabilidad", texto: "Sin una gestión pendiente ante un tribunal no hay inaplicabilidad.", verdad: true, porque: "Art. 93 N.º 6 e inc. 11 CPR: la sala verifica la existencia de una gestión pendiente ante un tribunal ordinario o especial." },
+    { id: "m11-af-07", modulo: 11, hallazgo: "m11-inconstitucionalidad", texto: "La inconstitucionalidad de un precepto legal se declara por simple mayoría del TC.", verdad: false, porque: "Exige los cuatro quintos de los integrantes en ejercicio (art. 93 N.º 7 CPR)." },
+    { id: "m11-af-08", modulo: 11, hallazgo: "m11-inconstitucionalidad", texto: "Para declarar inconstitucional un precepto legal, el TC debe haberlo declarado inaplicable antes.", verdad: true, porque: "Art. 93 N.º 7 CPR: precepto «declarado inaplicable en conformidad a lo dispuesto en el numeral anterior»; luego hay acción pública o actuación de oficio (inc. 12)." },
+    { id: "m11-af-09", modulo: 11, hallazgo: "m11-preventivo", texto: "Las leyes orgánicas constitucionales pasan por el TC antes de su promulgación, sin que nadie lo pida.", verdad: true, porque: "Art. 93 N.º 1 CPR; la Cámara de origen envía el proyecto dentro de los cinco días siguientes a su despacho (inc. 2)." },
+    { id: "m11-af-10", modulo: 11, hallazgo: "m11-preventivo", texto: "Un solo diputado puede llevar al TC un proyecto de ley en tramitación.", verdad: false, porque: "Art. 93 CPR, párrafo sobre el N.º 3: lo requieren el Presidente, cualquiera de las Cámaras o una cuarta parte de sus miembros en ejercicio." },
+    { id: "m11-af-11", modulo: 11, hallazgo: "m11-decretos", texto: "Un vecino puede requerir al TC que declare inconstitucional un decreto alcaldicio.", verdad: false, porque: "El TC sólo conoce de decretos supremos (art. 93 N.º 9 y N.º 16 CPR), y el N.º 16 lo requieren las Cámaras o un cuarto de sus miembros." },
+    { id: "m11-af-12", modulo: 11, hallazgo: "m11-decretos", texto: "Si la Contraloría representa un decreto por inconstitucional, el Presidente no puede insistir: debe ir al TC.", verdad: true, porque: "Art. 99 inc. 3 CPR: sin facultad de insistir, remite los antecedentes al TC dentro de diez días (art. 93 N.º 9)." },
+    { id: "m11-af-13", modulo: 11, hallazgo: "m11-efectos", texto: "La sentencia que declara inconstitucional un precepto legal tiene efecto retroactivo.", verdad: false, porque: "Art. 94 inc. 3 CPR: se entiende derogado desde la publicación de la sentencia en el Diario Oficial, «la que no producirá efecto retroactivo»." },
+    { id: "m11-af-14", modulo: 11, hallazgo: "m11-efectos", texto: "Contra las resoluciones del TC no procede recurso alguno.", verdad: true, porque: "Art. 94 inc. 1 CPR, sin perjuicio de que el propio Tribunal rectifique errores de hecho." },
+  ],
+
+  fichas: [
+    { id: "m11-f-01", modulo: 11, frente: "Supremacía constitucional", dorso: "Calidad de la Constitución por la cual se ubica por sobre todos los órganos del Estado y las demás fuentes, dando validez al resto del ordenamiento. Aspecto formal (proceso de formación) y material (contenido).", norma: "Art. 6 CPR", etiqueta: "conceptos", prioridad: "S", fuente: "iuspublic" },
+    { id: "m11-f-02", modulo: 11, frente: "Art. 6 CPR", dorso: "Los órganos del Estado someten su acción a la Constitución y a las normas dictadas conforme a ella y garantizan el orden institucional. Sus preceptos obligan a los titulares de los órganos y a toda persona, institución o grupo. La infracción genera las responsabilidades y sanciones que determine la ley.", norma: "Art. 6 CPR", etiqueta: "normas", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-03", modulo: 11, frente: "Art. 7 CPR y el TC", dorso: "Investidura regular, competencia y forma legal; nadie puede atribuirse, ni a pretexto de circunstancias extraordinarias, otra autoridad que la conferida. El TC cuida que la ley misma respete la Constitución; los tribunales ordinarios, que los actos respeten la ley.", norma: "Art. 7 CPR", etiqueta: "normas", prioridad: "A", fuente: "nuevo" },
+    { id: "m11-f-04", modulo: 11, frente: "Composición del TC", dorso: "Diez miembros: tres del Presidente de la República; cuatro del Congreso (dos nombrados por el Senado y dos propuestos por la Cámara de Diputados para aprobación del Senado, con dos tercios de los senadores o diputados en ejercicio); tres de la Corte Suprema en votación secreta.", norma: "Art. 92 inc. 1 CPR", etiqueta: "composición", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-05", modulo: 11, frente: "Estatuto de los ministros del TC", dorso: "Nueve años, renovación por parcialidades cada tres; quince años de título de abogado; inamovibles; no reelegibles, salvo el reemplazante que ejerció menos de cinco años; cesan a los 75 años; no pueden ejercer la abogacía ni la judicatura.", norma: "Art. 92 incs. 2 y 3 CPR", etiqueta: "composición", prioridad: "A", fuente: "nuevo" },
+    { id: "m11-f-06", modulo: 11, frente: "Funcionamiento: pleno y salas", dorso: "Funciona en pleno (quórum de ocho) o dividido en dos salas (quórum de cuatro). Acuerdos por simple mayoría salvo quórum especial; falla conforme a derecho. El pleno resuelve, entre otras, las atribuciones de los N.º 1, 3, 4, 5, 6, 7, 8, 9 y 11 del art. 93.", norma: "Art. 92 incs. 5 a 7 CPR", etiqueta: "composición", prioridad: "B", fuente: "nuevo" },
+    { id: "m11-f-07", modulo: 11, frente: "Cuatro categorías de atribuciones", dorso: "Control normativo (preventivo, inaplicabilidad, inconstitucionalidad, DFL, autos acordados, decretos supremos), contencioso constitucional (contiendas de competencia, reclamos por promulgación), sancionatorio (organizaciones y partidos inconstitucionales) y consultivo (informar al Senado). Clasificación doctrinal.", norma: "Art. 93 CPR", etiqueta: "atribuciones", prioridad: "A", fuente: "iuspublic" },
+    { id: "m11-f-08", modulo: 11, frente: "Control preventivo obligatorio", dorso: "Leyes que interpreten algún precepto de la Constitución, leyes orgánicas constitucionales y normas de un tratado sobre materias de LOC, antes de su promulgación. La Cámara de origen envía el proyecto dentro de los cinco días siguientes a su total tramitación.", norma: "Art. 93 N.º 1 e inc. 2 CPR", etiqueta: "atribuciones", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-09", modulo: 11, frente: "Control preventivo facultativo", dorso: "Cuestiones de constitucionalidad durante la tramitación de proyectos de ley, de reforma constitucional y de tratados. Requieren el Presidente, cualquiera de las Cámaras o un cuarto de sus miembros en ejercicio, antes de la promulgación y nunca después del quinto día del despacho. El TC resuelve en diez días, prorrogables por otros diez.", norma: "Art. 93 N.º 3 CPR", etiqueta: "atribuciones", prioridad: "A", fuente: "nuevo" },
+    { id: "m11-f-10", modulo: 11, frente: "Inaplicabilidad por inconstitucionalidad", dorso: "El TC resuelve, por la mayoría de sus miembros en ejercicio, que un precepto legal no se aplique en una gestión pendiente ante un tribunal ordinario o especial, porque su aplicación resultaría contraria a la Constitución. Es control concreto: efecto para ese juicio.", norma: "Art. 93 N.º 6 CPR", etiqueta: "atribuciones", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-11", modulo: 11, frente: "Quién y cómo se pide la inaplicabilidad", dorso: "Cualquiera de las partes o el juez que conoce del asunto. Una sala declara la admisibilidad, sin ulterior recurso, si hay gestión pendiente, el precepto puede ser decisivo, la impugnación está fundada razonablemente y se cumplen los demás requisitos legales; la misma sala resuelve la suspensión del procedimiento.", norma: "Art. 93 inc. 11 CPR", etiqueta: "atribuciones", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-12", modulo: 11, frente: "Inconstitucionalidad de un precepto legal", dorso: "Resuelta antes la inaplicabilidad, hay acción pública para pedir la declaración de inconstitucionalidad, y el TC puede declararla de oficio. Quórum: cuatro quintos de los integrantes en ejercicio. Es control abstracto: el precepto sale del ordenamiento.", norma: "Art. 93 N.º 7 e inc. 12 CPR", etiqueta: "atribuciones", prioridad: "S", fuente: "iuspublic" },
+    { id: "m11-f-13", modulo: 11, frente: "Decretos ante el TC (N.º 9 y N.º 16)", dorso: "N.º 9: decreto o resolución del Presidente representado por la Contraloría por inconstitucional, a requerimiento del Presidente (art. 99). N.º 16: decretos supremos, cualquiera sea el vicio, a requerimiento de cualquiera de las Cámaras dentro de 30 días, o de un cuarto de sus miembros si el vicio no es exceder la potestad reglamentaria autónoma.", norma: "Art. 93 N.º 9 y N.º 16 CPR; art. 99 CPR", etiqueta: "atribuciones", prioridad: "A", fuente: "nuevo" },
+    { id: "m11-f-14", modulo: 11, frente: "Otras atribuciones de control normativo", dorso: "Autos acordados de la Corte Suprema, Cortes de Apelaciones y Tribunal Calificador de Elecciones (N.º 2); decretos con fuerza de ley (N.º 4); convocatoria a plebiscito (N.º 5); reclamos cuando el Presidente no promulga una ley o promulga un texto diverso (N.º 8).", norma: "Art. 93 N.º 2, 4, 5 y 8 CPR", etiqueta: "atribuciones", prioridad: "B", fuente: "nuevo" },
+    { id: "m11-f-15", modulo: 11, frente: "Contiendas de competencia", dorso: "El TC resuelve las contiendas de competencia entre las autoridades políticas o administrativas y los tribunales de justicia que no correspondan al Senado. El requerimiento lo deduce cualquiera de las autoridades o tribunales en conflicto.", norma: "Art. 93 N.º 12 CPR", etiqueta: "atribuciones", prioridad: "B", fuente: "nuevo" },
+    { id: "m11-f-16", modulo: 11, frente: "Efectos de las sentencias del TC", dorso: "Sin recurso alguno (salvo rectificar errores de hecho). Lo declarado inconstitucional no puede convertirse en ley. El decreto supremo del N.º 16 queda sin efecto de pleno derecho. El precepto de los N.º 2, 4 o 7 se entiende derogado desde la publicación de la sentencia en el Diario Oficial, sin retroactividad. Publicación dentro de tres días.", norma: "Art. 94 CPR", etiqueta: "efectos", prioridad: "S", fuente: "nuevo" },
+    { id: "m11-f-17", modulo: 11, frente: "¿Y los decretos alcaldicios?", dorso: "No llegan al TC. Un decreto alcaldicio se controla por la Contraloría, por los recursos administrativos, por el reclamo de ilegalidad municipal y por la acción de nulidad de derecho público ante los tribunales.", norma: "Art. 93 N.º 9 y N.º 16 CPR (a contrario); art. 7 inc. 3 CPR", etiqueta: "efectos", prioridad: "A", fuente: "nuevo" },
+    { id: "m11-f-18", modulo: 11, frente: "Materias de ley y potestad reglamentaria", dorso: "Sólo son materias de ley las que enumera el art. 63. Un decreto supremo dictado con potestad reglamentaria autónoma que invada materias reservadas a la ley puede llevarse al TC por el N.º 16.", norma: "Art. 63 CPR; art. 93 N.º 16 CPR", etiqueta: "atribuciones", prioridad: "C", fuente: "nuevo" },
+  ],
+
+  quiz: [
+    { id: "m11-q-01", modulo: 11, texto: "¿Cuántos miembros tiene el Tribunal Constitucional y quién los designa?", opciones: ["Siete: todos el Presidente con acuerdo del Senado", "Diez: tres el Presidente, cuatro el Congreso y tres la Corte Suprema", "Nueve: tres por cada poder del Estado", "Diez: cinco el Senado y cinco la Corte Suprema"], correcta: 1, porque: "Art. 92 CPR: 3 + 4 (2 Senado, 2 propuestos por la Cámara) + 3 Corte Suprema.", norma: "Art. 92 CPR", fuente: "nuevo" },
+    { id: "m11-q-02", modulo: 11, texto: "¿Con qué quórum aprueban las Cámaras los ministros del TC que les corresponden?", opciones: ["Simple mayoría", "Mayoría absoluta", "Dos tercios de los senadores o diputados en ejercicio", "Cuatro quintos"], correcta: 2, porque: "Art. 92 inc. 1 letra b) CPR: votaciones únicas y dos tercios en ejercicio.", norma: "Art. 92 CPR", fuente: "iuspublic" },
+    { id: "m11-q-03", modulo: 11, texto: "¿Cuánto duran los ministros del TC?", opciones: ["Cuatro años, reelegibles", "Nueve años, renovados por parcialidades cada tres, sin reelección", "Hasta los 70 años", "Ocho años, con una reelección"], correcta: 1, porque: "Art. 92 incs. 2 y 3 CPR; cesan a los 75 años.", norma: "Art. 92 CPR", fuente: "nuevo" },
+    { id: "m11-q-04", modulo: 11, texto: "¿Quién puede requerir la inaplicabilidad de un precepto legal?", opciones: ["Sólo el Presidente de la República", "Cualquiera de las partes o el juez que conoce del asunto, en una gestión pendiente", "Cualquier ciudadano, por acción pública", "Sólo la Corte Suprema"], correcta: 1, porque: "Art. 93 inc. 11 CPR.", norma: "Art. 93 N.º 6 e inc. 11 CPR", fuente: "nuevo" },
+    { id: "m11-q-05", modulo: 11, texto: "¿Qué quórum exige la declaración de inconstitucionalidad de un precepto legal?", opciones: ["Mayoría de los miembros en ejercicio", "Dos tercios", "Cuatro quintos de los integrantes en ejercicio", "Unanimidad"], correcta: 2, porque: "Art. 93 N.º 7 CPR; la inaplicabilidad, en cambio, se resuelve por la mayoría de los miembros en ejercicio (N.º 6).", norma: "Art. 93 N.º 7 CPR", fuente: "iuspublic" },
+    { id: "m11-q-06", modulo: 11, texto: "¿Qué requisitos revisa la sala del TC para admitir una inaplicabilidad?", opciones: ["Que el requirente sea abogado y pague una tasa", "Gestión pendiente ante un tribunal, precepto que pueda ser decisivo e impugnación fundada razonablemente", "Que la ley tenga menos de cinco años", "Que el juez de la causa esté de acuerdo"], correcta: 1, porque: "Art. 93 inc. 11 CPR; la misma sala resuelve la suspensión del procedimiento.", norma: "Art. 93 inc. 11 CPR", fuente: "nuevo" },
+    { id: "m11-q-07", modulo: 11, texto: "¿Desde cuándo rige la sentencia que declara inconstitucional un precepto legal?", opciones: ["Desde que se dictó, con efecto retroactivo", "Desde la publicación en el Diario Oficial, sin efecto retroactivo", "Desde que la publique el Congreso", "Desde que el Presidente la promulgue"], correcta: 1, porque: "Art. 94 inc. 3 CPR: se entiende derogado desde la publicación, que no produce efecto retroactivo.", norma: "Art. 94 CPR", fuente: "nuevo" },
+    { id: "m11-q-08", modulo: 11, texto: "¿Qué leyes pasan por control preventivo obligatorio del TC?", opciones: ["Todas las leyes", "Las interpretativas de la Constitución, las orgánicas constitucionales y los tratados sobre materias de LOC", "Sólo las de quórum calificado", "Sólo la Ley de Presupuestos"], correcta: 1, porque: "Art. 93 N.º 1 CPR, antes de su promulgación.", norma: "Art. 93 N.º 1 CPR", fuente: "nuevo" },
+    { id: "m11-q-09", modulo: 11, texto: "¿Puede un decreto alcaldicio de Potestas ser revisado por el Tribunal Constitucional?", opciones: ["Sí, por el N.º 16 del art. 93", "No: el TC sólo conoce de decretos supremos (N.º 9 y N.º 16); el decreto alcaldicio se controla por Contraloría, reclamo de ilegalidad y tribunales", "Sí, si lo pide un cuarto de los concejales", "Sí, por acción pública"], correcta: 1, porque: "Art. 93 N.º 9 y N.º 16 CPR hablan de decretos del Presidente y decretos supremos.", norma: "Art. 93 N.º 9 y N.º 16 CPR", fuente: "nuevo" },
+    { id: "m11-q-10", modulo: 11, texto: "La Contraloría representa un decreto del Presidente por inconstitucional. ¿Qué puede hacer el Presidente?", opciones: ["Insistir con la firma de todos sus ministros", "Nada: el decreto muere", "Remitir los antecedentes al TC dentro de diez días para que resuelva", "Pedir un dictamen al Consejo de Defensa del Estado"], correcta: 2, porque: "Art. 99 inc. 3 CPR: sin facultad de insistir; va al TC (art. 93 N.º 9).", norma: "Art. 99 CPR; art. 93 N.º 9 CPR", fuente: "nuevo" },
+    { id: "m11-q-11", modulo: 11, texto: "¿Qué recurso procede contra una sentencia del Tribunal Constitucional?", opciones: ["Apelación ante la Corte Suprema", "Ninguno, sin perjuicio de rectificar errores de hecho", "Reposición ante el propio TC", "Queja"], correcta: 1, porque: "Art. 94 inc. 1 CPR.", norma: "Art. 94 CPR", fuente: "nuevo" },
+    { id: "m11-q-12", modulo: 11, texto: "¿Quién resuelve una contienda de competencia entre una autoridad administrativa y un juzgado de policía local?", opciones: ["El Senado", "La Corte de Apelaciones", "El Tribunal Constitucional, si no corresponde al Senado", "La Contraloría"], correcta: 2, porque: "Art. 93 N.º 12 CPR: contiendas entre autoridades políticas o administrativas y tribunales de justicia que no correspondan al Senado.", norma: "Art. 93 N.º 12 CPR", fuente: "nuevo" },
+  ],
+
+  orales: [
+    {
+      id: "m11-o-01", modulo: 11,
+      pregunta: "Enumere las categorías de atribuciones del Tribunal Constitucional y dé ejemplos de control normativo.",
+      profesor: "Prof. Bronfman",
+      claves: ["control normativo", "contencioso constitucional", "sancionatorio", "consultivo", "control preventivo obligatorio: LOC e interpretativas", "control preventivo facultativo", "inaplicabilidad en gestión concreta", "inconstitucionalidad con 4/5"],
+      trampas: ["casación constitucional", "control de los decretos alcaldicios", "revisión de sentencias de la Corte Suprema", "acción pública de inaplicabilidad", "control preventivo de todas las leyes"],
+      modelo: "Las atribuciones del art. 93 se agrupan en control normativo, contencioso constitucional, sancionatorio y consultivo. En control normativo están el control preventivo obligatorio de las leyes interpretativas, las orgánicas constitucionales y los tratados sobre materias de LOC (N.º 1); el preventivo facultativo durante la tramitación de proyectos (N.º 3); la inaplicabilidad de un precepto legal en una gestión pendiente, por mayoría de los miembros en ejercicio (N.º 6); y la inconstitucionalidad del precepto antes declarado inaplicable, con cuatro quintos (N.º 7). También controla DFL, autos acordados y decretos supremos.",
+      repregunta: "¿Cómo se integra el TC y con qué quórum se nombra a los propuestos por la Cámara?",
+      prioridad: "A", fuente: "iuspublic",
+    },
+    {
+      id: "m11-o-02", modulo: 11,
+      pregunta: "La Municipalidad de Potestas es demandada y cree que la ley que le aplican es inconstitucional. ¿Qué puede hacer y qué efectos tendría?",
+      profesor: "Ministra del Tribunal Constitucional",
+      claves: ["inaplicabilidad, art. 93 N.º 6", "la municipalidad es parte: puede requerir", "gestión pendiente ante un tribunal", "precepto decisivo y fundamento razonable", "sala: admisibilidad y suspensión", "mayoría de los miembros en ejercicio", "efecto sólo para ese juicio", "después, inconstitucionalidad con 4/5 y sin retroactividad"],
+      trampas: ["dejar de aplicar la ley por decreto alcaldicio", "pedir la inconstitucionalidad directamente", "recurso de protección contra la ley", "la sentencia devuelve lo pagado"],
+      modelo: "Como parte de una gestión pendiente, la municipalidad puede requerir al TC la inaplicabilidad del precepto legal (art. 93 N.º 6 e inc. 11), igual que podría hacerlo el juez. Una sala revisa la admisibilidad: gestión pendiente, precepto que pueda ser decisivo e impugnación fundada razonablemente, y puede suspender el procedimiento. El pleno resuelve por la mayoría de sus miembros en ejercicio, y la sentencia impide aplicar el precepto sólo en ese juicio. Después hay acción pública, o actuación de oficio, para la inconstitucionalidad, con cuatro quintos (N.º 7), cuyo efecto es la derogación desde la publicación en el Diario Oficial, sin retroactividad (art. 94).",
+      repregunta: "¿Qué pasa con los cobros ya pagados bajo la ley si el TC la declara inconstitucional?",
+      prioridad: "S", fuente: "nuevo",
+    },
+  ],
+
+  columnas: [
+    {
+      id: "m11-c-01", modulo: 11,
+      titulo: "¿Inaplicabilidad o inconstitucionalidad?",
+      izq: "Inaplicabilidad (N.º 6)", der: "Inconstitucionalidad (N.º 7)",
+      items: [
+        { texto: "Control concreto: para una gestión pendiente", lado: 0 },
+        { texto: "Control abstracto: el precepto sale del ordenamiento", lado: 1 },
+        { texto: "Mayoría de los miembros en ejercicio", lado: 0, porque: "Art. 93 N.º 6." },
+        { texto: "Cuatro quintos de los integrantes en ejercicio", lado: 1, porque: "Art. 93 N.º 7." },
+        { texto: "La piden las partes o el juez de la causa", lado: 0, porque: "Art. 93 inc. 11." },
+        { texto: "Acción pública o de oficio por el propio TC", lado: 1, porque: "Art. 93 inc. 12." },
+        { texto: "Exige una gestión pendiente ante un tribunal", lado: 0 },
+        { texto: "Exige una sentencia previa de inaplicabilidad", lado: 1 },
+        { texto: "Una sala puede suspender el procedimiento", lado: 0 },
+        { texto: "Precepto derogado desde la publicación en el Diario Oficial, sin retroactividad", lado: 1, porque: "Art. 94 inc. 3." },
+      ],
+      norma: "Art. 93 N.º 6 y N.º 7 CPR; art. 94 CPR", fuente: "nuevo",
+    },
+  ],
+
+  cadenas: [
+    {
+      id: "m11-k-01", modulo: 11,
+      titulo: "Del juicio al Tribunal Constitucional",
+      pasos: [
+        "Hay un juicio o gestión pendiente ante un tribunal ordinario o especial",
+        "Un precepto legal puede ser decisivo y su aplicación parece contraria a la Constitución",
+        "Una parte o el juez requiere la inaplicabilidad al TC",
+        "Una sala declara la admisibilidad y, si procede, suspende el procedimiento",
+        "El pleno resuelve la inaplicabilidad por la mayoría de sus miembros en ejercicio",
+        "Con la sentencia de inaplicabilidad, hay acción pública (o de oficio) para la inconstitucionalidad",
+        "El pleno declara la inconstitucionalidad con cuatro quintos",
+        "Se publica en el Diario Oficial: el precepto queda derogado, sin efecto retroactivo",
+      ],
+      nota: "Los pasos 1 a 5 bastan para ganar un juicio; los 6 a 8 cambian la ley para todos.",
+      norma: "Art. 93 N.º 6 y N.º 7 CPR; art. 94 CPR", fuente: "nuevo",
+    },
+  ],
+
+  expedientes: [
+    {
+      id: "m11-exp-requerimiento", modulo: 11,
+      titulo: "La ley que nos aplican",
+      relato: "Una empresa demanda a la Municipalidad de Potestas y el juez aplicará un artículo de ley que, en este caso, deja al municipio sin posibilidad de defenderse. La Alcaldesa Ruperta Cañas propone «pedir al TC que derogue esa ley de una vez».",
+      documento: { tipo: "Minuta de la Dirección Jurídica", campos: [
+        { k: "Gestión pendiente", v: "Juicio ordinario, Juzgado Civil de Potestas, en etapa de prueba" },
+        { k: "Precepto legal", v: "Artículo de ley que el juez debe aplicar para resolver" },
+        { k: "Problema", v: "Su aplicación al caso vulneraría el art. 19 N.º 3 CPR" },
+        { k: "Calidad de la municipalidad", v: "Parte demandada" },
+        { k: "Propuesta de la Alcaldesa", v: "Pedir la inconstitucionalidad de la ley" },
+      ] },
+      pregunta: "¿Qué vía propones?",
+      sellos: [
+        { texto: "REQUERIR LA INAPLICABILIDAD (ART. 93 N.º 6): SOMOS PARTE EN GESTIÓN PENDIENTE", correcto: true, porque: "La municipalidad es parte de una gestión pendiente y el precepto puede ser decisivo: puede requerir la inaplicabilidad (art. 93 N.º 6 e inc. 11 CPR). La inconstitucionalidad viene después, por acción pública, y exige inaplicabilidad previa (N.º 7)." },
+        { texto: "PEDIR LA INCONSTITUCIONALIDAD DIRECTAMENTE", correcto: false, porque: "El N.º 7 exige una sentencia previa de inaplicabilidad; primero el caso concreto." },
+        { texto: "DEJAR DE APLICAR LA LEY POR DECRETO ALCALDICIO", correcto: false, porque: "Los órganos del Estado someten su acción a la Constitución y a las normas dictadas conforme a ella (art. 6 CPR); un decreto no deroga una ley." },
+        { texto: "RECURSO DE PROTECCIÓN CONTRA LA LEY", correcto: false, porque: "La protección procede contra actos u omisiones arbitrarios o ilegales, no contra preceptos legales (art. 20 CPR)." },
+      ],
+      norma: "Art. 93 N.º 6 e inc. 11 CPR", fuente: "nuevo", hallazgo: "m11-inaplicabilidad",
+    },
+    {
+      id: "m11-exp-sin-gestion", modulo: 11,
+      titulo: "Inaplicabilidad por si acaso",
+      relato: "No hay ningún juicio, pero la Alcaldesa teme que una ley nueva la perjudique «cuando la apliquen» y quiere que Jurídica requiera al TC desde ya.",
+      documento: { tipo: "Borrador de requerimiento de inaplicabilidad", campos: [
+        { k: "Requirente", v: "Municipalidad de Potestas" },
+        { k: "Gestión pendiente", v: "Ninguna" },
+        { k: "Precepto impugnado", v: "Ley publicada el mes pasado" },
+        { k: "Fundamento", v: "«Podría afectarnos en el futuro»" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "INADMISIBLE: NO HAY GESTIÓN PENDIENTE", correcto: true, porque: "La inaplicabilidad exige una gestión pendiente ante un tribunal ordinario o especial, en la que el precepto pueda ser decisivo (art. 93 N.º 6 e inc. 11 CPR). Sin juicio no hay caso concreto." },
+        { texto: "PRESENTAR: EL TC LO VERÁ DE OFICIO", correcto: false, porque: "El TC actúa de oficio sólo para la inconstitucionalidad posterior a una inaplicabilidad (inc. 12)." },
+        { texto: "PEDIR CONTROL PREVENTIVO", correcto: false, porque: "El control preventivo es antes de la promulgación y lo requieren el Presidente, las Cámaras o un cuarto de sus miembros (art. 93 N.º 3)." },
+        { texto: "ACCIÓN PÚBLICA DE INAPLICABILIDAD", correcto: false, porque: "La acción pública existe para la inconstitucionalidad (N.º 7), no para la inaplicabilidad." },
+      ],
+      norma: "Art. 93 N.º 6 e inc. 11 CPR", fuente: "nuevo", hallazgo: "m11-inaplicabilidad",
+    },
+    {
+      id: "m11-exp-decreto", modulo: 11,
+      titulo: "El vecino que quiere ir al TC",
+      relato: "Don Aurelio, vecino de la plaza, trae un escrito: quiere que el Tribunal Constitucional declare inconstitucional el decreto alcaldicio que cambió el horario de la feria. Pide que Jurídica le «firme el requerimiento».",
+      documento: { tipo: "Requerimiento de inconstitucionalidad (borrador del vecino)", campos: [
+        { k: "Acto impugnado", v: "Decreto alcaldicio N.º 301, horario de la feria libre" },
+        { k: "Tribunal", v: "Tribunal Constitucional" },
+        { k: "Fundamento", v: "«Vulnera mi derecho a trabajar»" },
+        { k: "Requirente", v: "Un vecino" },
+      ] },
+      pregunta: "¿Qué le explicas?",
+      sellos: [
+        { texto: "EL TC NO REVISA DECRETOS ALCALDICIOS: CONTRALORÍA, RECLAMO DE ILEGALIDAD O TRIBUNALES", correcto: true, porque: "El TC conoce de decretos sólo en los N.º 9 y N.º 16 del art. 93, que se refieren a decretos del Presidente y decretos supremos, y los requieren el Presidente, las Cámaras o un cuarto de sus miembros. Un decreto alcaldicio se impugna por las vías administrativas y judiciales." },
+        { texto: "FIRMAR: CUALQUIER PERSONA PUEDE REQUERIR", correcto: false, porque: "La acción pública existe para la inconstitucionalidad de preceptos legales ya declarados inaplicables (N.º 7), no para decretos alcaldicios." },
+        { texto: "PEDIR INAPLICABILIDAD DEL DECRETO", correcto: false, porque: "La inaplicabilidad recae sobre preceptos legales, no sobre decretos (art. 93 N.º 6)." },
+        { texto: "ELEVARLO A LA CÁMARA DE DIPUTADOS PARA QUE REQUIERA", correcto: false, porque: "El N.º 16 permite a las Cámaras requerir sobre decretos supremos, no sobre decretos alcaldicios." },
+      ],
+      norma: "Art. 93 N.º 9 y N.º 16 CPR", fuente: "nuevo", hallazgo: "m11-decretos",
+    },
+    {
+      id: "m11-exp-retroactivo", modulo: 11,
+      titulo: "La ley derogada y los cobros de antes",
+      relato: "El TC declaró inconstitucional un precepto legal que obligaba a los municipios a pagar un aporte, y la sentencia se publicó ayer en el Diario Oficial. La Alcaldesa pregunta si puede exigir la devolución de lo pagado en los últimos cinco años.",
+      documento: { tipo: "Oficio de la Dirección de Finanzas", campos: [
+        { k: "Precepto", v: "Declarado inconstitucional por el TC (art. 93 N.º 7)" },
+        { k: "Publicación de la sentencia", v: "Ayer, Diario Oficial" },
+        { k: "Pagos anteriores", v: "Cinco años de aportes bajo la ley derogada" },
+        { k: "Consulta", v: "¿Se devuelven?" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "NO: SIN EFECTO RETROACTIVO (ART. 94)", correcto: true, porque: "El precepto se entiende derogado desde la publicación de la sentencia en el Diario Oficial, «la que no producirá efecto retroactivo» (art. 94 inc. 3 CPR). Desde ayer no se paga más; lo anterior no se devuelve por esta vía." },
+        { texto: "SÍ: LA LEY NUNCA EXISTIÓ", correcto: false, porque: "La sentencia deroga hacia el futuro; no declara que la ley nunca existió (art. 94 inc. 3 CPR)." },
+        { texto: "APELAR AL TC PARA QUE DÉ EFECTO RETROACTIVO", correcto: false, porque: "Contra las resoluciones del TC no procede recurso alguno (art. 94 inc. 1 CPR)." },
+        { texto: "SEGUIR PAGANDO HASTA QUE EL CONGRESO DEROGUE LA LEY", correcto: false, porque: "La derogación opera con la publicación de la sentencia, sin necesidad de ley derogatoria." },
+      ],
+      norma: "Art. 94 CPR", fuente: "nuevo", hallazgo: "m11-efectos",
+    },
+    {
+      id: "m11-exp-valido", modulo: 11,
+      titulo: "El requerimiento que sí cumple",
+      relato: "Jurídica terminó el requerimiento de inaplicabilidad para el juicio con la empresa. Antes de enviarlo, la Alcaldesa pide que le pongas el sello.",
+      documento: { tipo: "Requerimiento de inaplicabilidad por inconstitucionalidad", campos: [
+        { k: "Requirente", v: "Municipalidad de Potestas, parte demandada" },
+        { k: "Gestión pendiente", v: "Juicio ordinario rol C-1203, Juzgado Civil de Potestas, en estado de prueba" },
+        { k: "Precepto impugnado", v: "Un artículo de ley, identificado, cuya aplicación resolvería el pleito" },
+        { k: "Fundamento", v: "Conflicto concreto con el art. 19 N.º 3 CPR, desarrollado con antecedentes" },
+        { k: "Petición accesoria", v: "Suspensión del procedimiento" },
+        { k: "Tribunal", v: "Tribunal Constitucional" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: CUMPLE LOS REQUISITOS DE ADMISIBILIDAD", correcto: true, porque: "Hay gestión pendiente ante un tribunal, el precepto puede ser decisivo, la impugnación está fundada razonablemente y lo presenta una parte (art. 93 N.º 6 e inc. 11 CPR). La sala puede además suspender el procedimiento." },
+        { texto: "INADMISIBLE: FALTA LA FIRMA DEL JUEZ", correcto: false, porque: "Lo puede plantear cualquiera de las partes sin necesidad del juez (inc. 11)." },
+        { texto: "INADMISIBLE: NECESITA CUATRO QUINTOS DEL CONCEJO", correcto: false, porque: "Los cuatro quintos son el quórum del TC para la inconstitucionalidad (N.º 7), no un requisito del requirente." },
+        { texto: "CAMBIARLO POR UN REQUERIMIENTO DE INCONSTITUCIONALIDAD", correcto: false, porque: "La inconstitucionalidad exige inaplicabilidad previa (N.º 7)." },
+      ],
+      norma: "Art. 93 N.º 6 e inc. 11 CPR", fuente: "nuevo", hallazgo: "m11-inaplicabilidad",
+    },
+    {
+      id: "m11-exp-contienda", modulo: 11,
+      titulo: "¿Quién manda aquí?",
+      relato: "La Dirección de Obras ordenó demoler un cierre ilegal y el Juzgado de Policía Local sostiene que esa decisión le corresponde a él. Ambos se declaran competentes y el vecino afectado no sabe a quién obedecer.",
+      documento: { tipo: "Oficios cruzados", campos: [
+        { k: "Autoridad administrativa", v: "Dirección de Obras Municipales de Potestas" },
+        { k: "Tribunal", v: "Juzgado de Policía Local de Potestas" },
+        { k: "Materia", v: "Orden de demolición de un cierre en bien nacional de uso público" },
+        { k: "Situación", v: "Ambos se atribuyen la competencia" },
+      ] },
+      pregunta: "¿Quién resuelve la contienda?",
+      sellos: [
+        { texto: "CONTIENDA DE COMPETENCIA: TRIBUNAL CONSTITUCIONAL (ART. 93 N.º 12)", correcto: true, porque: "El TC resuelve las contiendas de competencia entre las autoridades políticas o administrativas y los tribunales de justicia que no correspondan al Senado; la deduce cualquiera de las autoridades o tribunales en conflicto (art. 93 N.º 12 CPR)." },
+        { texto: "LA ALCALDESA, POR DECRETO", correcto: false, porque: "Ninguna autoridad puede atribuirse más competencia que la conferida (art. 7 inc. 2 CPR); la contienda la resuelve un tercero." },
+        { texto: "LA CONTRALORÍA", correcto: false, porque: "La Contraloría controla la legalidad de los actos administrativos; no resuelve contiendas con tribunales." },
+        { texto: "EL VECINO ELIGE A QUIÉN OBEDECER", correcto: false, porque: "La competencia no es a elección del interesado." },
+      ],
+      norma: "Art. 93 N.º 12 CPR", fuente: "nuevo", hallazgo: "m11-supremacia",
+    },
+  ],
+};
+
+// PENDIENTE DE REVISIÓN: la clasificación de las atribuciones en cuatro categorías (normativa, contenciosa,
+// sancionatoria, consultiva) es doctrinal (iuspublic). La distribución de contiendas entre Senado (tribunales
+// superiores, art. 53 N.º 3) y TC (art. 93 N.º 12) se verificó en el XML: el Senado conoce las contiendas
+// con los tribunales superiores de justicia; el TC, las demás. Los ejemplos de los expedientes (ley que «deja sin defensa» al municipio) son
+// hipotéticos: no citan una ley real.

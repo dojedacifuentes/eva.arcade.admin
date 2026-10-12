@@ -1,0 +1,321 @@
+// Módulo 3 · La autopsia (Dirección Jurídica). Eficacia (ejecutoriedad, irretroactividad,
+// suspensión, firmeza), vicios y principio de trascendencia, extinción, invalidación vs.
+// revocación (arts. 13, 51, 52, 53, 57, 61 y 62 Ley 19.880).
+// Verificado contra los XML de la BCN (l19880.xml, cpr.xml) el 12-10-2026.
+import type { BancoModulo } from "../tipos";
+
+export const BANCO_M03: BancoModulo = {
+  modulo: 3,
+
+  hallazgos: [
+    {
+      id: "m03-ejecutoriedad",
+      modulo: 3,
+      titulo: "Rige de inmediato, pero desde que te avisan",
+      texto: "Los actos de la Administración sujetos al derecho administrativo causan inmediata ejecutoriedad, salvo que una disposición diga lo contrario o necesiten aprobación o autorización superior. Pero los decretos y resoluciones producen efectos jurídicos desde su notificación o publicación, según sean de contenido individual o general.",
+      norma: "Art. 51 Ley 19.880",
+      simple: "El decreto nace con motor encendido; la notificación es la llave de contacto.",
+    },
+    {
+      id: "m03-irretroactividad",
+      modulo: 3,
+      titulo: "Hacia atrás, sólo si te favorece",
+      texto: "Los actos administrativos no tienen efecto retroactivo, salvo cuando producen consecuencias favorables para los interesados y no lesionan derechos de terceros. Las dos condiciones van juntas: un acto gravoso nunca puede retrotraerse.",
+      norma: "Art. 52 Ley 19.880",
+      simple: "La Administración puede viajar al pasado sólo para dejarte regalos, nunca cuentas.",
+    },
+    {
+      id: "m03-suspension",
+      modulo: 3,
+      titulo: "Reclamar no detiene el acto",
+      texto: "Interponer un recurso administrativo no suspende la ejecución del acto impugnado. La autoridad que debe resolverlo puede suspenderla, a petición fundada del interesado, cuando el cumplimiento pudiere causar daño irreparable o hacer imposible cumplir lo que se resolviere si el recurso se acoge. El acto queda firme cuando ya no admite recursos ordinarios; sólo contra actos firmes cabe la revisión extraordinaria.",
+      norma: "Arts. 57 y 60 Ley 19.880",
+      simple: "Poner un recurso no es apretar el freno: es pedirle a la Administración que lo apriete ella.",
+    },
+    {
+      id: "m03-seis-vicios",
+      modulo: 3,
+      titulo: "Un vicio por cada elemento",
+      texto: "Cada elemento del acto tiene su vicio: investidura irregular, incompetencia, ausencia o ilegalidad de los motivos, ilegalidad del objeto, desviación de poder y vicio de forma o de procedimiento. Los dos primeros y el último vienen del art. 7 de la Constitución; los otros tres, del principio de legalidad y de la exigencia de fin público.",
+      norma: "Art. 7 CPR; arts. 11 y 13 Ley 19.880",
+      simple: "La autopsia es ordenada: se abre el acto por sus seis costuras y se mira cuál cedió.",
+    },
+    {
+      id: "m03-trascendencia",
+      modulo: 3,
+      titulo: "No toda ilegalidad mata al acto",
+      texto: "El vicio de procedimiento o de forma sólo afecta la validez del acto cuando recae en un requisito esencial, por su naturaleza o por mandato del ordenamiento, y genera perjuicio al interesado. La Administración puede subsanar los vicios de sus actos si con ello no afecta intereses de terceros, y puede aclarar puntos dudosos y rectificar errores de copia, de referencia o de cálculo en cualquier momento.",
+      norma: "Arts. 13 incs. 3 y 4, y 62 Ley 19.880",
+      simple: "Un RUT mal tipeado se corrige; una audiencia omitida se paga con el acto completo.",
+    },
+    {
+      id: "m03-invalidacion",
+      modulo: 3,
+      titulo: "Invalidar: dos años y una audiencia",
+      texto: "La autoridad administrativa puede, de oficio o a petición de parte, invalidar los actos contrarios a derecho, previa audiencia del interesado, siempre que lo haga dentro de los dos años contados desde la notificación o publicación del acto. La invalidación puede ser total o parcial, y el acto invalidatorio es siempre impugnable ante los tribunales en procedimiento breve y sumario.",
+      norma: "Art. 53 Ley 19.880",
+      simple: "La Administración también tiene fecha de vencimiento: dos años para arrepentirse, y antes tiene que escucharte.",
+    },
+    {
+      id: "m03-revocacion",
+      modulo: 3,
+      titulo: "Revocar: por conveniencia, pero no siempre",
+      texto: "Los actos pueden ser revocados por el órgano que los dictó, por razones de mérito, oportunidad o conveniencia, y hacia el futuro. No procede cuando se trate de actos declarativos o creadores de derechos adquiridos legítimamente, cuando la ley haya fijado expresamente otra forma de extinción, ni cuando por su naturaleza la regulación legal del acto impida dejarlo sin efecto.",
+      norma: "Art. 61 Ley 19.880",
+      simple: "Cambiar de opinión es legal; quitarle a alguien lo que ya es suyo, no.",
+    },
+  ],
+
+  afirmaciones: [
+    { id: "m03-af-01", modulo: 3, hallazgo: "m03-ejecutoriedad", texto: "Los decretos y resoluciones producen efectos jurídicos desde su notificación o publicación, según sean individuales o generales.", verdad: true, porque: "Art. 51 inc. 2 Ley 19.880." },
+    { id: "m03-af-02", modulo: 3, hallazgo: "m03-ejecutoriedad", texto: "Un acto sólo puede ejecutarse cuando queda firme, es decir, cuando ya no admite recursos.", verdad: false, porque: "Art. 51 inc. 1: causan inmediata ejecutoriedad; los recursos no suspenden la ejecución (art. 57)." },
+    { id: "m03-af-03", modulo: 3, hallazgo: "m03-irretroactividad", texto: "Un acto favorable puede tener efecto retroactivo si no lesiona derechos de terceros.", verdad: true, porque: "Art. 52 Ley 19.880: es la única excepción a la irretroactividad." },
+    { id: "m03-af-04", modulo: 3, hallazgo: "m03-irretroactividad", texto: "La irretroactividad de los actos administrativos está en el art. 57 de la Ley 19.880.", verdad: false, porque: "Está en el art. 52. El art. 57 regula la suspensión del acto recurrido." },
+    { id: "m03-af-05", modulo: 3, hallazgo: "m03-suspension", texto: "La autoridad que resuelve un recurso puede suspender la ejecución del acto si su cumplimiento pudiere causar daño irreparable.", verdad: true, porque: "Art. 57 Ley 19.880: a petición fundada del interesado." },
+    { id: "m03-af-06", modulo: 3, hallazgo: "m03-suspension", texto: "Presentar un recurso de reposición suspende automáticamente la ejecución del acto.", verdad: false, porque: "Art. 57: «la interposición de los recursos administrativos no suspenderá la ejecución del acto impugnado»." },
+    { id: "m03-af-07", modulo: 3, hallazgo: "m03-seis-vicios", texto: "La desviación de poder es el vicio del elemento «fin»: la potestad se usa para una finalidad distinta de la prevista.", verdad: true, porque: "Doctrina consolidada sobre el fin del acto; se apoya en los arts. 2 y 3 Ley 18.575 (sólo atribuciones conferidas; finalidad de bien común)." },
+    { id: "m03-af-08", modulo: 3, hallazgo: "m03-seis-vicios", texto: "La incompetencia territorial no es un vicio: lo que importa es que el órgano tenga la materia.", verdad: false, porque: "La competencia se mide también por territorio y grado; actuar fuera de ella infringe el art. 7 CPR y el art. 2 Ley 18.575." },
+    { id: "m03-af-09", modulo: 3, hallazgo: "m03-trascendencia", texto: "El vicio de forma afecta la validez sólo si recae en un requisito esencial y genera perjuicio al interesado.", verdad: true, porque: "Art. 13 inc. 3 Ley 19.880." },
+    { id: "m03-af-10", modulo: 3, hallazgo: "m03-trascendencia", texto: "Cualquier error de forma, incluso un número mal escrito, produce la nulidad del acto.", verdad: false, porque: "Art. 13 inc. 3 exige esencialidad y perjuicio; los errores de copia o de cálculo se rectifican (art. 62)." },
+    { id: "m03-af-11", modulo: 3, hallazgo: "m03-invalidacion", texto: "La invalidación requiere audiencia previa del interesado y debe hacerse dentro de dos años desde la notificación o publicación.", verdad: true, porque: "Art. 53 inc. 1 Ley 19.880." },
+    { id: "m03-af-12", modulo: 3, hallazgo: "m03-invalidacion", texto: "El acto que invalida otro acto no puede impugnarse ante los tribunales, porque es la propia Administración corrigiendo su error.", verdad: false, porque: "Art. 53 inc. 3: el acto invalidatorio «será siempre impugnable ante los Tribunales de Justicia, en procedimiento breve y sumario»." },
+    { id: "m03-af-13", modulo: 3, hallazgo: "m03-revocacion", texto: "No procede revocar un acto que declaró o creó derechos adquiridos legítimamente.", verdad: true, porque: "Art. 61 letra a) Ley 19.880." },
+    { id: "m03-af-14", modulo: 3, hallazgo: "m03-revocacion", texto: "La revocación procede cuando el acto es ilegal; la invalidación, cuando es inconveniente.", verdad: false, porque: "Es al revés: la invalidación procede por ilegalidad (art. 53, «actos contrarios a derecho»); la revocación, por mérito, oportunidad o conveniencia (art. 61)." },
+  ],
+
+  fichas: [
+    { id: "m03-f-01", modulo: 3, frente: "Validez, eficacia, ejecutividad, ejecutoriedad", dorso: "Validez: conformidad del acto con el ordenamiento. Eficacia: aptitud para producir efectos (desde la notificación o publicación). Ejecutividad: obligatoriedad o exigibilidad del acto desde su entrada en vigencia. Ejecutoriedad: posibilidad de que la Administración lo ejecute de oficio cuando la ley lo autoriza. Un acto puede ser válido y aún no eficaz; o eficaz, y luego declarado inválido.", norma: "Arts. 3 inc. final y 51 Ley 19.880 (doctrina)", etiqueta: "Eficacia", prioridad: "A", fuente: "sancionador" },
+    { id: "m03-f-02", modulo: 3, frente: "Art. 51: ejecutoriedad", dorso: "«Los actos de la Administración Pública sujetos al Derecho Administrativo causan inmediata ejecutoriedad, salvo en aquellos casos en que una disposición establezca lo contrario o necesiten aprobación o autorización superior. Los decretos y las resoluciones producirán efectos jurídicos desde su notificación o publicación, según sean de contenido individual o general.»", norma: "Art. 51 Ley 19.880", etiqueta: "Eficacia", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-03", modulo: 3, frente: "Título para ejecutar", dorso: "La Administración no iniciará ninguna actuación material de ejecución que limite derechos de los particulares sin que previamente haya adoptado la resolución que le sirva de fundamento jurídico, y debe notificar al interesado la resolución que autoriza la actuación. Sin acto previo, la ejecución es vía de hecho.", norma: "Art. 50 Ley 19.880", etiqueta: "Eficacia", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-04", modulo: 3, frente: "Art. 52: retroactividad", dorso: "«Los actos administrativos no tendrán efecto retroactivo, salvo cuando produzcan consecuencias favorables para los interesados y no lesionen derechos de terceros.» Excepción de interpretación restrictiva: ambas condiciones son copulativas.", norma: "Art. 52 Ley 19.880", etiqueta: "Eficacia", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-05", modulo: 3, frente: "Art. 57: suspensión del acto recurrido", dorso: "La interposición de los recursos administrativos no suspende la ejecución del acto impugnado. La autoridad llamada a resolver el recurso, a petición fundada del interesado, puede suspenderla cuando el cumplimiento del acto pudiere causar daño irreparable o hacer imposible el cumplimiento de lo que se resolviere en caso de acogerse el recurso. También puede suspender el juez (art. 3 inc. final).", norma: "Art. 57 Ley 19.880", etiqueta: "Eficacia", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-06", modulo: 3, frente: "Firmeza del acto", dorso: "Condición que adquiere el acto cuando se agotaron los recursos administrativos ordinarios o venció el plazo para interponerlos. Es distinta de la ejecutoriedad: el acto se ejecuta aunque no esté firme. Sólo contra actos firmes procede el recurso extraordinario de revisión del art. 60.", norma: "Art. 60 inc. 1 Ley 19.880 (doctrina)", etiqueta: "Eficacia", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-07", modulo: 3, frente: "Vicio A: investidura irregular", dorso: "Actúa por el órgano alguien que no fue regularmente investido: nunca fue nombrado, no asumió, su nombramiento fue anulado o su subrogancia caducó. Consecuencia: nulidad. La teoría del funcionario de hecho atenúa los efectos frente a terceros de buena fe (doctrina).", norma: "Art. 7 inc. 1 CPR", etiqueta: "Vicios", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-08", modulo: 3, frente: "Vicio B: incompetencia", dorso: "El órgano actúa fuera de las atribuciones que la ley le confirió: por materia (asunto ajeno), territorio (fuera de su ámbito) o grado (nivel que no corresponde). Nadie puede atribuirse otra autoridad que la expresamente conferida. Consecuencia: nulidad.", norma: "Art. 7 incs. 1 y 2 CPR; art. 2 Ley 18.575", etiqueta: "Vicios", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-09", modulo: 3, frente: "Vicio C: ausencia o ilegalidad de los motivos", dorso: "Los hechos o el derecho que justifican el acto no existen, son falsos o no bastan: (1) ausencia de motivos; (2) falsedad de los hechos; (3) ilegalidad de los motivos (interpretación errónea de la ley o calificación errónea de los hechos). Ejemplo: sanción por «abandono de funciones» cuando la asistencia prueba que el funcionario concurrió.", norma: "Arts. 11 inc. 2 y 41 Ley 19.880", etiqueta: "Vicios", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-10", modulo: 3, frente: "Vicio D: ilegalidad del objeto", dorso: "El contenido del acto contradice el ordenamiento o es imposible: violación de ley en el fondo, retroactividad prohibida (art. 52), infracción de principios generales (igualdad, proporcionalidad, buena fe). Ejemplo: concesión en zona donde la ley prohíbe toda concesión. Si el vicio es intrínseco al contenido, no se subsana.", norma: "Arts. 6 y 7 CPR; art. 52 Ley 19.880", etiqueta: "Vicios", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-11", modulo: 3, frente: "Vicio E: desviación de poder", dorso: "La potestad se ejerce para un fin distinto del previsto por la norma, aunque el acto sea formalmente legal. Hay que probar que la norma atribuye la potestad para un fin específico y que el acto persiguió otro (particular, político, punitivo). Es el más difícil de probar; se admite la prueba por indicios. Ejemplo: traslado «organizativo» que encubre una sanción.", norma: "Arts. 2 y 3 Ley 18.575 (doctrina)", etiqueta: "Vicios", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-12", modulo: 3, frente: "Vicio F: vicio de forma o de procedimiento", dorso: "Incumplimiento de los requisitos formales (escrituración, motivación, firma, notificación) o del procedimiento previo. Sólo afecta la validez cuando recae en un requisito esencial, por su naturaleza o por mandato del ordenamiento, y genera perjuicio al interesado. Ejemplo de vicio esencial: sanción que no indica hechos, fundamentos ni recurso procedente.", norma: "Art. 13 inc. 3 Ley 19.880", etiqueta: "Vicios", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-13", modulo: 3, frente: "Conservación y subsanación", dorso: "La Administración puede subsanar los vicios de que adolezcan los actos que emita, siempre que no afecte intereses de terceros (art. 13 inc. 4). La invalidación parcial no afecta las disposiciones independientes de la parte invalidada (art. 53 inc. 2). La autoridad puede aclarar puntos dudosos y rectificar errores de copia, referencia o cálculo en cualquier momento (art. 62).", norma: "Arts. 13, 53 y 62 Ley 19.880", etiqueta: "Vicios", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-14", modulo: 3, frente: "Anulabilidad como regla general", dorso: "Como el acto se presume legal (art. 3 inc. final) y el vicio de forma exige esencialidad y perjuicio (art. 13), la regla general en Chile es la anulabilidad: el acto produce efectos hasta que la Administración lo invalide o el juez lo anule. La nulidad ipso iure del art. 7 CPR se reserva, según la doctrina mayoritaria, a infracciones groseras.", norma: "Art. 7 CPR; arts. 3 y 13 Ley 19.880 (doctrina)", etiqueta: "Vicios", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-15", modulo: 3, frente: "Formas de extinción del acto", dorso: "Por causas objetivas: consumación de efectos (el permiso de construir, terminadas las obras), cumplimiento de plazo o condición, desaparición del objeto. Por el destinatario: renuncia, desistimiento (art. 42). Por otro órgano: nulidad judicial, declaración de inconstitucionalidad de la norma que lo fundaba. Por la propia Administración: revocación (art. 61) e invalidación (art. 53). La doctrina agrega el decaimiento.", norma: "Arts. 42, 53 y 61 Ley 19.880", etiqueta: "Extinción", prioridad: "A", fuente: "acto-admin" },
+    { id: "m03-f-16", modulo: 3, frente: "Decaimiento", dorso: "Pérdida de eficacia del acto o del procedimiento por el cambio de las circunstancias que lo justificaban o por una dilación extrema e injustificada que lo vuelve inútil o ilegítimo. Es construcción jurisprudencial y doctrinal, usada sobre todo en procedimientos sancionadores; no tiene artículo propio en la Ley 19.880.", etiqueta: "Extinción", prioridad: "B", fuente: "sancionador" },
+    { id: "m03-f-17", modulo: 3, frente: "Art. 53: invalidación", dorso: "«La autoridad administrativa podrá, de oficio o a petición de parte, invalidar los actos contrarios a derecho, previa audiencia del interesado, siempre que lo haga dentro de los dos años contados desde la notificación o publicación del acto.» Total o parcial; el acto invalidatorio es siempre impugnable ante los tribunales en procedimiento breve y sumario. Efecto: retroactivo (ex tunc), según la doctrina.", norma: "Art. 53 Ley 19.880", etiqueta: "Extinción", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-18", modulo: 3, frente: "Art. 61: revocación", dorso: "Los actos pueden ser revocados por el órgano que los dictó. No procede: a) actos declarativos o creadores de derechos adquiridos legítimamente; b) cuando la ley determinó expresamente otra forma de extinción; c) cuando por su naturaleza la regulación legal impide dejarlos sin efecto. Fundamento: mérito, oportunidad o conveniencia; efecto hacia el futuro (ex nunc), según la doctrina.", norma: "Art. 61 Ley 19.880", etiqueta: "Extinción", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-19", modulo: 3, frente: "Invalidación vs. revocación", dorso: "Invalidación: por ilegalidad; de oficio o a petición de parte; audiencia previa obligatoria; dos años desde notificación o publicación; efectos retroactivos; impugnable en breve y sumario. Revocación: por mérito, oportunidad o conveniencia; por el órgano que dictó el acto; sin plazo especial; hacia el futuro; no procede si creó derechos adquiridos legítimamente.", norma: "Arts. 53 y 61 Ley 19.880", etiqueta: "Extinción", prioridad: "S", fuente: "acto-admin" },
+    { id: "m03-f-20", modulo: 3, frente: "Confianza legítima", dorso: "Principio doctrinal y jurisprudencial: el beneficiario de buena fe de un acto favorable, que ha incorporado derechos a su patrimonio, merece protección frente al retiro del acto. Modula la invalidación de actos favorables ilegales y fundamenta la prohibición de revocar actos que crean derechos (art. 61 a).", norma: "Art. 61 a) Ley 19.880 (doctrina)", etiqueta: "Extinción", prioridad: "B", fuente: "acto-admin" },
+  ],
+
+  quiz: [
+    { id: "m03-q-01", modulo: 3, texto: "¿Qué plazo tiene la autoridad para invalidar un acto contrario a derecho?", opciones: ["Cinco años desde que quedó firme", "Es imprescriptible", "Dos años desde la notificación o publicación del acto", "Un año desde que conoció el vicio"], correcta: 2, porque: "Art. 53 inc. 1 Ley 19.880. Vencido el plazo, la Administración pierde esa vía; queda la discusión judicial.", norma: "Art. 53 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-02", modulo: 3, texto: "¿En qué se diferencian la invalidación y la revocación?", opciones: ["Sólo en el plazo", "La invalidación procede por ilegalidad y opera retroactivamente; la revocación, por mérito o conveniencia y hacia el futuro", "La revocación exige audiencia previa y la invalidación no", "Ambas proceden por las mismas causales ante órganos distintos"], correcta: 1, porque: "Arts. 53 («actos contrarios a derecho», previa audiencia) y 61 (revocación por el órgano que dictó el acto, con límites). Los efectos en el tiempo son doctrina consolidada.", norma: "Arts. 53 y 61 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-03", modulo: 3, texto: "¿Qué dispone el art. 57 sobre la suspensión del acto recurrido?", opciones: ["El recurso suspende automáticamente la ejecución", "El recurso no suspende la ejecución, pero la autoridad puede suspenderla a petición fundada si hay riesgo de daño irreparable", "El recurso suspende el acto por 30 días", "Sólo el recurso jerárquico suspende"], correcta: 1, porque: "Art. 57 Ley 19.880: también cuando el cumplimiento haría imposible cumplir lo que se resolviere si se acoge el recurso.", norma: "Art. 57 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-04", modulo: 3, texto: "¿Cuándo afecta la validez del acto un vicio de forma o de procedimiento?", opciones: ["Siempre", "Sólo cuando recae en un requisito esencial y genera perjuicio al interesado", "Sólo si el interesado lo alega en un recurso", "Nunca"], correcta: 1, porque: "Art. 13 inc. 3 Ley 19.880 (principio de no formalización; doctrina: trascendencia y conservación).", norma: "Art. 13 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-05", modulo: 3, texto: "¿Qué actos puede revocar la Administración?", opciones: ["Todos, sin excepción", "Ninguno: sólo el juez anula", "Los que dictó, salvo los que declaren o creen derechos adquiridos legítimamente, los que tengan otra forma de extinción fijada por ley y los que por su naturaleza no admitan ser dejados sin efecto", "Sólo los ilegales"], correcta: 2, porque: "Art. 61 Ley 19.880. La ilegalidad es causal de invalidación (art. 53), no de revocación.", norma: "Art. 61 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-06", modulo: 3, texto: "¿Qué requisitos exige la ley para que la Administración ejecute forzosamente un acto?", opciones: ["Que el acto esté firme y sin recursos pendientes", "Que exista una resolución previa que sirva de fundamento jurídico, notificada al interesado, y que no requiera aprobación superior pendiente", "Que el particular haya incumplido por 30 días", "Que la Contraloría lo autorice"], correcta: 1, porque: "Arts. 50 y 51 Ley 19.880. No se exige firmeza: los recursos no suspenden (art. 57).", norma: "Arts. 50, 51 y 57 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-07", modulo: 3, texto: "Un decreto de marzo reconoce a una funcionaria una asignación «desde enero», fecha en que cumplió los requisitos. ¿Es válido el efecto retroactivo?", opciones: ["No: ningún acto puede ser retroactivo", "Sí: produce consecuencias favorables para la interesada y no lesiona derechos de terceros", "Sólo si lo autoriza el Concejo", "Sólo si lo toma razón la Contraloría"], correcta: 1, porque: "Art. 52 Ley 19.880: es exactamente la excepción legal.", norma: "Art. 52 Ley 19.880", fuente: "nuevo" },
+    { id: "m03-q-08", modulo: 3, texto: "El decreto de clausura dice «patente rol 1234» y la patente correcta es la 1243; todo lo demás es exacto. ¿Qué corresponde?", opciones: ["Invalidar el decreto por vicio de forma", "Rectificar el error de referencia mediante aclaración (art. 62), porque no es un vicio esencial ni causa perjuicio", "Revocarlo y dictar uno nuevo", "Esperar a que el afectado reclame"], correcta: 1, porque: "Art. 62 Ley 19.880 permite rectificar errores de copia, de referencia o de cálculo; el art. 13 inc. 3 exige esencialidad y perjuicio para que la forma anule.", norma: "Arts. 13 y 62 Ley 19.880", fuente: "nuevo" },
+    { id: "m03-q-09", modulo: 3, texto: "¿Qué puede hacer la Administración con un acto que invalidó sólo en parte?", opciones: ["Nada: la invalidación es siempre total", "Mantener las disposiciones que sean independientes de la parte invalidada", "Debe dictar un acto completamente nuevo", "Debe pedir autorización judicial"], correcta: 1, porque: "Art. 53 inc. 2 Ley 19.880: la invalidación parcial no afecta las disposiciones independientes.", norma: "Art. 53 inc. 2 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-10", modulo: 3, texto: "¿Cuál es la regla general del sistema chileno de nulidad del acto administrativo, según el apunte?", opciones: ["La nulidad de pleno derecho", "La anulabilidad: el acto se presume legal y produce efectos hasta que se declare su ilegalidad", "La inexistencia", "La validez absoluta"], correcta: 1, porque: "Se construye desde la presunción de legalidad (art. 3 inc. final) y el art. 13 inc. 3. La nulidad ipso iure se reserva a infracciones groseras (doctrina).", norma: "Arts. 3 y 13 Ley 19.880", fuente: "acto-admin" },
+    { id: "m03-q-11", modulo: 3, texto: "El acto invalidatorio dictado por la Alcaldesa, ¿puede impugnarse?", opciones: ["No: es un acto de control interno", "Sí: es siempre impugnable ante los tribunales en procedimiento breve y sumario", "Sólo ante la Contraloría", "Sólo si el Concejo lo acuerda"], correcta: 1, porque: "Art. 53 inc. 3 Ley 19.880.", norma: "Art. 53 Ley 19.880", fuente: "procedimiento-admin" },
+    { id: "m03-q-12", modulo: 3, texto: "¿Cuál de estos vicios corresponde al elemento «motivos»?", opciones: ["Firmar sin subrogancia vigente", "Sancionar por «abandono de funciones» a quien el registro de asistencia muestra trabajando", "Dictar el acto sin indicar los recursos", "Trasladar a un funcionario para castigarlo"], correcta: 1, porque: "Falsedad de los hechos: los presupuestos de hecho del acto no existen. Las otras opciones son investidura, forma y desviación de poder.", norma: "Art. 11 inc. 2 Ley 19.880", fuente: "acto-admin" },
+  ],
+
+  orales: [
+    {
+      id: "m03-o-01", modulo: 3,
+      pregunta: "Compare la invalidación y la revocación del acto administrativo.",
+      profesor: "Prof. Charney",
+      claves: ["Invalidación: acto contrario a derecho (art. 53)", "Revocación: mérito, oportunidad o conveniencia (art. 61)", "Invalidación: audiencia previa del interesado", "Invalidación: dos años desde notificación o publicación", "Invalidación: total o parcial", "Acto invalidatorio impugnable en breve y sumario", "Revocación: no si hay derechos adquiridos legítimamente", "Invalidación ex tunc; revocación ex nunc"],
+      trampas: ["La revocación procede por ilegalidad", "La invalidación no tiene plazo", "La revocación exige audiencia previa por ley", "El acto invalidatorio no es impugnable", "Ambas las declara el juez"],
+      modelo: "La invalidación (art. 53) es la potestad de la Administración de dejar sin efecto, de oficio o a petición de parte, un acto contrario a derecho, previa audiencia del interesado y dentro de dos años desde su notificación o publicación; puede ser total o parcial y el acto invalidatorio es siempre impugnable ante los tribunales en procedimiento breve y sumario. La revocación (art. 61) la ejerce el órgano que dictó el acto por razones de mérito, oportunidad o conveniencia, sin plazo especial, y no procede respecto de actos que declaren o creen derechos adquiridos legítimamente, cuando la ley fijó otra forma de extinción o cuando la naturaleza del acto lo impide. La doctrina añade que la invalidación opera retroactivamente y la revocación sólo hacia el futuro.",
+      repregunta: "Pasaron los dos años y el acto sigue siendo ilegal: ¿qué le queda a la Administración y qué le queda al afectado?",
+      prioridad: "S", fuente: "acto-admin",
+    },
+    {
+      id: "m03-o-02", modulo: 3,
+      pregunta: "¿Toda ilegalidad produce la nulidad del acto administrativo? Explique el régimen de los vicios.",
+      profesor: "Prof. Cordero",
+      claves: ["Presunción de legalidad (art. 3)", "Vicio de forma: esencial y con perjuicio", "Anulabilidad como regla general", "Conservación: subsanación e invalidación parcial", "Rectificación de errores materiales (art. 62)", "Seis vicios, uno por elemento", "Art. 7 CPR: nulidad y responsabilidad", "Proporcionalidad entre vicio y sanción"],
+      trampas: ["Todo vicio produce nulidad automática", "El vicio de forma nunca anula", "Un error de tipeo exige invalidar", "El acto nulo no produjo nunca efectos, en todo caso", "La no abstención invalida siempre el acto"],
+      modelo: "No. El acto se presume legal desde su entrada en vigencia (art. 3 inc. final), de modo que produce efectos hasta que la Administración lo invalide o el juez lo anule: la regla general es la anulabilidad. El art. 13 inc. 3 lo confirma: el vicio de procedimiento o de forma sólo afecta la validez cuando recae en un requisito esencial y genera perjuicio al interesado; la Administración puede subsanar sus vicios sin afectar a terceros, invalidar sólo la parte viciada (art. 53 inc. 2) y rectificar errores de copia, referencia o cálculo (art. 62). Los vicios se ordenan por elementos: investidura irregular, incompetencia, motivos, objeto, fin y forma; los más graves —los del art. 7 CPR— llevan a la nulidad y a la responsabilidad. La respuesta debe graduar: la gravedad del vicio decide la consecuencia.",
+      repregunta: "¿Qué pasa con el acto en que intervino un funcionario que debió abstenerse?",
+      prioridad: "A", fuente: "acto-admin",
+    },
+  ],
+
+  columnas: [
+    {
+      id: "m03-c-01", modulo: 3, titulo: "¿Invalidación o revocación?",
+      izq: "Invalidación (art. 53)", der: "Revocación (art. 61)",
+      items: [
+        { texto: "Procede contra actos contrarios a derecho", lado: 0, porque: "Art. 53 inc. 1." },
+        { texto: "Procede por razones de mérito, oportunidad o conveniencia", lado: 1, porque: "Art. 61 (doctrina sobre su fundamento)." },
+        { texto: "Exige audiencia previa del interesado", lado: 0, porque: "Art. 53 inc. 1." },
+        { texto: "Plazo de dos años desde la notificación o publicación", lado: 0, porque: "Art. 53 inc. 1." },
+        { texto: "No procede sobre actos que crearon derechos adquiridos legítimamente", lado: 1, porque: "Art. 61 letra a)." },
+        { texto: "Puede ser total o parcial", lado: 0, porque: "Art. 53 inc. 2." },
+        { texto: "La ejerce el órgano que dictó el acto", lado: 1, porque: "Art. 61 inc. 1." },
+        { texto: "El acto que la dispone es siempre impugnable en procedimiento breve y sumario", lado: 0, porque: "Art. 53 inc. 3." },
+        { texto: "Opera hacia el futuro (ex nunc)", lado: 1, porque: "Doctrina consolidada." },
+        { texto: "Opera con efecto retroactivo (ex tunc)", lado: 0, porque: "Doctrina consolidada." },
+        { texto: "No procede cuando la ley fijó otra forma de extinción del acto", lado: 1, porque: "Art. 61 letra b)." },
+        { texto: "Puede iniciarse de oficio o a petición de parte", lado: 0, porque: "Art. 53 inc. 1." },
+      ],
+      norma: "Arts. 53 y 61 Ley 19.880", fuente: "acto-admin",
+    },
+  ],
+
+  cadenas: [
+    {
+      id: "m03-k-01", modulo: 3, titulo: "La ruta de la invalidación",
+      pasos: [
+        "Se detecta que el acto es contrario a derecho (de oficio o a petición de parte)",
+        "Se verifica que no hayan pasado dos años desde su notificación o publicación",
+        "Se da audiencia previa al interesado",
+        "Se dicta el acto invalidatorio, fundado, total o parcial",
+        "Se notifica dentro de cinco días con su texto íntegro",
+        "El afectado puede impugnarlo ante los tribunales en procedimiento breve y sumario",
+      ],
+      norma: "Arts. 41, 45 y 53 Ley 19.880", fuente: "acto-admin",
+    },
+  ],
+
+  expedientes: [
+    {
+      id: "m03-e-01", modulo: 3,
+      titulo: "El permiso que estorba al parque",
+      relato: "La Alcaldesa Ruperta Cañas quiere dejar sin efecto un permiso de edificación otorgado hace ocho meses, conforme a la ley, porque ahora prefiere un parque en ese terreno. «Lo revoco y listo.»",
+      documento: { tipo: "Borrador de decreto alcaldicio", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Revoca permiso de edificación N.º 88 de Inmobiliaria Los Jueces" },
+        { k: "Fundamento", v: "«Conveniencia de destinar el terreno a área verde»" },
+        { k: "Legalidad del permiso", v: "Otorgado conforme al plan regulador; sin vicios" },
+        { k: "Antigüedad", v: "8 meses; obras iniciadas" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "REVOCAR: la Administración siempre puede cambiar de opinión", correcto: false, porque: "Puede, pero no sobre actos que crearon derechos adquiridos legítimamente." },
+        { texto: "NO PROCEDE REVOCAR: el permiso creó derechos adquiridos legítimamente", correcto: true, porque: "Art. 61 letra a) Ley 19.880. Tampoco cabe invalidar, porque el permiso es legal (art. 53 exige acto contrario a derecho). Si la comuna quiere el parque, el camino es la expropiación con indemnización (art. 19 N.º 24 CPR; art. 65 g Ley 18.695), no la revocación." },
+        { texto: "INVALIDAR CON AUDIENCIA PREVIA", correcto: false, porque: "La invalidación requiere un acto contrario a derecho (art. 53); este permiso no tiene vicio." },
+        { texto: "SUBSANAR: cambiar «revoca» por «deja sin efecto»", correcto: false, porque: "El nombre no cambia la naturaleza del acto ni levanta la prohibición del art. 61 a)." },
+      ],
+      norma: "Art. 61 a) Ley 19.880", fuente: "acto-admin", hallazgo: "m03-revocacion",
+    },
+    {
+      id: "m03-e-02", modulo: 3,
+      titulo: "La patente de hace tres años",
+      relato: "Control descubrió que una patente de alcoholes se otorgó hace tres años sin el acuerdo del Concejo que exige la ley. La Directora Jurídica anterior dejó un borrador que la invalida.",
+      documento: { tipo: "Borrador de decreto alcaldicio de invalidación", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Invalida decreto N.º 702 que otorgó patente de alcoholes" },
+        { k: "Vicio", v: "Falta de acuerdo del Concejo (art. 65 o Ley 18.695)" },
+        { k: "Notificación del decreto N.º 702", v: "Hace 3 años y 2 meses" },
+        { k: "Audiencia previa", v: "Se dio" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "INVALIDAR: el vicio es real y hubo audiencia", correcto: false, porque: "El vicio es real, pero la potestad invalidatoria tiene plazo." },
+        { texto: "FUERA DE PLAZO: la invalidación caduca a los dos años", correcto: true, porque: "Art. 53 inc. 1 Ley 19.880: «siempre que lo haga dentro de los dos años contados desde la notificación o publicación del acto». La Administración perdió esta vía; la ilegalidad podría discutirse ante los tribunales (jornada 10)." },
+        { texto: "REVOCAR POR CONVENIENCIA", correcto: false, porque: "La patente creó derechos para su titular (art. 61 a); y el problema es de legalidad, no de mérito." },
+        { texto: "VÁLIDO EL DECRETO 702: el Concejo no interviene en patentes", correcto: false, porque: "Las patentes de alcoholes sí requieren acuerdo del concejo (art. 65 o Ley 18.695). El decreto 702 fue ilegal; sólo que ya no puede invalidarse administrativamente." },
+      ],
+      norma: "Art. 53 inc. 1 Ley 19.880", fuente: "procedimiento-admin", hallazgo: "m03-invalidacion",
+    },
+    {
+      id: "m03-e-03", modulo: 3,
+      titulo: "Invalidado sin oírlo",
+      relato: "Obras detectó que un permiso de ocupación de vereda se otorgó contra la ordenanza. Hoy salió el decreto que lo invalida. El beneficiario se enteró por el inspector que le retiraba las mesas.",
+      documento: { tipo: "Decreto alcaldicio N.º 1.455", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Invalida permiso de ocupación de vereda del café «La Potestad»" },
+        { k: "Vicio del permiso", v: "Contrario a la ordenanza de espacios públicos" },
+        { k: "Fecha del permiso", v: "Hace 5 meses" },
+        { k: "Audiencia previa al interesado", v: "No consta" },
+        { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: el permiso era ilegal y está dentro de los dos años", correcto: false, porque: "Las dos condiciones se cumplen, pero falta la tercera: la audiencia." },
+        { texto: "FALTA AUDIENCIA PREVIA: la invalidación exige oír antes al interesado", correcto: true, porque: "Art. 53 inc. 1 Ley 19.880: «previa audiencia del interesado». Es un trámite esencial cuya omisión causa indefensión (art. 13 inc. 3): el decreto debe dejarse sin efecto y repetirse el procedimiento, oyendo al beneficiario." },
+        { texto: "NO SE PUEDE INVALIDAR UN ACTO FAVORABLE", correcto: false, porque: "Sí se puede: el art. 53 no distingue; lo que se protege es el derecho a ser oído y, según la doctrina, la confianza legítima." },
+        { texto: "DEBIÓ REVOCARSE", correcto: false, porque: "El motivo es la ilegalidad: invalidación (art. 53), no revocación (art. 61)." },
+      ],
+      norma: "Art. 53 inc. 1 y art. 13 inc. 3 Ley 19.880", fuente: "acto-admin", hallazgo: "m03-invalidacion",
+    },
+    {
+      id: "m03-e-04", modulo: 3,
+      titulo: "La asignación desde enero",
+      relato: "Personal trae un decreto de marzo que reconoce a una funcionaria una asignación «a contar del 1 de enero», fecha en que cumplió los requisitos. Finanzas duda: «¿no era que los actos no son retroactivos?».",
+      documento: { tipo: "Decreto alcaldicio N.º 1.460", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Reconoce asignación profesional a doña Inés Vargas" },
+        { k: "Vigencia", v: "A contar del 1 de enero (cumplió los requisitos ese día)" },
+        { k: "Fecha del decreto", v: "12 de marzo" },
+        { k: "Terceros afectados", v: "Ninguno" },
+        { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: efecto retroactivo favorable que no lesiona a terceros", correcto: true, porque: "Art. 52 Ley 19.880: los actos no tienen efecto retroactivo «salvo cuando produzcan consecuencias favorables para los interesados y no lesionen derechos de terceros». Aquí se cumplen las dos condiciones." },
+        { texto: "SIN EFECTO RETROACTIVO: debe regir desde el 12 de marzo", correcto: false, porque: "La regla general cede ante la excepción del art. 52, que es exactamente este caso." },
+        { texto: "NULO: la retroactividad está prohibida por el art. 57", correcto: false, porque: "El art. 57 regula la suspensión del acto recurrido; la retroactividad está en el art. 52, y la permite en este caso." },
+        { texto: "REQUIERE ACUERDO DEL CONCEJO", correcto: false, porque: "Las remuneraciones del personal las administra el alcalde conforme al estatuto; no está en la lista del art. 65 Ley 18.695." },
+      ],
+      norma: "Art. 52 Ley 19.880", fuente: "nuevo", hallazgo: "m03-irretroactividad",
+    },
+    {
+      id: "m03-e-05", modulo: 3,
+      titulo: "El rol equivocado",
+      relato: "Un local fue clausurado por decreto. El dueño alega que el decreto «es nulo» porque dice «patente rol 1234» y su patente es la 1243. Todo lo demás —nombre, dirección, hechos, norma— es correcto.",
+      documento: { tipo: "Decreto alcaldicio N.º 1.470, clausura", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Afectado", v: "Bar «El Recurso», Av. Juridicidad 77, patente rol 1234 (debió decir 1243)" },
+        { k: "Hechos", v: "Tres infracciones de ruido acreditadas por inspección" },
+        { k: "Norma", v: "Ordenanza de ruidos, art. 9" },
+        { k: "Recursos", v: "Indicados" },
+        { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "NULO: un dato erróneo vicia el acto", correcto: false, porque: "Sólo los vicios esenciales que causan perjuicio anulan (art. 13 inc. 3)." },
+        { texto: "RECTIFICAR (art. 62): error de referencia, no esencial y sin perjuicio", correcto: true, porque: "Art. 62 Ley 19.880 permite aclarar y rectificar «los errores de copia, de referencia, de cálculos numéricos y, en general, los puramente materiales». El local está perfectamente identificado por nombre y dirección: no hay indefensión (art. 13 inc. 3)." },
+        { texto: "INVALIDAR CON AUDIENCIA PREVIA", correcto: false, porque: "La invalidación es para actos contrarios a derecho; un error material se corrige sin abrir ese procedimiento." },
+        { texto: "REVOCAR Y DICTAR OTRO", correcto: false, porque: "La revocación responde a razones de mérito; aquí no hay cambio de criterio, hay un dígito." },
+      ],
+      norma: "Arts. 13 inc. 3 y 62 Ley 19.880", fuente: "nuevo", hallazgo: "m03-trascendencia",
+    },
+    {
+      id: "m03-e-06", modulo: 3,
+      titulo: "La demolición sin aviso",
+      relato: "Obras demolió esta mañana un cierre irregular. El decreto que lo ordenaba se dictó ayer y «se iba a notificar hoy». El propietario llegó cuando ya no había cierre.",
+      documento: { tipo: "Decreto alcaldicio N.º 1.480, demolición", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Ordena demoler cierre perimetral en Av. Juridicidad 120" },
+        { k: "Fecha del decreto", v: "Ayer" },
+        { k: "Notificación al propietario", v: "Pendiente" },
+        { k: "Ejecución material", v: "Hoy, 8:00 h" },
+        { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: los actos causan inmediata ejecutoriedad", correcto: false, porque: "La ejecutoriedad es inmediata, pero los efectos frente al destinatario nacen con la notificación." },
+        { texto: "EJECUTADO SIN NOTIFICAR: el acto no producía efectos frente al propietario", correcto: true, porque: "Art. 51 inc. 2: los decretos producen efectos desde su notificación; art. 50: la Administración no inicia actuación material que limite derechos sin notificar la resolución que la autoriza; art. 45: la notificación con texto íntegro, dentro de cinco días. Demoler antes es una vía de hecho que compromete la responsabilidad municipal (art. 152 Ley 18.695)." },
+        { texto: "SUBSANAR: notificar ahora y listo", correcto: false, porque: "Notificar ahora no deshace la demolición ni sanea la ejecución anticipada; el daño ya está causado." },
+        { texto: "NULO POR FALTA DE COMPETENCIA", correcto: false, porque: "La municipalidad aplica las normas de construcción y urbanización (art. 3 e Ley 18.695); el problema es el momento de la ejecución, no la competencia." },
+      ],
+      norma: "Arts. 45, 50 y 51 Ley 19.880", fuente: "proceadmin", hallazgo: "m03-ejecutoriedad",
+    },
+  ],
+};
+
+// PENDIENTE DE REVISIÓN (docs/REVISION_JURIDICA.md):
+// - Efectos en el tiempo de la invalidación (ex tunc) y la revocación (ex nunc), y el fundamento de ésta en el
+//   mérito u oportunidad: doctrina; el art. 61 sólo dice quién revoca y cuándo no procede.
+// - Firmeza, decaimiento, confianza legítima, funcionario de hecho, anulabilidad como regla general: doctrina.
+// - La clasificación en seis vicios es del apunte Cordero (ACTO-ADMIN).
+// - Errores del apunte que NO se copiaron: irretroactividad citada como «art. 57» (es el 52); «decaimiento,
+//   art. 61 d)» (el art. 61 no tiene letra d); dictámenes de Contraloría citados por número (1589/1957,
+//   34.810/2006, 13.188/2009, 42.003/2014) sin posibilidad de verificación: no se citan.
+// - En las definiciones de ejecutividad/ejecutoriedad, ACTO-ADMIN y el apunte sancionador las invierten entre sí;
+//   la ficha m03-f-01 sigue al apunte sancionador y la ley sólo usa «ejecutoriedad» (art. 51).

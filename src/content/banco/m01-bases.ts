@@ -1,0 +1,341 @@
+// Módulo 1 · El primer día (Municipalidad). Juridicidad (arts. 6 y 7 CPR), Ley 18.575,
+// organización administrativa, municipalidad (Ley 18.695), probidad.
+// Verificado contra los XML de la BCN (cpr.xml, locbgae.xml, locmun.xml) el 12-10-2026.
+// Ojo: el Título II de la Ley 18.575 (arts. 21 a 42: ministerios, servicios públicos,
+// delegación, falta de servicio) no se aplica a las municipalidades (art. 21 inc. 2); sus
+// Títulos I y III (bases y probidad) sí.
+import type { BancoModulo } from "../tipos";
+
+export const BANCO_M01: BancoModulo = {
+  modulo: 1,
+
+  hallazgos: [
+    {
+      id: "m01-juridicidad",
+      modulo: 1,
+      titulo: "Sólo lo que la ley permite",
+      texto: "Un órgano del Estado actúa válidamente si cumple tres cosas a la vez: investidura regular de quien firma, competencia sobre la materia y la forma que prescribe la ley. Nadie puede atribuirse otra autoridad que la que la Constitución o las leyes le dieron, ni siquiera con el pretexto de una emergencia.",
+      norma: "Art. 7 incs. 1 y 2 CPR",
+      simple: "En el mundo privado, lo que no está prohibido está permitido; en el Estado, lo que no está permitido no existe.",
+    },
+    {
+      id: "m01-nulidad",
+      modulo: 1,
+      titulo: "La sanción viene en la misma frase",
+      texto: "Todo acto dictado en contravención al artículo 7 es nulo y además origina las responsabilidades y sanciones que la ley señale. La nulidad de derecho público nace de ahí; cómo se declara y cuándo prescribe lo verás en la jornada 10.",
+      norma: "Art. 7 inc. 3 CPR",
+      simple: "La Constitución no dice «ojalá no lo hagan»: dice «es nulo» y después pasa la cuenta.",
+    },
+    {
+      id: "m01-supremacia",
+      modulo: 1,
+      titulo: "La Constitución manda, también a la Alcaldesa",
+      texto: "Los órganos del Estado deben someter su acción a la Constitución y a las normas dictadas conforme a ella. Sus preceptos obligan tanto a los titulares de esos órganos como a toda persona, institución o grupo; infringirlos genera las responsabilidades y sanciones que determine la ley.",
+      norma: "Art. 6 CPR",
+      simple: "La banda presidencial, la cadena alcaldicia y tu credencial de la Dirección Jurídica cuelgan del mismo artículo.",
+    },
+    {
+      id: "m01-administracion",
+      modulo: 1,
+      titulo: "Quién es «la Administración»",
+      texto: "La Administración del Estado la forman los ministerios, las intendencias, las gobernaciones, los órganos y servicios públicos creados para cumplir la función administrativa, incluidas la Contraloría, el Banco Central, las Fuerzas Armadas y de Orden, los gobiernos regionales, las municipalidades y las empresas públicas creadas por ley. Está al servicio de la persona humana: su finalidad es promover el bien común atendiendo las necesidades públicas en forma continua y permanente, dentro de su competencia y sin más atribuciones que las que el ordenamiento le confiere.",
+      norma: "Arts. 1, 2 y 3 Ley 18.575",
+      simple: "La Municipalidad de Potestas es Estado: con todo lo que eso le permite y, sobre todo, con todo lo que le prohíbe.",
+    },
+    {
+      id: "m01-organizacion",
+      modulo: 1,
+      titulo: "Centralizado, descentralizado, desconcentrado",
+      texto: "Los servicios públicos centralizados actúan con la personalidad jurídica y los bienes del Fisco y dependen del Presidente a través del ministerio; los descentralizados tienen personalidad jurídica y patrimonio propios y sólo quedan bajo supervigilancia. La desconcentración es distinta: la ley radica atribuciones en un órgano del mismo servicio (una dirección regional, por ejemplo) sin darle personalidad propia. La municipalidad es el ejemplo de descentralización territorial: corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio.",
+      norma: "Arts. 29 y 33 Ley 18.575; art. 118 inc. 4 CPR; art. 1 Ley 18.695",
+      simple: "Descentralizar es dar RUT propio; desconcentrar es prestar la firma sin soltar la correa.",
+    },
+    {
+      id: "m01-municipalidad",
+      modulo: 1,
+      titulo: "La Alcaldesa y el Concejo",
+      texto: "La municipalidad está constituida por el alcalde, su máxima autoridad, y por el concejo, órgano normativo, resolutivo y fiscalizador. Sus resoluciones se llaman ordenanzas (normas generales para la comunidad, con multas de hasta 5 UTM que aplica el juzgado de policía local), reglamentos municipales (orden interno), decretos alcaldicios (casos particulares) e instrucciones (directivas a los subalternos). Para ciertas materias —ordenanzas, presupuesto, plan regulador, concesiones, contratos de 500 UTM o más— el alcalde necesita el acuerdo del concejo.",
+      norma: "Arts. 2, 12, 56, 65 y 71 Ley 18.695",
+      simple: "La Alcaldesa firma; el Concejo aprueba, fiscaliza y, cuando quiere, le hace preguntas por escrito que ella debe responder en quince días.",
+    },
+    {
+      id: "m01-probidad",
+      modulo: 1,
+      titulo: "Probidad: el interés general va primero",
+      texto: "El ejercicio de las funciones públicas obliga a dar estricto cumplimiento al principio de probidad: conducta funcionaria intachable y desempeño honesto y leal, con preeminencia del interés general sobre el particular. Rige para autoridades y funcionarios, de planta o a contrata, y también para el alcalde y los concejales. Intervenir en un asunto en que tengas interés tú o un pariente cercano lo contraviene especialmente.",
+      norma: "Art. 8 inc. 1 CPR; arts. 52 y 62 N.º 6 Ley 18.575; art. 40 inc. 3 Ley 18.695",
+      simple: "Probidad es simple: si el expediente es de tu cuñado, lo firma otro.",
+    },
+  ],
+
+  afirmaciones: [
+    { id: "m01-af-01", modulo: 1, hallazgo: "m01-juridicidad", texto: "Para actuar válidamente, un órgano del Estado necesita investidura regular, competencia y la forma que prescriba la ley: las tres a la vez.", verdad: true, porque: "Art. 7 inc. 1 CPR: los tres requisitos son copulativos; falla uno y el acto es nulo (inc. 3)." },
+    { id: "m01-af-02", modulo: 1, hallazgo: "m01-juridicidad", texto: "En una emergencia, la Alcaldesa puede ejercer atribuciones que la ley no le ha dado, siempre que sea por el bien de la comuna.", verdad: false, porque: "Art. 7 inc. 2 CPR: ninguna magistratura ni persona puede atribuirse otra autoridad «ni aun a pretexto de circunstancias extraordinarias»." },
+    { id: "m01-af-03", modulo: 1, hallazgo: "m01-nulidad", texto: "El acto dictado contra el art. 7 es nulo y, además, origina las responsabilidades y sanciones que la ley señale.", verdad: true, porque: "Art. 7 inc. 3 CPR: nulidad y responsabilidad van en la misma frase." },
+    { id: "m01-af-04", modulo: 1, hallazgo: "m01-nulidad", texto: "La Constitución sólo declara nulo el acto; la responsabilidad del funcionario queda entregada a la buena voluntad del jefe.", verdad: false, porque: "Art. 7 inc. 3 CPR: el acto «es nulo y originará las responsabilidades y sanciones que la ley señale»." },
+    { id: "m01-af-05", modulo: 1, hallazgo: "m01-supremacia", texto: "Los preceptos de la Constitución obligan a los titulares de los órganos del Estado y también a toda persona, institución o grupo.", verdad: true, porque: "Art. 6 inc. 2 CPR lo dice con esas palabras." },
+    { id: "m01-af-06", modulo: 1, hallazgo: "m01-supremacia", texto: "El art. 6 CPR obliga a los órganos del Estado a someterse a la Constitución, pero no a las leyes ni a los reglamentos.", verdad: false, porque: "Art. 6 inc. 1 CPR: a la Constitución «y a las normas dictadas conforme a ella»." },
+    { id: "m01-af-07", modulo: 1, hallazgo: "m01-administracion", texto: "Las municipalidades forman parte de la Administración del Estado según la Ley 18.575.", verdad: true, porque: "Art. 1 inc. 2 Ley 18.575 las nombra expresamente; también el art. 2 Ley 19.880." },
+    { id: "m01-af-08", modulo: 1, hallazgo: "m01-administracion", texto: "Un órgano de la Administración tiene todas las atribuciones que no le estén expresamente prohibidas.", verdad: false, porque: "Art. 2 Ley 18.575: «no tendrán más atribuciones que las que expresamente les haya conferido el ordenamiento jurídico»." },
+    { id: "m01-af-09", modulo: 1, hallazgo: "m01-organizacion", texto: "Un servicio descentralizado actúa con personalidad jurídica y patrimonio propios y queda bajo supervigilancia, no bajo dependencia, del Presidente.", verdad: true, porque: "Art. 29 inc. 3 Ley 18.575." },
+    { id: "m01-af-10", modulo: 1, hallazgo: "m01-organizacion", texto: "Desconcentrar un servicio es lo mismo que descentralizarlo: en ambos casos nace una nueva persona jurídica.", verdad: false, porque: "Art. 33 Ley 18.575: la desconcentración radica atribuciones en órganos del mismo servicio (direcciones regionales), sin personalidad jurídica propia; la descentralización sí la crea (art. 29)." },
+    { id: "m01-af-11", modulo: 1, hallazgo: "m01-municipalidad", texto: "Una ordenanza municipal puede fijar multas, pero no superiores a 5 UTM, y las aplica el juzgado de policía local.", verdad: true, porque: "Art. 12 inc. 2 Ley 18.695." },
+    { id: "m01-af-12", modulo: 1, hallazgo: "m01-municipalidad", texto: "La Alcaldesa puede dictar una ordenanza por sí sola, sin acuerdo del Concejo.", verdad: false, porque: "Art. 65 letra l) Ley 18.695: dictar ordenanzas requiere acuerdo del concejo." },
+    { id: "m01-af-13", modulo: 1, hallazgo: "m01-probidad", texto: "Las normas de probidad de la Ley 18.575 se aplican también al alcalde y a los concejales.", verdad: true, porque: "Art. 40 inc. 3 Ley 18.695." },
+    { id: "m01-af-14", modulo: 1, hallazgo: "m01-probidad", texto: "La probidad sólo prohíbe recibir dinero; intervenir en un asunto de un pariente no la contraviene si no hubo pago.", verdad: false, porque: "Art. 62 N.º 6 Ley 18.575: intervenir en asuntos en que tengan interés el cónyuge, hijos o parientes hasta el tercer grado de consanguinidad y segundo de afinidad contraviene especialmente la probidad." },
+  ],
+
+  fichas: [
+    { id: "m01-f-01", modulo: 1, frente: "Art. 6 CPR (supremacía constitucional)", dorso: "Los órganos del Estado deben someter su acción a la Constitución y a las normas dictadas conforme a ella, y garantizar el orden institucional. Sus preceptos obligan a titulares de órganos y a toda persona, institución o grupo. La infracción genera las responsabilidades y sanciones que determine la ley.", norma: "Art. 6 CPR", etiqueta: "Juridicidad", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m01-f-02", modulo: 1, frente: "Art. 7 inc. 1 CPR: los tres requisitos de validez", dorso: "Previa investidura regular de sus integrantes, dentro de su competencia y en la forma que prescriba la ley. Son copulativos: basta que falte uno.", norma: "Art. 7 inc. 1 CPR", etiqueta: "Juridicidad", prioridad: "S", fuente: "iuspublic" },
+    { id: "m01-f-03", modulo: 1, frente: "Art. 7 inc. 2 CPR: la prohibición", dorso: "Ninguna magistratura, persona ni grupo puede atribuirse, ni aun a pretexto de circunstancias extraordinarias, otra autoridad o derechos que los que expresamente se les hayan conferido en virtud de la Constitución o las leyes.", norma: "Art. 7 inc. 2 CPR", etiqueta: "Juridicidad", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m01-f-04", modulo: 1, frente: "Art. 7 inc. 3 CPR: la sanción", dorso: "«Todo acto en contravención a este artículo es nulo y originará las responsabilidades y sanciones que la ley señale.» Es el fundamento de la nulidad de derecho público.", norma: "Art. 7 inc. 3 CPR", etiqueta: "Juridicidad", prioridad: "S", fuente: "iuspublic" },
+    { id: "m01-f-05", modulo: 1, frente: "Investidura regular", dorso: "Procedimiento por el que una persona natural pasa a ser titular de un órgano público y puede imputar sus actos a la persona jurídica estatal (nombramiento válido y asunción del cargo). Sin ella, el acto es nulo (art. 7 CPR). Doctrina: la «teoría del funcionario de hecho» atenúa los efectos frente a terceros de buena fe.", norma: "Art. 7 inc. 1 CPR", etiqueta: "Elementos", prioridad: "A", fuente: "acto-admin" },
+    { id: "m01-f-06", modulo: 1, frente: "Competencia", dorso: "Ámbito de atribuciones que la ley entrega a un órgano. Se mide por materia, territorio, grado o jerarquía y tiempo. Los órganos «deberán actuar dentro de su competencia y no tendrán más atribuciones que las que expresamente les haya conferido el ordenamiento jurídico».", norma: "Art. 7 CPR; art. 2 Ley 18.575", etiqueta: "Elementos", prioridad: "S", fuente: "acto-admin" },
+    { id: "m01-f-07", modulo: 1, frente: "¿Quiénes integran la Administración del Estado?", dorso: "Ministerios, intendencias, gobernaciones, órganos y servicios públicos creados para la función administrativa, incluidos Contraloría, Banco Central, Fuerzas Armadas y de Orden y Seguridad, gobiernos regionales, municipalidades y empresas públicas creadas por ley.", norma: "Art. 1 inc. 2 Ley 18.575", etiqueta: "Organización", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-08", modulo: 1, frente: "Finalidad de la Administración", dorso: "Está al servicio de la persona humana; su finalidad es promover el bien común atendiendo las necesidades públicas en forma continua y permanente. Debe observar, entre otros, los principios de responsabilidad, eficiencia, eficacia, coordinación, impulsión de oficio, impugnabilidad, control, probidad, transparencia y publicidad.", norma: "Art. 3 Ley 18.575", etiqueta: "Organización", prioridad: "A", fuente: "proceadmin" },
+    { id: "m01-f-09", modulo: 1, frente: "Actividad formal vs. actividad material", dorso: "Formal: se expresa en actos que producen efectos jurídicos respecto de terceros (crean, modifican o extinguen situaciones); su manifestación principal es el acto administrativo. Material, real o técnica: operaciones como inspección, vigilancia o prestación directa (salud, educación), de relevancia jurídica mediata. Importa para el régimen, la impugnación y la responsabilidad.", etiqueta: "Actividad", prioridad: "A", fuente: "sancionador" },
+    { id: "m01-f-10", modulo: 1, frente: "Servicio público, policía y fomento", dorso: "Servicio público: prestaciones regulares y continuas a la comunidad (art. 28 Ley 18.575 define los servicios públicos como órganos encargados de satisfacer necesidades colectivas de manera regular y continua). Policía u ordenación: limitar libertad o propiedad para proteger el orden público en sentido amplio (seguridad, salubridad, urbanismo, medio ambiente). Fomento: incentivos para estimular conductas de interés público.", norma: "Art. 28 Ley 18.575 (servicio público)", etiqueta: "Actividad", prioridad: "A", fuente: "sancionador" },
+    { id: "m01-f-11", modulo: 1, frente: "Servicio centralizado", dorso: "Actúa bajo la personalidad jurídica y con los bienes y recursos del Fisco; está sometido a la dependencia del Presidente de la República a través del ministerio correspondiente.", norma: "Art. 29 inc. 2 Ley 18.575", etiqueta: "Organización", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-12", modulo: 1, frente: "Servicio descentralizado", dorso: "Actúa con la personalidad jurídica y el patrimonio propios que la ley le asigna; está sometido a la supervigilancia del Presidente a través del ministerio respectivo. La descentralización puede ser funcional o territorial.", norma: "Art. 29 inc. 3 Ley 18.575", etiqueta: "Organización", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-13", modulo: 1, frente: "Desconcentración", dorso: "Sin perjuicio de su dependencia jerárquica general, la ley puede desconcentrar territorial y funcionalmente a determinados órganos. Territorial: direcciones regionales a cargo de un director regional que depende del director nacional. Funcional: radicación por ley de atribuciones en determinados órganos del servicio. No nace una persona jurídica nueva.", norma: "Art. 33 Ley 18.575", etiqueta: "Organización", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-14", modulo: 1, frente: "Qué es una municipalidad", dorso: "Corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, cuya finalidad es satisfacer las necesidades de la comunidad local y asegurar su participación en el progreso económico, social y cultural de la comuna. La administración local de cada comuna reside en ella.", norma: "Art. 118 inc. 4 CPR; art. 1 Ley 18.695", etiqueta: "Municipalidad", prioridad: "S", fuente: "nuevo" },
+    { id: "m01-f-15", modulo: 1, frente: "Funciones privativas de la municipalidad", dorso: "En su territorio: plan comunal de desarrollo; planificación y regulación de la comuna y plan regulador comunal; promoción del desarrollo comunitario; aplicar las normas de transporte y tránsito; aplicar las normas de construcción y urbanización; aseo y ornato.", norma: "Art. 3 Ley 18.695", etiqueta: "Municipalidad", prioridad: "B", fuente: "nuevo" },
+    { id: "m01-f-16", modulo: 1, frente: "Las cuatro resoluciones municipales", dorso: "Ordenanzas: normas generales y obligatorias para la comunidad; pueden fijar multas de hasta 5 UTM, aplicadas por el juzgado de policía local. Reglamentos municipales: normas generales y permanentes de orden interno. Decretos alcaldicios: resoluciones sobre casos particulares. Instrucciones: directivas a los subalternos. Todas se publican en los sistemas electrónicos de la municipalidad.", norma: "Art. 12 Ley 18.695", etiqueta: "Municipalidad", prioridad: "S", fuente: "nuevo" },
+    { id: "m01-f-17", modulo: 1, frente: "El alcalde", dorso: "Máxima autoridad de la municipalidad: le corresponde su dirección y administración superior y la supervigilancia de su funcionamiento. Entre sus atribuciones: representar judicial y extrajudicialmente a la municipalidad, nombrar y remover funcionarios, otorgar y poner término a permisos municipales, dictar resoluciones obligatorias generales o particulares, delegar parte de sus atribuciones y la firma «por orden del alcalde», convocar y presidir el concejo.", norma: "Arts. 56 y 63 Ley 18.695", etiqueta: "Municipalidad", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-18", modulo: 1, frente: "El concejo municipal", dorso: "Órgano normativo, resolutivo y fiscalizador, encargado de hacer efectiva la participación de la comunidad local. Fiscaliza las actuaciones del alcalde y le formula observaciones que deben responderse por escrito en quince días. El alcalde requiere su acuerdo para, entre otras cosas, aprobar el plan comunal de desarrollo y el presupuesto, el plan regulador, dictar ordenanzas, otorgar concesiones y celebrar contratos de 500 UTM o más.", norma: "Arts. 65, 71 y 79 Ley 18.695", etiqueta: "Municipalidad", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-19", modulo: 1, frente: "Tu unidad: la asesoría jurídica", dorso: "Presta apoyo en materias legales al alcalde y al concejo; informa en derecho los asuntos legales que le planteen las unidades municipales; mantiene al día los títulos de los bienes municipales; asume la defensa en juicio a requerimiento del alcalde y, cuando éste lo ordene, efectúa las investigaciones y sumarios administrativos. El secretario municipal es el ministro de fe de todas las actuaciones municipales.", norma: "Arts. 20 y 28 Ley 18.695", etiqueta: "Municipalidad", prioridad: "B", fuente: "nuevo" },
+    { id: "m01-f-20", modulo: 1, frente: "La unidad de control representa los actos ilegales", dorso: "La unidad de control audita la legalidad de la actuación municipal y debe representar al alcalde los actos que estime ilegales, informando al concejo, dentro de los diez días desde que los conoce. Si el alcalde no toma medidas para enmendar el acto, la unidad remite la información a la Contraloría General de la República.", norma: "Art. 29 letra c) Ley 18.695", etiqueta: "Control", prioridad: "B", fuente: "nuevo" },
+    { id: "m01-f-21", modulo: 1, frente: "Principio de probidad administrativa", dorso: "Observar una conducta funcionaria intachable y un desempeño honesto y leal de la función o cargo, con preeminencia del interés general sobre el particular. Obliga a todas las autoridades y funcionarios, de planta o a contrata; su inobservancia acarrea las responsabilidades y sanciones que determinen la Constitución y las leyes.", norma: "Art. 8 inc. 1 CPR; art. 52 Ley 18.575", etiqueta: "Probidad", prioridad: "S", fuente: "nuevo" },
+    { id: "m01-f-22", modulo: 1, frente: "Conductas que contravienen especialmente la probidad", dorso: "Entre otras: usar información reservada en beneficio propio; hacer valer la posición funcionaria para obtener beneficios; emplear dinero, bienes, tiempo o personal del organismo en provecho propio; solicitar o aceptar donativos en razón del cargo; intervenir en asuntos en que tengan interés uno mismo, el cónyuge, hijos o parientes hasta el tercer grado de consanguinidad y segundo de afinidad; omitir la propuesta pública cuando la ley la exige.", norma: "Art. 62 Ley 18.575", etiqueta: "Probidad", prioridad: "A", fuente: "nuevo" },
+    { id: "m01-f-23", modulo: 1, frente: "Publicidad de los actos del Estado", dorso: "Son públicos los actos y resoluciones de los órganos del Estado, así como sus fundamentos y los procedimientos que utilicen. Sólo una ley de quórum calificado puede establecer reserva o secreto, cuando la publicidad afecte el debido cumplimiento de las funciones del órgano, los derechos de las personas, la seguridad de la Nación o el interés nacional.", norma: "Art. 8 inc. 2 CPR", etiqueta: "Probidad", prioridad: "A", fuente: "nuevo" },
+  ],
+
+  quiz: [
+    { id: "m01-q-01", modulo: 1, texto: "¿Cuáles son los tres requisitos del art. 7 CPR para que un órgano del Estado actúe válidamente?", opciones: ["Ley habilitante, interés público y proporcionalidad", "Previa investidura regular, competencia y forma prescrita por la ley", "Motivación, publicidad y oportunidad", "Competencia, buena fe y firma del ministro de fe"], correcta: 1, porque: "Art. 7 inc. 1 CPR: «previa investidura regular de sus integrantes, dentro de su competencia y en la forma que prescriba la ley». Los otros conceptos existen, pero no son los requisitos constitucionales de validez.", norma: "Art. 7 inc. 1 CPR", fuente: "guia-rpe" },
+    { id: "m01-q-02", modulo: 1, texto: "Según el art. 7 inc. 3 CPR, el acto dictado en contravención a ese artículo…", opciones: ["Es anulable sólo si alguien lo reclama dentro de 30 días", "Es nulo y origina las responsabilidades y sanciones que la ley señale", "Queda sujeto a la toma de razón de la Contraloría", "Es válido mientras no lo revoque la autoridad superior"], correcta: 1, porque: "El texto es literal: «es nulo y originará las responsabilidades y sanciones que la ley señale». Cómo se declara esa nulidad es otra discusión (jornada 10).", norma: "Art. 7 inc. 3 CPR", fuente: "guia-rpe" },
+    { id: "m01-q-03", modulo: 1, texto: "¿A quiénes obligan los preceptos de la Constitución según su art. 6?", opciones: ["Sólo a los órganos del Estado", "Sólo al Presidente y al Congreso", "A los titulares o integrantes de los órganos del Estado y a toda persona, institución o grupo", "A los funcionarios públicos de planta"], correcta: 2, porque: "Art. 6 inc. 2 CPR: obligan «tanto a los titulares o integrantes de dichos órganos como a toda persona, institución o grupo».", norma: "Art. 6 inc. 2 CPR", fuente: "nuevo" },
+    { id: "m01-q-04", modulo: 1, texto: "Un vecino alega que la Municipalidad de Potestas «no es parte de la Administración del Estado» y que por eso no la rige la Ley 18.575. ¿Tiene razón?", opciones: ["Sí: las municipalidades son corporaciones autónomas y quedan fuera", "No: el art. 1 de la Ley 18.575 incluye expresamente a las municipalidades en la Administración del Estado", "Sí, salvo que la Contraloría las incorpore por dictamen", "Depende de si la comuna tiene más de cien mil habitantes"], correcta: 1, porque: "Art. 1 inc. 2 Ley 18.575 las nombra. Lo que no se les aplica es el Título II (organización de ministerios y servicios), por el art. 21 inc. 2; las bases (Título I) y la probidad (Título III) sí las rigen.", norma: "Arts. 1 y 21 Ley 18.575", fuente: "nuevo" },
+    { id: "m01-q-05", modulo: 1, texto: "¿Qué distingue a un servicio descentralizado de uno centralizado?", opciones: ["El descentralizado está en regiones; el centralizado, en Santiago", "El descentralizado tiene personalidad jurídica y patrimonio propios y está sometido a supervigilancia; el centralizado actúa con la personalidad y bienes del Fisco y está sometido a dependencia", "El descentralizado no tiene jefe de servicio", "Ninguna: son sinónimos en la Ley 18.575"], correcta: 1, porque: "Art. 29 Ley 18.575. La ubicación geográfica no decide nada: la descentralización puede ser funcional o territorial.", norma: "Art. 29 Ley 18.575", fuente: "nuevo" },
+    { id: "m01-q-06", modulo: 1, texto: "La ley radica atribuciones en la Dirección Regional de un servicio, cuyo director depende jerárquicamente del Director Nacional. Eso es…", opciones: ["Descentralización territorial", "Desconcentración", "Delegación de firma", "Autonomía constitucional"], correcta: 1, porque: "Art. 33 Ley 18.575: la desconcentración territorial se hace mediante direcciones regionales que dependen del director nacional; la funcional, radicando por ley atribuciones en órganos del servicio. No nace una persona jurídica nueva.", norma: "Art. 33 Ley 18.575", fuente: "nuevo" },
+    { id: "m01-q-07", modulo: 1, texto: "La Alcaldesa quiere multar con 8 UTM a quien riegue la vereda en horario de restricción, mediante una ordenanza. ¿Qué dice la ley?", opciones: ["Puede, si el Concejo lo aprueba por dos tercios", "La ordenanza puede fijar multas, pero no superiores a 5 UTM, y las aplica el juzgado de policía local", "Las ordenanzas no pueden contener multas", "Puede, porque la multa la cobra la propia municipalidad"], correcta: 1, porque: "Art. 12 inc. 2 Ley 18.695: las ordenanzas pueden establecer multas «cuyo monto no excederá de cinco unidades tributarias mensuales», aplicadas por los juzgados de policía local.", norma: "Art. 12 Ley 18.695", fuente: "nuevo" },
+    { id: "m01-q-08", modulo: 1, texto: "¿Cuál de estas materias NO requiere acuerdo del Concejo según el art. 65 de la Ley 18.695?", opciones: ["Dictar una ordenanza", "Aprobar el presupuesto municipal", "Otorgar un permiso municipal", "Celebrar un contrato de 600 UTM"], correcta: 2, porque: "Otorgar, renovar y poner término a permisos municipales es atribución propia del alcalde (art. 63 letra g). Las ordenanzas (65 l), el presupuesto (65 a) y los contratos de 500 UTM o más (65 j) sí requieren acuerdo.", norma: "Arts. 63 y 65 Ley 18.695", fuente: "nuevo" },
+    { id: "m01-q-09", modulo: 1, texto: "¿Qué funciones tiene el concejo municipal?", opciones: ["Sólo consultivas: opina y el alcalde decide", "Normativas, resolutivas y fiscalizadoras", "Jurisdiccionales: resuelve los reclamos de los vecinos", "Ejecutivas: administra los bienes municipales"], correcta: 1, porque: "Art. 71 Ley 18.695 (y art. 119 CPR). Fiscaliza, entre otros, las actuaciones del alcalde, que debe responder sus observaciones por escrito en quince días (art. 79 d).", norma: "Arts. 71 y 79 Ley 18.695", fuente: "nuevo" },
+    { id: "m01-q-10", modulo: 1, texto: "El Director de Obras informa favorablemente el permiso de edificación de la empresa de su hermana. ¿Qué principio está en juego?", opciones: ["Celeridad: el informe salió rápido", "Probidad: intervenir en asuntos en que tengan interés parientes hasta el tercer grado de consanguinidad la contraviene especialmente", "Transparencia: basta con publicar el informe", "Ninguno, mientras el permiso cumpla la norma técnica"], correcta: 1, porque: "Art. 62 N.º 6 Ley 18.575: debe abstenerse y poner la implicancia en conocimiento de su superior. La hermana es pariente en segundo grado de consanguinidad.", norma: "Art. 62 N.º 6 Ley 18.575", fuente: "nuevo" },
+    { id: "m01-q-11", modulo: 1, texto: "¿En qué consiste el principio de probidad administrativa según la Ley 18.575?", opciones: ["En declarar patrimonio e intereses una vez al año", "En observar una conducta funcionaria intachable y un desempeño honesto y leal, con preeminencia del interés general sobre el particular", "En no recibir regalos de ningún tipo, ni siquiera protocolares", "En cumplir la jornada de trabajo completa"], correcta: 1, porque: "Art. 52 inc. 2 Ley 18.575. Los donativos oficiales y protocolares están exceptuados de la prohibición del art. 62 N.º 5.", norma: "Art. 52 Ley 18.575", fuente: "nuevo" },
+    { id: "m01-q-12", modulo: 1, texto: "La inspectora municipal mide el ruido de un bar con un sonómetro. Esa actuación es…", opciones: ["Un acto administrativo terminal", "Actividad material o técnica de inspección, que puede preceder a un acto formal", "Una ordenanza", "Un contrato administrativo"], correcta: 1, porque: "La inspección es actividad material: verifica hechos. El acto formal vendrá después (una multa o una clausura), con su procedimiento. Confundir inspección con acto es un error frecuente de examen.", fuente: "sancionador" },
+  ],
+
+  orales: [
+    {
+      id: "m01-o-01", modulo: 1,
+      pregunta: "Explique el principio de juridicidad y sus consecuencias a partir de los artículos 6 y 7 de la Constitución.",
+      profesor: "Prof. Bronfman",
+      claves: ["Sometimiento a la Constitución y sus normas", "Obliga a órganos y a toda persona", "Investidura regular, competencia y forma", "Los tres requisitos son copulativos", "Nadie se atribuye otra autoridad, ni en emergencia", "El acto en contravención es nulo", "Origina responsabilidades y sanciones", "Sólo lo expresamente conferido"],
+      trampas: ["Lo que no está prohibido está permitido", "Basta el interés público para actuar", "La nulidad se sanea por el transcurso de 30 días", "Las municipalidades quedan fuera del art. 7", "La emergencia habilita atribuciones nuevas"],
+      modelo: "El art. 6 somete a los órganos del Estado a la Constitución y a las normas dictadas conforme a ella, y sus preceptos obligan tanto a los titulares de esos órganos como a toda persona. El art. 7 concreta la juridicidad: los órganos actúan válidamente previa investidura regular, dentro de su competencia y en la forma que prescriba la ley, requisitos copulativos. Ninguna magistratura ni persona puede atribuirse otra autoridad que la expresamente conferida, ni aun a pretexto de circunstancias extraordinarias. Todo acto en contravención es nulo y origina las responsabilidades y sanciones que la ley señale.",
+      repregunta: "Si el acto «es nulo» por el solo texto constitucional, ¿por qué la Ley 19.880 dice que se presume legal?",
+      prioridad: "S", fuente: "iuspublic",
+    },
+    {
+      id: "m01-o-02", modulo: 1,
+      pregunta: "Describa la organización de la Administración del Estado: centralización, descentralización y desconcentración, y ubique a la municipalidad.",
+      profesor: "Prof. Cordero",
+      claves: ["Administración: ministerios, servicios, municipalidades, etc.", "Centralizado: personalidad del Fisco, dependencia", "Descentralizado: personalidad y patrimonio propios", "Descentralizado: supervigilancia, no dependencia", "Descentralización funcional o territorial", "Desconcentración: atribuciones radicadas por ley", "Desconcentración no crea persona jurídica", "Municipalidad: corporación autónoma con patrimonio propio"],
+      trampas: ["Desconcentrar es crear un servicio nuevo", "La municipalidad depende del Ministerio del Interior", "Descentralizado significa estar fuera de Santiago", "El Título II de la Ley 18.575 rige a las municipalidades", "El concejo nombra al alcalde"],
+      modelo: "La Administración del Estado la integran ministerios, intendencias, gobernaciones, servicios públicos, Contraloría, Banco Central, Fuerzas Armadas y de Orden, gobiernos regionales, municipalidades y empresas públicas creadas por ley (art. 1 Ley 18.575). Los servicios centralizados actúan con la personalidad y bienes del Fisco bajo dependencia del Presidente; los descentralizados tienen personalidad jurídica y patrimonio propios y sólo quedan bajo supervigilancia, en forma funcional o territorial (art. 29). La desconcentración, en cambio, radica por ley atribuciones en órganos del mismo servicio —direcciones regionales— sin crear una persona jurídica (art. 33). La municipalidad es una corporación autónoma de derecho público con personalidad jurídica y patrimonio propio (art. 118 CPR, art. 1 Ley 18.695): la descentralización territorial por excelencia, aunque el Título II de la Ley 18.575 no se le aplica.",
+      repregunta: "¿Qué autoridad supervigila a una municipalidad, si es autónoma? ¿Y quién la controla?",
+      prioridad: "A", fuente: "nuevo",
+    },
+  ],
+
+  columnas: [
+    {
+      id: "m01-c-01", modulo: 1, titulo: "¿Centralizado o descentralizado?",
+      izq: "Servicio centralizado", der: "Servicio descentralizado",
+      items: [
+        { texto: "Actúa con la personalidad jurídica del Fisco", lado: 0, porque: "Art. 29 inc. 2 Ley 18.575." },
+        { texto: "Tiene personalidad jurídica y patrimonio propios", lado: 1, porque: "Art. 29 inc. 3 Ley 18.575." },
+        { texto: "Sometido a la dependencia del Presidente a través del ministerio", lado: 0, porque: "Art. 29 inc. 2." },
+        { texto: "Sometido a la supervigilancia del Presidente a través del ministerio", lado: 1, porque: "Art. 29 inc. 3." },
+        { texto: "Usa los bienes y recursos del Fisco", lado: 0, porque: "Art. 29 inc. 2." },
+        { texto: "Puede ser funcional o territorial", lado: 1, porque: "Art. 29 inc. final." },
+        { texto: "La representación judicial corresponde a su jefe superior", lado: 1, porque: "Art. 36 Ley 18.575: representación judicial y extrajudicial de los servicios descentralizados." },
+        { texto: "El Presidente puede delegar en su jefe la representación del Fisco", lado: 0, porque: "Art. 35 Ley 18.575: delegación de la representación del Fisco en jefes de servicios centralizados." },
+        { texto: "Una municipalidad se parece a éste", lado: 1, porque: "Corporación autónoma con personalidad jurídica y patrimonio propio (art. 118 CPR; art. 1 Ley 18.695)." },
+        { texto: "Aunque tenga competencia exclusiva por ley, su patrimonio sigue siendo el fiscal", lado: 0, porque: "Art. 34 Ley 18.575." },
+      ],
+      norma: "Arts. 29, 34, 35 y 36 Ley 18.575", fuente: "nuevo",
+    },
+    {
+      id: "m01-c-02", modulo: 1, titulo: "¿Actividad formal o material?",
+      izq: "Actividad formal (acto)", der: "Actividad material (operación)",
+      items: [
+        { texto: "Decreto alcaldicio que otorga una patente", lado: 0, porque: "Decisión formal con efectos jurídicos: acto administrativo." },
+        { texto: "La inspectora mide el ruido del bar", lado: 1, porque: "Operación técnica de verificación." },
+        { texto: "Resolución que aplica una multa", lado: 0, porque: "Crea una obligación: efecto jurídico directo." },
+        { texto: "El camión municipal retira la basura", lado: 1, porque: "Prestación directa de servicio: actividad material." },
+        { texto: "Ordenanza de ruidos molestos", lado: 0, porque: "Norma general y obligatoria (art. 12 Ley 18.695)." },
+        { texto: "Un funcionario de Obras visita la construcción para fiscalizar", lado: 1, porque: "Inspección: material, aunque pueda preceder a un acto." },
+        { texto: "Decreto que ordena la clausura del local", lado: 0, porque: "Decisión que extingue una situación jurídica." },
+        { texto: "Carabineros pone los sellos de clausura en la puerta", lado: 1, porque: "Ejecución material de un acto previo." },
+        { texto: "Certificado de la Dirección de Obras sobre el uso de suelo", lado: 0, porque: "Declaración de constancia: también es acto (art. 3 inc. 6 Ley 19.880)." },
+        { texto: "El consultorio municipal atiende a un paciente", lado: 1, porque: "Prestación directa de salud: actividad material." },
+      ],
+      fuente: "sancionador",
+    },
+  ],
+
+  cadenas: [
+    {
+      id: "m01-k-01", modulo: 1, titulo: "Cómo nace una ordenanza en Potestas",
+      pasos: [
+        "La Alcaldesa somete el proyecto de ordenanza al Concejo",
+        "El Concejo da su acuerdo (art. 65 letra l)",
+        "La Alcaldesa dicta la ordenanza (arts. 12 y 63 letra i)",
+        "El Secretario Municipal la certifica como ministro de fe (art. 20 letra b)",
+        "Se publica en los sistemas electrónicos de la municipalidad (art. 12 inc. final)",
+        "Si un vecino la infringe, el juzgado de policía local aplica la multa, de hasta 5 UTM (art. 12 inc. 2)",
+      ],
+      nota: "La secuencia es la de la ley; el orden de los dos pasos del medio sigue la práctica municipal.",
+      norma: "Arts. 12, 20, 63 y 65 Ley 18.695", fuente: "nuevo",
+    },
+  ],
+
+  expedientes: [
+    {
+      id: "m01-e-01", modulo: 1,
+      titulo: "El decreto que firmó el Director de Obras",
+      relato: "El Director de Obras trae un decreto alcaldicio que él mismo firmó «por orden de la Alcaldesa» porque ella estaba en un seminario. No existe ningún decreto que le delegue esa facultad.",
+      documento: { tipo: "Decreto alcaldicio N.º 1.204", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Otorga permiso de ocupación de bien nacional de uso público para terraza del café «La Potestad»" },
+        { k: "Firma", v: "Director de Obras Municipales, «por orden de la Alcaldesa»" },
+        { k: "Delegación invocada", v: "Ninguna (no existe decreto de delegación)" },
+        { k: "Ministro de fe", v: "Secretario Municipal" },
+        { k: "Fecha", v: "3 de marzo" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: la Alcaldesa estaba ausente y alguien tenía que firmar", correcto: false, porque: "La ausencia no habilita a nadie. Si la Alcaldesa está ausente opera la subrogación (art. 62 Ley 18.695) o una delegación previa; ninguna de las dos existe aquí." },
+        { texto: "SIN DELEGACIÓN: falta investidura y competencia para firmar", correcto: true, porque: "Otorgar permisos es atribución del alcalde (art. 63 g); puede delegarla o delegar la firma «por orden del alcalde» (art. 63 j), pero mediante un acto de delegación. Sin él, el Director actúa fuera de su competencia y el acto cae por el art. 7 CPR." },
+        { texto: "NULO porque la Municipalidad no puede dar permisos sobre bienes nacionales de uso público", correcto: false, porque: "Sí puede: administra los bienes nacionales de uso público de la comuna (art. 5 letra c y art. 63 letra f Ley 18.695). El problema no es la materia, es quién firmó." },
+        { texto: "FALTA ACUERDO DEL CONCEJO", correcto: false, porque: "Un permiso de ocupación no está en la lista del art. 65; es atribución propia del alcalde (art. 63 g). Las concesiones sí requieren acuerdo (65 k), pero esto es un permiso." },
+      ],
+      norma: "Art. 7 CPR; art. 63 letras g) y j) Ley 18.695", fuente: "nuevo", hallazgo: "m01-juridicidad",
+    },
+    {
+      id: "m01-e-02", modulo: 1,
+      titulo: "La ordenanza de los 10 UTM",
+      relato: "La Alcaldesa Ruperta Cañas quiere publicar hoy la nueva ordenanza de ruidos molestos. El Concejo la aprobó anoche. Lee la multa.",
+      documento: { tipo: "Ordenanza municipal N.º 18, sobre ruidos molestos", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Acuerdo del Concejo", v: "Sesión ordinaria N.º 112, aprobada por 6 votos contra 2" },
+        { k: "Art. 9 de la ordenanza", v: "Multa de 10 UTM por infracción, aplicada por el juzgado de policía local" },
+        { k: "Firma", v: "Alcaldesa" },
+        { k: "Ministro de fe", v: "Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: el Concejo la aprobó y la aplica el juzgado de policía local", correcto: false, porque: "El procedimiento está bien, pero el contenido no: la ley pone un tope a las multas de ordenanza." },
+        { texto: "EXCEDE EL TOPE: las multas de ordenanza no pueden pasar de 5 UTM", correcto: true, porque: "Art. 12 inc. 2 Ley 18.695: las ordenanzas pueden establecer multas «cuyo monto no excederá de cinco unidades tributarias mensuales». El art. 9 debe corregirse antes de publicar; lo demás se conserva." },
+        { texto: "NULA: las ordenanzas no pueden establecer multas", correcto: false, porque: "Sí pueden (art. 12 inc. 2); lo que no pueden es superar las 5 UTM." },
+        { texto: "FALTA ACUERDO DEL CONCEJO", correcto: false, porque: "El acuerdo existe (sesión N.º 112). Dictar ordenanzas requiere acuerdo del concejo (art. 65 l) y aquí se cumplió." },
+      ],
+      norma: "Art. 12 inc. 2 Ley 18.695", fuente: "nuevo", hallazgo: "m01-municipalidad",
+    },
+    {
+      id: "m01-e-03", modulo: 1,
+      titulo: "La feria de los sábados",
+      relato: "La presidenta de la junta de vecinos del sector Las Potestades trae el decreto que autoriza la feria de los sábados en la calle Los Jueces. Quiere saber si «está bien hecho».",
+      documento: { tipo: "Decreto alcaldicio N.º 1.311", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Vistos", v: "Arts. 5 letra c), 12 y 63 letras f) y g) de la Ley 18.695; la solicitud de la junta de vecinos" },
+        { k: "Considerando", v: "Que la calle Los Jueces es bien nacional de uso público administrado por la municipalidad; que el informe de Tránsito es favorable" },
+        { k: "Dispone", v: "Otórgase permiso de ocupación los sábados de 8 a 15 h, por un año, a la junta de vecinos" },
+        { k: "Firma", v: "Alcaldesa" },
+        { k: "Ministro de fe", v: "Secretario Municipal" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO", correcto: true, porque: "Órgano competente (la municipalidad administra los bienes nacionales de uso público de la comuna, art. 5 c), autoridad con atribución (otorgar permisos, art. 63 g), investidura regular (la Alcaldesa) y forma (decreto alcaldicio para un caso particular, art. 12, con ministro de fe). No necesita acuerdo del Concejo: es un permiso, no una concesión." },
+        { texto: "FALTA ACUERDO DEL CONCEJO", correcto: false, porque: "Las concesiones requieren acuerdo (art. 65 k); los permisos son atribución del alcalde (art. 63 g)." },
+        { texto: "INCOMPETENCIA: las calles las administra el Ministerio de Obras Públicas", correcto: false, porque: "Los bienes nacionales de uso público existentes en la comuna los administra la municipalidad, salvo que por su naturaleza correspondan a otro órgano (art. 5 c Ley 18.695). Una calle vecinal es el caso típico municipal." },
+        { texto: "DEBIÓ SER ORDENANZA", correcto: false, porque: "La ordenanza es norma general para la comunidad; un permiso a una junta de vecinos es un caso particular: decreto alcaldicio (art. 12)." },
+      ],
+      norma: "Arts. 5 c), 12 y 63 g) Ley 18.695", fuente: "nuevo", hallazgo: "m01-administracion",
+    },
+    {
+      id: "m01-e-04", modulo: 1,
+      titulo: "El impuesto a las bicicletas",
+      relato: "El Director de Tránsito trae una resolución de su dirección que «crea un impuesto comunal de 0,2 UTM por bicicleta» para financiar ciclovías. Está orgulloso.",
+      documento: { tipo: "Resolución exenta N.º 77, Dirección de Tránsito", campos: [
+        { k: "Órgano", v: "Dirección de Tránsito y Transporte Públicos, Municipalidad de Potestas" },
+        { k: "Vistos", v: "«Las necesidades de la comuna»" },
+        { k: "Dispone", v: "Créase un impuesto comunal de 0,2 UTM anuales por cada bicicleta" },
+        { k: "Firma", v: "Director de Tránsito" },
+        { k: "Acuerdo del Concejo", v: "No consta" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: la municipalidad puede aplicar tributos locales", correcto: false, porque: "Puede aplicar los tributos que la ley le permita, dentro de los marcos legales y con acuerdo del concejo (art. 5 h y 65 e Ley 18.695). No puede crearlos, y menos una dirección por resolución." },
+        { texto: "SIN POTESTAD: nadie puede atribuirse una autoridad que la ley no le dio", correcto: true, porque: "Art. 7 inc. 2 CPR. La municipalidad sólo aplica tributos «dentro de las normas que la ley establezca» (art. 5 h) y con acuerdo del concejo (65 e); un director de unidad no tiene potestad alguna para crear un impuesto. Es nulo (art. 7 inc. 3)." },
+        { texto: "SUBSANAR: basta que lo firme la Alcaldesa", correcto: false, porque: "La firma de la Alcaldesa no crea una potestad tributaria que la ley no entregó al municipio." },
+        { texto: "FALTA ACUERDO DEL CONCEJO", correcto: false, porque: "El acuerdo del concejo opera sobre tributos que la ley permite aplicar (65 e). Aquí el problema es anterior: no existe ley que permita este impuesto." },
+      ],
+      norma: "Art. 7 incs. 2 y 3 CPR; arts. 5 h) y 65 e) Ley 18.695", fuente: "nuevo", hallazgo: "m01-nulidad",
+    },
+    {
+      id: "m01-e-05", modulo: 1,
+      titulo: "El contrato de 600 UTM",
+      relato: "La Alcaldesa firmó esta mañana un contrato de mantención de áreas verdes por 600 UTM. La Directora de Administración y Finanzas pregunta si puede pagar la primera cuota.",
+      documento: { tipo: "Decreto alcaldicio N.º 1.350, aprueba contrato", campos: [
+        { k: "Órgano", v: "Municipalidad de Potestas" },
+        { k: "Materia", v: "Aprueba contrato de mantención de áreas verdes con Jardines del Poder Ltda." },
+        { k: "Monto", v: "600 UTM, a 12 meses, dentro del período alcaldicio" },
+        { k: "Licitación", v: "Pública, adjudicada por decreto N.º 1.298" },
+        { k: "Acuerdo del Concejo", v: "No se pidió" },
+        { k: "Firma", v: "Alcaldesa" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: hubo licitación pública y firma la Alcaldesa", correcto: false, porque: "La licitación resuelve cómo se eligió al contratista, no la autorización para contratar por ese monto." },
+        { texto: "FALTA ACUERDO DEL CONCEJO: contratos de 500 UTM o más", correcto: true, porque: "Art. 65 letra j) Ley 18.695: celebrar convenios y contratos que involucren montos iguales o superiores a 500 UTM requiere el acuerdo de la mayoría absoluta del concejo (y de dos tercios si exceden el período alcaldicio). Sin él, falta un requisito de forma esencial." },
+        { texto: "NULO: las municipalidades no pueden contratar con privados", correcto: false, porque: "Pueden celebrar contratos para atender las necesidades de la comunidad local (art. 8 Ley 18.695); el problema es la autorización por el monto." },
+        { texto: "SUBSANAR: con que el Concejo lo apruebe por dos tercios después basta", correcto: false, porque: "Como el contrato no excede el período alcaldicio, basta mayoría absoluta (65 j); y el acuerdo debió ser previo. Lo que corresponde es no pagar y someter el contrato al Concejo." },
+      ],
+      norma: "Art. 65 letra j) Ley 18.695", fuente: "nuevo", hallazgo: "m01-municipalidad",
+    },
+    {
+      id: "m01-e-06", modulo: 1,
+      titulo: "El informe del cuñado",
+      relato: "El Director de Obras informó favorablemente y en tiempo récord la licitación que ganó «Constructora Cañas y Cuñado». El cuñado es el suyo. Un concejal pide tu opinión.",
+      documento: { tipo: "Informe técnico N.º 45, Dirección de Obras", campos: [
+        { k: "Órgano", v: "Dirección de Obras Municipales" },
+        { k: "Materia", v: "Evaluación técnica de ofertas, licitación de la plaza Potestas" },
+        { k: "Conclusión", v: "Recomienda adjudicar a Constructora Cañas y Cuñado Ltda." },
+        { k: "Firma", v: "Director de Obras" },
+        { k: "Vínculo", v: "El socio principal es cuñado del Director (afinidad en segundo grado)" },
+        { k: "Abstención", v: "No la comunicó" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: la oferta era la mejor y el informe es técnico", correcto: false, porque: "Que la oferta sea buena no limpia la implicancia. La probidad mira quién decide, no sólo qué se decide." },
+        { texto: "IMPLICANCIA: debió abstenerse e informar a su superior", correcto: true, porque: "Art. 62 N.º 6 Ley 18.575: contraviene especialmente la probidad intervenir en asuntos en que tengan interés parientes hasta el tercer grado de consanguinidad y segundo de afinidad (el cuñado está en el segundo de afinidad). Debió abstenerse y poner la implicancia en conocimiento de su superior; también lo exige el art. 12 N.º 2 Ley 19.880." },
+        { texto: "NULO DE PLENO DERECHO TODO EL PROCESO", correcto: false, porque: "Hay responsabilidad del funcionario y el informe debe rehacerse por otro; pero el art. 12 inc. 3 Ley 19.880 dice que la actuación de quien debió abstenerse «no implicará, necesariamente, la invalidez de los actos»." },
+        { texto: "NO HAY PROBLEMA: la probidad no se aplica a parientes por afinidad", correcto: false, porque: "El art. 62 N.º 6 incluye expresamente a los parientes hasta el segundo grado de afinidad." },
+      ],
+      norma: "Art. 62 N.º 6 Ley 18.575; art. 12 Ley 19.880", fuente: "nuevo", hallazgo: "m01-probidad",
+    },
+  ],
+};
+
+// PENDIENTE DE REVISIÓN (docs/REVISION_JURIDICA.md):
+// - «Teoría del funcionario de hecho» (ficha m01-f-05): doctrina, sin norma expresa; se marca como tal.
+// - La calificación de la municipalidad como «descentralización territorial por excelencia» es doctrinal:
+//   la ley la llama corporación autónoma (art. 118 CPR; art. 1 Ley 18.695) y el art. 21 inc. 2 de la Ley 18.575
+//   excluye a las municipalidades del Título II (arts. 29 y 33 describen a los servicios públicos).
+// - Actividad formal/material y servicio-policía-fomento (fichas m01-f-09 y m01-f-10, columna m01-c-02):
+//   categorías doctrinales (apunte Cordero); sólo el concepto de servicio público tiene texto legal (art. 28 LBGAE).
+// - El art. 1 de la Ley 18.575 (XML versión 15-01-2024) sigue diciendo «Intendencias y Gobernaciones»; se copió
+//   así, aunque hoy existan delegaciones presidenciales (Ley 21.074). Confirmar con la versión vigente.

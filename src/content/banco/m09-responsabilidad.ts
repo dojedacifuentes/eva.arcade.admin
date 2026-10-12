@@ -1,0 +1,316 @@
+// Módulo 9 · El hoyo en la vereda · Responsabilidad patrimonial del Estado.
+// Fuentes: guia-rpe (teoría, períodos, casos, defensas, quiz), iuspublic (casos y
+// comisión). Normas verificadas contra los XML de la BCN el 12-10-2026: CPR arts. 6, 7,
+// 19 N.º 20 y 38; Ley 18.575 arts. 4, 21 y 42; Ley 18.695 arts. 5 y 152; CC arts. 45,
+// 2314, 2320, 2330 y 2332. Jurisprudencia: rol y año sólo cuando los apuntes los traen.
+import type { BancoModulo } from "../tipos";
+
+export const BANCO_M09: BancoModulo = {
+  modulo: 9,
+
+  hallazgos: [
+    {
+      id: "m09-falta-servicio", modulo: 9,
+      titulo: "Falta de servicio",
+      texto: "La Administración responde por el daño que causa por falta de servicio: cuando el servicio no funciona debiendo hacerlo, funciona mal o funciona tarde. No hace falta encontrar al funcionario culpable: responde la organización.",
+      norma: "Art. 42 Ley 18.575; art. 152 Ley 18.695",
+      simple: "El hoyo no tiene nombre ni apellido, pero sí tiene dueño: el servicio que debía taparlo.",
+    },
+    {
+      id: "m09-municipal", modulo: 9,
+      titulo: "La vereda es de la Municipalidad",
+      texto: "Las municipalidades administran los bienes nacionales de uso público de la comuna, veredas incluidas, y responden por los daños que causen, principalmente por falta de servicio. Después pueden repetir contra el funcionario con falta personal.",
+      norma: "Arts. 5 letra c) y 152 Ley 18.695",
+      simple: "Administrar la vereda incluye el hoyo que nadie quiso ver.",
+    },
+    {
+      id: "m09-elementos", modulo: 9,
+      titulo: "Tres cosas que probar",
+      texto: "Para que el Estado pague tienen que concurrir una acción u omisión del órgano, un daño efectivo y avaluable, y una relación de causalidad entre ambos. La falta de servicio es el factor que atribuye ese daño a la Administración.",
+      norma: "Arts. 4 y 42 Ley 18.575",
+      simple: "Hoyo, tobillo roto y el camino entre los dos: sin esa línea recta no hay cheque.",
+    },
+    {
+      id: "m09-falta-personal", modulo: 9,
+      titulo: "La falta personal también compromete",
+      texto: "Si el daño lo causa la falta personal de un funcionario en ejercicio de sus funciones o con ocasión de ellas, el Estado igual responde frente a la víctima y luego repite contra el funcionario. Sólo queda liberado cuando la falta no tiene vínculo alguno con el servicio.",
+      norma: "Art. 42 inc. 2 Ley 18.575; art. 152 Ley 18.695; Morales Gamboa con Fisco (2011, rol 7.919-2008)",
+      simple: "El Estado paga primero y cobra después: es un fiador con memoria.",
+    },
+    {
+      id: "m09-prescripcion", modulo: 9,
+      titulo: "Cuatro años para demandar",
+      texto: "Desde Domic Bezic con Fisco (2002) la Corte Suprema aplica supletoriamente el Código Civil: la acción indemnizatoria contra el Estado prescribe en cuatro años desde el hecho dañoso. El art. 38 inc. 2 de la Constitución sólo dice ante quién se reclama; no crea un sistema de responsabilidad objetiva.",
+      norma: "Art. 2332 CC; art. 38 inc. 2 CPR; Domic Bezic con Fisco (2002, rol 4.753-2001)",
+      simple: "El Estado también cobra sus plazos: cuatro años y el hoyo pasa a ser historia.",
+    },
+    {
+      id: "m09-no-asegurador", modulo: 9,
+      titulo: "El Estado no es asegurador universal",
+      texto: "La Administración responde según el estándar que razonablemente se le puede exigir con los medios que tiene. Si cumplió ese estándar, si el daño vino de fuerza mayor o si la víctima se expuso imprudentemente, no paga o paga menos.",
+      norma: "Art. 42 Ley 18.575; arts. 45 y 2330 CC",
+      simple: "Funciona como un seguro, pero no como uno que cubre cruzar la obra mirando el celular.",
+    },
+    {
+      id: "m09-licita", modulo: 9,
+      titulo: "Galletué: cuando lo lícito también se paga",
+      texto: "En Galletué (1984) la Corte Suprema obligó al Fisco a indemnizar a quienes no pudieron explotar sus araucarias por un decreto válido: un sacrificio especial rompe la igualdad ante las cargas públicas. Hoy la regla general es la falta de servicio, pero el precedente sigue vivo para los sacrificios singulares.",
+      norma: "Art. 19 N.º 20 CPR; Comunidad Galletué con Fisco (1984, rol 16.743); Sociedad Inmobiliaria Maullín con Fisco (2010, rol 552-2008)",
+      simple: "A veces el Estado hace todo bien y, aun así, le toca pagar la cuenta.",
+    },
+  ],
+
+  afirmaciones: [
+    { id: "m09-af-01", modulo: 9, hallazgo: "m09-falta-servicio", texto: "Para que la Municipalidad responda hay que identificar al funcionario que debía tapar el hoyo.", verdad: false, porque: "La falta de servicio es anónima: basta acreditar que el servicio no funcionó, funcionó mal o tarde (art. 42 Ley 18.575; art. 152 Ley 18.695)." },
+    { id: "m09-af-02", modulo: 9, hallazgo: "m09-falta-servicio", texto: "Un servicio que actúa, pero con retraso dañoso, también incurre en falta de servicio.", verdad: true, porque: "Son tres hipótesis: no funciona, funciona mal o funciona tarde (art. 42 Ley 18.575; definición de la CS en Carvajal Zamora con Fisco, 2015, rol 2.732-2015)." },
+    { id: "m09-af-03", modulo: 9, hallazgo: "m09-municipal", texto: "Las municipalidades tienen su propia norma de responsabilidad, que remite principalmente a la falta de servicio.", verdad: true, porque: "Art. 152 Ley 18.695: las municipalidades responden por los daños que causen, principalmente por falta de servicio, con derecho a repetir contra el funcionario." },
+    { id: "m09-af-04", modulo: 9, hallazgo: "m09-municipal", texto: "Las veredas son del Ministerio de Obras Públicas, así que el hoyo no es problema municipal.", verdad: false, porque: "La municipalidad administra los bienes nacionales de uso público de la comuna, salvo que la ley entregue alguno a otro órgano (art. 5 letra c) Ley 18.695)." },
+    { id: "m09-af-05", modulo: 9, hallazgo: "m09-elementos", texto: "Basta probar la falta de servicio: el daño se presume.", verdad: false, porque: "El daño debe ser efectivo, avaluable y probado por quien demanda; sin daño no hay responsabilidad (art. 42 Ley 18.575)." },
+    { id: "m09-af-06", modulo: 9, hallazgo: "m09-elementos", texto: "La omisión también cuenta como conducta del órgano cuando había deber de actuar.", verdad: true, porque: "La falta de servicio incluye no funcionar debiendo hacerlo (art. 42 Ley 18.575)." },
+    { id: "m09-af-07", modulo: 9, hallazgo: "m09-falta-personal", texto: "Si el chofer municipal chocó por su propia imprudencia, la Municipalidad no responde ante la víctima.", verdad: false, porque: "La falta personal cometida en ejercicio o con ocasión del servicio compromete al Estado, que después repite contra el funcionario (art. 42 inc. 2 Ley 18.575; art. 152 Ley 18.695; Morales Gamboa, 2011)." },
+    { id: "m09-af-08", modulo: 9, hallazgo: "m09-falta-personal", texto: "El Estado tiene derecho a repetir contra el funcionario que incurrió en falta personal.", verdad: true, porque: "Lo dice el art. 42 inc. 2 Ley 18.575 y, para las municipalidades, el art. 152 Ley 18.695." },
+    { id: "m09-af-09", modulo: 9, hallazgo: "m09-prescripcion", texto: "La acción indemnizatoria contra el Estado es imprescriptible porque nace de la Constitución.", verdad: false, porque: "Esa fue la tesis de Hexagon (1987); desde Domic Bezic (2002) la CS aplica los cuatro años del art. 2332 CC." },
+    { id: "m09-af-10", modulo: 9, hallazgo: "m09-prescripcion", texto: "El art. 38 inc. 2 de la Constitución es, para la Corte Suprema, una norma de competencia: dice ante quién se reclama.", verdad: true, porque: "Domic Bezic (2002): el art. 38 inc. 2 CPR atribuye competencia a los tribunales; el sistema de responsabilidad lo fija la ley (art. 42 Ley 18.575)." },
+    { id: "m09-af-11", modulo: 9, hallazgo: "m09-no-asegurador", texto: "Si la víctima se expuso imprudentemente al daño, la Municipalidad queda totalmente liberada.", verdad: false, porque: "La exposición imprudente reduce la indemnización, no la elimina (art. 2330 CC, aplicado por analogía)." },
+    { id: "m09-af-12", modulo: 9, hallazgo: "m09-no-asegurador", texto: "Un terremoto puede romper el nexo causal, pero no si el Estado omitió medidas preventivas razonables.", verdad: true, porque: "La fuerza mayor exige un hecho imprevisto e irresistible (art. 45 CC); si la falta de servicio contribuyó al daño, la defensa falla." },
+    { id: "m09-af-13", modulo: 9, hallazgo: "m09-licita", texto: "En Galletué el Fisco pagó porque el decreto que protegía la araucaria era ilegal.", verdad: false, porque: "El decreto era válido: se indemnizó un sacrificio especial impuesto por una actuación lícita (art. 19 N.º 20 CPR; Galletué, 1984, rol 16.743)." },
+    { id: "m09-af-14", modulo: 9, hallazgo: "m09-licita", texto: "La Corte Suprema hoy niega que la Constitución, por sí sola, establezca un sistema de responsabilidad objetiva del Estado.", verdad: true, porque: "Maullín (2010, rol 552-2008): la Constitución fija el principio; el sistema lo establece la ley (art. 42 Ley 18.575)." },
+  ],
+
+  fichas: [
+    { id: "m09-f-01", modulo: 9, frente: "Fuente de la responsabilidad del Estado", dorso: "Es constitucional: nace de los arts. 6, 7 y 38 inc. 2 CPR, no del Código Civil. Es distinta de la responsabilidad penal, civil y disciplinaria de los funcionarios.", norma: "Arts. 6, 7 y 38 inc. 2 CPR", etiqueta: "características", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-02", modulo: 9, frente: "Responsabilidad de persona jurídica y directa", dorso: "El Estado responde como organización y por sus propios hechos: no es responsabilidad por el hecho ajeno de sus funcionarios ni exige identificarlos.", norma: "Arts. 4 y 42 Ley 18.575", etiqueta: "características", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-03", modulo: 9, frente: "Régimen de derecho público con Código Civil supletorio", dorso: "El régimen es de derecho público; las normas civiles llenan vacíos, como la prescripción de cuatro años del art. 2332 CC desde Domic Bezic (2002).", norma: "Art. 2332 CC (supletorio)", etiqueta: "características", prioridad: "B", fuente: "guia-rpe" },
+    { id: "m09-f-04", modulo: 9, frente: "Responsabilidad integral", dorso: "Se repara todo el daño: emergente, lucro cesante y daño moral. Excepción: en la expropiación sólo se indemniza el daño patrimonial efectivamente causado.", norma: "Art. 19 N.º 24 CPR (excepción)", etiqueta: "características", prioridad: "B", fuente: "guia-rpe" },
+    { id: "m09-f-05", modulo: 9, frente: "¿Es objetiva la responsabilidad del Estado?", dorso: "Hoy no: la CS exige falta de servicio y descarta la responsabilidad objetiva pura. No basta la sola relación causal entre actuación y daño.", norma: "Art. 42 Ley 18.575; Domic Bezic (2002); Maullín (2010)", etiqueta: "características", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-06", modulo: 9, frente: "Art. 4 Ley 18.575", dorso: "«El Estado será responsable por los daños que causen los órganos de la Administración en el ejercicio de sus funciones, sin perjuicio de las responsabilidades que pudieren afectar al funcionario que los hubiere ocasionado.» Principio general.", norma: "Art. 4 Ley 18.575", etiqueta: "normas", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-07", modulo: 9, frente: "Art. 42 Ley 18.575", dorso: "«Los órganos de la Administración serán responsables del daño que causen por falta de servicio. No obstante, el Estado tendrá derecho a repetir en contra del funcionario que hubiere incurrido en falta personal.» Factor general de imputación.", norma: "Art. 42 Ley 18.575", etiqueta: "normas", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-08", modulo: 9, frente: "Art. 152 Ley 18.695", dorso: "Las municipalidades incurren en responsabilidad por los daños que causen, la que procede principalmente por falta de servicio; pueden repetir contra el funcionario con falta personal.", norma: "Art. 152 Ley 18.695", etiqueta: "normas", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-09", modulo: 9, frente: "Art. 38 inc. 2 CPR", dorso: "Cualquier persona lesionada en sus derechos por la Administración, sus organismos o las municipalidades puede reclamar ante los tribunales que determine la ley. Para la CS es norma de competencia, no de responsabilidad.", norma: "Art. 38 inc. 2 CPR; Domic Bezic (2002)", etiqueta: "normas", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-10", modulo: 9, frente: "Definición de falta de servicio (CS)", dorso: "Deficiencia o mal funcionamiento del servicio en relación con la conducta normal que se espera de él: no funciona debiendo hacerlo, funciona irregularmente o funciona tardíamente.", norma: "Carvajal Zamora con Fisco (2015, rol 2.732-2015)", etiqueta: "falta de servicio", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-11", modulo: 9, frente: "Elementos esenciales de la responsabilidad", dorso: "(1) Acción u omisión del órgano, incluida la inactividad cuando hay deber de actuar; (2) daño efectivo, avaluable, no reparado y probado; (3) relación de causalidad directa y necesaria.", norma: "Art. 42 Ley 18.575", etiqueta: "elementos", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-12", modulo: 9, frente: "Causalidad: teorías en Chile", dorso: "Predomina la equivalencia de las condiciones (test de supresión mental hipotética); la doctrina tiende a la causalidad adecuada, que sólo acepta la causa idónea por sí sola para producir el daño.", etiqueta: "elementos", prioridad: "B", fuente: "guia-rpe" },
+    { id: "m09-f-13", modulo: 9, frente: "Falta personal que compromete al Estado", dorso: "Si se comete en ejercicio de las funciones o con ocasión de ellas (valiéndose de medios del servicio), el Estado responde y luego repite. Si es enteramente personal y sin vínculo con el cargo, no compromete al Estado.", norma: "Art. 42 inc. 2 Ley 18.575; Morales Gamboa con Fisco (2011, rol 7.919-2008)", etiqueta: "falta personal", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-14", modulo: 9, frente: "Defensa: prescripción", dorso: "La acción indemnizatoria prescribe en cuatro años desde el hecho dañoso, por aplicación supletoria del art. 2332 CC (Domic Bezic, 2002). La Segunda Sala ha declarado imprescriptibles las acciones por violaciones de derechos humanos.", norma: "Art. 2332 CC", etiqueta: "defensas", prioridad: "S", fuente: "guia-rpe" },
+    { id: "m09-f-15", modulo: 9, frente: "Defensa: estándar medio", dorso: "No hay falta de servicio si el Estado actuó dentro del estándar razonablemente exigible según sus medios y el contexto: la Administración no es asegurador universal.", norma: "Art. 42 Ley 18.575", etiqueta: "defensas", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-16", modulo: 9, frente: "Defensa: ausencia de causalidad y fuerza mayor", dorso: "El daño vino de la víctima o de un tercero, o de un hecho imprevisto e irresistible (art. 45 CC). No basta invocar el terremoto si faltaron medidas preventivas razonables.", norma: "Art. 45 CC", etiqueta: "defensas", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-17", modulo: 9, frente: "Defensa: exposición imprudente al daño", dorso: "Si la víctima contribuyó con su propia imprudencia, la indemnización se reduce proporcionalmente; no exime al Estado.", norma: "Art. 2330 CC (aplicación analógica)", etiqueta: "defensas", prioridad: "A", fuente: "guia-rpe" },
+    { id: "m09-f-18", modulo: 9, frente: "Domic Bezic con Fisco (2002)", dorso: "Punto de inflexión: la falta de servicio del art. 42 Ley 18.575 es el factor general; el art. 38 inc. 2 CPR sólo da competencia; la acción indemnizatoria prescribe en cuatro años; la acción de nulidad, en cambio, es imprescriptible.", norma: "Rol 4.753-2001", etiqueta: "casos", prioridad: "S", fuente: "iuspublic" },
+    { id: "m09-f-19", modulo: 9, frente: "Comunidad Galletué con Fisco (1984)", dorso: "Un decreto válido prohibió explotar la araucaria: el Fisco indemniza porque el sacrificio especial rompe la igualdad ante las cargas públicas. Responsabilidad por actividad lícita.", norma: "Rol 16.743; art. 19 N.º 20 CPR", etiqueta: "casos", prioridad: "A", fuente: "iuspublic" },
+    { id: "m09-f-20", modulo: 9, frente: "Tirado con Municipalidad de La Reina (1981)", dorso: "Caída en una excavación sin señalizar: la CS hizo responder a la municipalidad con una lógica objetiva, fundada en el riesgo y la causalidad material. Hoy el mismo caso se resuelve por falta de servicio. Se cita por nombre (doctrina).", etiqueta: "casos", prioridad: "B", fuente: "iuspublic" },
+    { id: "m09-f-21", modulo: 9, frente: "Seguel Cares (2009) y Jaramillo Amoyao (2017)", dorso: "Seguel construyó la falta de servicio de las FF.AA. vía art. 2314 CC («culpa de la organización»). Jaramillo cerró el rodeo: la exclusión del art. 21 Ley 18.575 es sólo de organización; las FF.AA. responden directamente por el art. 42.", norma: "Roles 371-2008 y 52.961-2016; art. 21 Ley 18.575", etiqueta: "casos", prioridad: "A", fuente: "iuspublic" },
+    { id: "m09-f-22", modulo: 9, frente: "Antuco (Ossa Infante con Fisco, 2015)", dorso: "Falta personal de oficiales ejecutada en ejercicio del servicio: el Estado indemniza y conserva el derecho a repetir contra ellos. Se cita por nombre (doctrina).", etiqueta: "casos", prioridad: "A", fuente: "iuspublic" },
+    { id: "m09-f-23", modulo: 9, frente: "Estado juez: Espinoza Marfull con Fisco (2015)", dorso: "La CS reconoció responsabilidad por funcionamiento anormal de la Administración de Justicia fuera del ámbito penal, aplicando el derecho común (arts. 2314 y ss. CC).", norma: "Rol 4.390-2015", etiqueta: "casos", prioridad: "C", fuente: "guia-rpe" },
+  ],
+
+  quiz: [
+    { id: "m09-q-01", modulo: 9, texto: "¿Cuál es hoy el factor general de imputación de la responsabilidad de la Administración, según la Corte Suprema?", opciones: ["Responsabilidad objetiva fundada en el art. 38 inc. 2 CPR", "Dolo o culpa del funcionario (art. 2314 CC)", "Falta de servicio (art. 42 Ley 18.575)", "Daño antijurídico fundado en la igualdad ante las cargas públicas"], correcta: 2, porque: "Desde Domic Bezic (2002) la CS fijó la falta de servicio del art. 42 Ley 18.575 como factor general y descartó la responsabilidad objetiva constitucional.", norma: "Art. 42 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-02", modulo: 9, texto: "¿Cuándo se configura la falta de servicio?", opciones: ["Sólo cuando el servicio no funciona en absoluto", "Cuando no funciona debiendo hacerlo, funciona mal o funciona tarde", "Sólo cuando hay culpa grave de un funcionario identificado", "Cuando el daño proviene de un acto ilícito"], correcta: 1, porque: "La CS la define como la deficiencia o mal funcionamiento respecto de la conducta normal esperada, en esas tres hipótesis (Carvajal Zamora, 2015).", norma: "Art. 42 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-03", modulo: 9, texto: "¿Hay que identificar al funcionario que causó el daño para que responda la Municipalidad de Potestas?", opciones: ["Sí, siempre", "No: la falta de servicio es anónima; basta acreditar el mal funcionamiento", "Sí, pero sólo en municipalidades", "No, pero sólo si hay daño moral"], correcta: 1, porque: "Responde la organización; la municipalidad puede luego repetir contra el funcionario con falta personal.", norma: "Art. 152 Ley 18.695; art. 42 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-04", modulo: 9, texto: "¿Qué estableció Domic Bezic con Fisco (2002)?", opciones: ["Que la responsabilidad del Estado es objetiva e imprescriptible", "Que la falta de servicio es el factor general y la acción indemnizatoria prescribe en cuatro años", "Que el art. 38 CPR crea un sistema de responsabilidad objetiva", "Que las FF.AA. están fuera del art. 42"], correcta: 1, porque: "Domic fijó la falta de servicio, interpretó el art. 38 inc. 2 CPR como norma de competencia y aplicó los cuatro años del art. 2332 CC.", norma: "Art. 2332 CC", fuente: "guia-rpe" },
+    { id: "m09-q-05", modulo: 9, texto: "¿Cuál fallo sostuvo la tesis de la responsabilidad objetiva, constitucional e imprescriptible?", opciones: ["Domic Bezic (2002)", "Galletué (1984)", "Hexagon (1987)", "Maullín (2010)"], correcta: 2, porque: "Hexagon (1987) afirmó esa tesis sobre los arts. 6, 7, 19 N.º 20 y 24 CPR; se abandonó desde Domic (2002).", fuente: "guia-rpe" },
+    { id: "m09-q-06", modulo: 9, texto: "Un chofer municipal, en su recorrido, se pasa una luz roja y choca. ¿Quién responde ante la víctima?", opciones: ["Sólo el chofer, porque fue su imprudencia", "La Municipalidad, que después puede repetir contra el chofer", "Nadie: fue un accidente", "El Fisco, porque el chofer es funcionario público"], correcta: 1, porque: "La falta personal cometida en ejercicio del servicio compromete a la municipalidad, que conserva el derecho a repetir.", norma: "Art. 152 Ley 18.695; art. 42 inc. 2 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-07", modulo: 9, texto: "¿Cuándo la falta personal NO compromete al Estado?", opciones: ["Cuando el funcionario actuó fuera de su horario", "Cuando la falta es enteramente personal, sin vínculo con el cargo ni uso de medios del servicio", "Nunca: el Estado siempre responde", "Cuando hubo dolo"], correcta: 1, porque: "Morales Gamboa (2011): compromete al Estado la falta en ejercicio o con ocasión del servicio; la desvinculada del cargo, no.", norma: "Art. 42 inc. 2 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-08", modulo: 9, texto: "¿La responsabilidad del Estado cubre el daño moral?", opciones: ["No, sólo el daño patrimonial", "Sí, salvo en la expropiación, que se limita al daño patrimonial efectivamente causado", "Sólo si hubo dolo del funcionario", "Sí, incluso en la expropiación"], correcta: 1, porque: "La responsabilidad por falta de servicio es integral; la expropiación es la excepción (art. 19 N.º 24 CPR).", norma: "Art. 19 N.º 24 CPR", fuente: "guia-rpe" },
+    { id: "m09-q-09", modulo: 9, texto: "¿En qué consiste la defensa de exposición imprudente al daño?", opciones: ["Exime totalmente al Estado", "Reduce proporcionalmente la indemnización si la víctima contribuyó con su imprudencia", "Sólo aplica con culpa grave del funcionario", "No aplica contra el Estado"], correcta: 1, porque: "El art. 2330 CC se aplica por analogía: reduce, no elimina.", norma: "Art. 2330 CC", fuente: "guia-rpe" },
+    { id: "m09-q-10", modulo: 9, texto: "¿Qué resolvió Jaramillo Amoyao con Fisco (2017) sobre las Fuerzas Armadas?", opciones: ["Que están excluidas del régimen de falta de servicio", "Que responden directamente por falta de servicio: la exclusión del art. 21 Ley 18.575 es sólo de organización y carrera", "Que sólo responden por falta personal", "Que se rigen únicamente por normas militares"], correcta: 1, porque: "Jaramillo (rol 52.961-2016) dejó de lado el rodeo por el art. 2314 CC que usó Seguel (2009).", norma: "Arts. 21 y 42 Ley 18.575", fuente: "guia-rpe" },
+    { id: "m09-q-11", modulo: 9, texto: "¿Qué dice el art. 38 inc. 2 de la Constitución, según la lectura actual de la CS?", opciones: ["Establece la responsabilidad objetiva del Estado", "Permite a cualquier persona lesionada por la Administración reclamar ante los tribunales que determine la ley: es norma de competencia", "Fija la prescripción en cuatro años", "Consagra la falta de servicio"], correcta: 1, porque: "Desde Domic (2002) el art. 38 inc. 2 CPR se lee como atribución de competencia judicial; el sistema de responsabilidad lo fija la ley.", norma: "Art. 38 inc. 2 CPR", fuente: "guia-rpe" },
+    { id: "m09-q-12", modulo: 9, texto: "¿Qué estableció Galletué con Fisco (1984)?", opciones: ["Que el Estado no responde por actos lícitos", "Que el Estado debe indemnizar cuando un acto lícito impone un sacrificio patrimonial singular", "Que la falta de servicio es el único factor de imputación", "Que la acción prescribe en cuatro años"], correcta: 1, porque: "Un decreto válido declaró monumento natural la araucaria; el sacrificio especial de la comunidad se indemnizó por igualdad ante las cargas públicas (art. 19 N.º 20 CPR).", norma: "Art. 19 N.º 20 CPR", fuente: "guia-rpe" },
+    { id: "m09-q-13", modulo: 9, texto: "Un vecino cae en un hoyo de la vereda que llevaba semanas sin señalizar. ¿Qué norma funda la responsabilidad de la Municipalidad de Potestas?", opciones: ["Art. 2320 CC, por el hecho de sus dependientes", "Art. 152 Ley 18.695: responsabilidad municipal principalmente por falta de servicio", "Art. 19 N.º 24 CPR", "Art. 53 Ley 19.880"], correcta: 1, porque: "La municipalidad administra las veredas (art. 5 letra c) Ley 18.695) y responde por falta de servicio (art. 152).", norma: "Art. 152 Ley 18.695", fuente: "nuevo" },
+  ],
+
+  orales: [
+    {
+      id: "m09-o-01", modulo: 9,
+      pregunta: "Un vecino cae en un hoyo de la vereda sin señalizar y demanda a la Municipalidad de Potestas. ¿Responde la municipalidad y en qué términos?",
+      profesor: "Jueza del Juzgado Civil",
+      claves: ["falta de servicio, art. 152 Ley 18.695", "la vereda la administra la municipalidad", "no hay que identificar al funcionario", "daño efectivo y causalidad", "estándar medio: no es asegurador", "exposición imprudente reduce (2330 CC)", "prescripción de 4 años (2332 CC)"],
+      trampas: ["responsabilidad objetiva: basta el daño", "sólo responde el funcionario de obras", "la acción es imprescriptible", "se aplica el art. 2320 CC por el hecho ajeno", "hay que demandar al Fisco, no a la municipalidad"],
+      modelo: "Sí. Las municipalidades responden por los daños que causan, principalmente por falta de servicio (art. 152 Ley 18.695), y la vereda es un bien nacional de uso público que ellas administran (art. 5 letra c)). Un hoyo sin señalizar durante semanas es un servicio que funcionó mal o tarde; no hace falta identificar al funcionario. El vecino debe probar el daño y la causalidad, y la municipalidad puede alegar que cumplió el estándar exigible, la exposición imprudente de la víctima (art. 2330 CC) o la prescripción de cuatro años (art. 2332 CC).",
+      repregunta: "¿Qué cambia si el vecino cruzó la obra saltando la barrera que la cerraba?",
+      prioridad: "S", fuente: "nuevo",
+    },
+    {
+      id: "m09-o-02", modulo: 9,
+      pregunta: "¿Responde el Estado por los daños causados por las Fuerzas Armadas, pese al art. 21 de la Ley 18.575?",
+      profesor: "Prof. Aldunate",
+      claves: ["art. 21 excluye sólo organización y carrera", "art. 42: falta de servicio", "Jaramillo Amoyao (2017)", "Seguel (2009) usaba el 2314 CC", "culpa de la organización", "falta personal con ocasión del servicio compromete", "derecho a repetir"],
+      trampas: ["las FF.AA. nunca responden", "responden sólo con normas militares", "se exige identificar al uniformado culpable", "la responsabilidad es objetiva"],
+      modelo: "Sí. Tras Jaramillo Amoyao (2017) la Corte Suprema estableció que la exclusión del art. 21 Ley 18.575 es sólo de organización y carrera, no del régimen de responsabilidad; las FF.AA. responden directamente por falta de servicio (art. 42), sin recurrir al art. 2314 CC como hacía Seguel (2009) con la «culpa de la organización». Si la falta es personal pero se cometió en ejercicio o con ocasión del servicio, el Estado igual responde y conserva el derecho a repetir, como en Antuco.",
+      repregunta: "Si la falta es personal del uniformado, ¿cuándo igual responde el Estado?",
+      prioridad: "S", fuente: "iuspublic",
+    },
+  ],
+
+  columnas: [
+    {
+      id: "m09-c-01", modulo: 9,
+      titulo: "¿Código Civil o responsabilidad del Estado?",
+      izq: "Responsabilidad civil (CC)", der: "Responsabilidad del Estado",
+      items: [
+        { texto: "Dolo o culpa del agente", lado: 0, porque: "Arts. 2314 y ss. CC." },
+        { texto: "Falta de servicio, sin identificar al funcionario", lado: 1, porque: "Art. 42 Ley 18.575." },
+        { texto: "Responsabilidad por el hecho ajeno (art. 2320 CC)", lado: 0, porque: "El empresario responde por sus dependientes." },
+        { texto: "Responsabilidad directa de la persona jurídica", lado: 1, porque: "El Estado responde por sus propios hechos (art. 4 Ley 18.575)." },
+        { texto: "Hay que probar la culpa del autor", lado: 0 },
+        { texto: "Basta probar que el servicio funcionó mal o tarde", lado: 1 },
+        { texto: "Fuente: arts. 6, 7 y 38 CPR", lado: 1 },
+        { texto: "Fuente: arts. 2314 y siguientes del Código Civil", lado: 0 },
+        { texto: "Derecho a repetir contra el funcionario con falta personal", lado: 1, porque: "Art. 42 inc. 2 Ley 18.575." },
+        { texto: "Régimen de derecho privado", lado: 0 },
+      ],
+      norma: "Arts. 4 y 42 Ley 18.575; arts. 2314 y 2320 CC", fuente: "guia-rpe",
+    },
+  ],
+
+  cadenas: [
+    {
+      id: "m09-k-01", modulo: 9,
+      titulo: "Seis períodos: de la irresponsabilidad a la falta de servicio",
+      pasos: [
+        "Derecho público: Ábalos con Fisco (1889) indemniza daños causados en beneficio de la comunidad",
+        "Irresponsabilidad: Mario Granja con Fisco (1938), el Estado no responde por sus funcionarios",
+        "Normas civiles: actos de gestión sí, actos de autoridad no (Rettig con Fisco, 1941)",
+        "Autoridad ilícita: los actos de autoridad ilícitos generan responsabilidad (Becker con Fisco, 1964)",
+        "Daño injusto y responsabilidad objetiva: Galletué (1984), Hexagon (1987)",
+        "Falta de servicio: Domic Bezic (2002), Maullín (2010), Jaramillo (2017)",
+      ],
+      nota: "La fecha que importa es 2002: desde Domic la regla es la falta de servicio y la acción indemnizatoria prescribe en cuatro años.",
+      norma: "Art. 42 Ley 18.575", fuente: "guia-rpe",
+    },
+  ],
+
+  expedientes: [
+    {
+      id: "m09-exp-hoyo", modulo: 9,
+      titulo: "El hoyo de calle Potestades",
+      relato: "Doña Clotilde llega con el tobillo enyesado y una demanda: cayó en un hoyo de la vereda de calle Potestades, abierto por una reparación municipal y sin señal ni cierre durante tres semanas. La Alcaldesa Ruperta Cañas pregunta si «esto se paga».",
+      documento: { tipo: "Demanda de indemnización de perjuicios", campos: [
+        { k: "Demandante", v: "Clotilde Barraza, vecina" },
+        { k: "Demandada", v: "Municipalidad de Potestas" },
+        { k: "Hecho", v: "Caída en excavación de vereda sin señalización ni cierre, tres semanas abierta" },
+        { k: "Daño", v: "Fractura de tobillo; gastos médicos y 40 días sin trabajar" },
+        { k: "Fundamento", v: "Art. 152 Ley 18.695; art. 42 Ley 18.575" },
+        { k: "Fecha del hecho", v: "Hace cinco meses" },
+      ] },
+      pregunta: "¿Qué le informas a la Alcaldesa?",
+      sellos: [
+        { texto: "HAY FALTA DE SERVICIO", correcto: true, porque: "La municipalidad administra la vereda (art. 5 letra c) Ley 18.695) y un hoyo sin señalizar tres semanas es un servicio que funcionó mal o tarde: responde por falta de servicio (art. 152 Ley 18.695), con daño y causalidad acreditables." },
+        { texto: "NO RESPONDE: FALTA IDENTIFICAR AL FUNCIONARIO", correcto: false, porque: "La falta de servicio es anónima; responde la organización (art. 42 Ley 18.575)." },
+        { texto: "RESPONSABILIDAD OBJETIVA: PAGAR SIN DISCUTIR", correcto: false, porque: "La CS exige falta de servicio, daño y causalidad; aquí concurren, pero no porque la responsabilidad sea objetiva (Domic Bezic, 2002)." },
+        { texto: "FUERZA MAYOR", correcto: false, porque: "Un hoyo abierto por la propia municipalidad no es un hecho imprevisto e irresistible (art. 45 CC)." },
+      ],
+      norma: "Art. 152 Ley 18.695; art. 42 Ley 18.575", fuente: "nuevo", hallazgo: "m09-falta-servicio",
+    },
+    {
+      id: "m09-exp-camion", modulo: 9,
+      titulo: "El camión de la basura",
+      relato: "Don Lalo Fuentes, Director de Aseo, trae el parte: el camión recolector, en su recorrido de la mañana, se pasó una luz roja y chocó el auto de un vecino. «El chofer es el responsable, no nosotros», dice.",
+      documento: { tipo: "Parte de accidente y reclamo del vecino", campos: [
+        { k: "Vehículo", v: "Camión recolector municipal PT-1032, en recorrido oficial" },
+        { k: "Conductor", v: "Funcionario de planta, en horario de servicio" },
+        { k: "Causa", v: "Cruzó con luz roja según Carabineros" },
+        { k: "Daño", v: "Auto del vecino con pérdida total; sin lesionados" },
+        { k: "Pide", v: "Que la municipalidad pague el auto" },
+      ] },
+      pregunta: "¿Quién responde ante el vecino?",
+      sellos: [
+        { texto: "LA MUNICIPALIDAD RESPONDE Y REPITE CONTRA EL CHOFER", correcto: true, porque: "La falta personal cometida en ejercicio del servicio compromete a la municipalidad; después puede repetir contra el funcionario (art. 152 Ley 18.695; art. 42 inc. 2 Ley 18.575; Morales Gamboa, 2011)." },
+        { texto: "SÓLO RESPONDE EL CHOFER", correcto: false, porque: "Eso vale sólo para la falta enteramente personal, sin vínculo con el servicio; aquí iba en el camión municipal y en su recorrido." },
+        { texto: "NO HAY DAÑO INDEMNIZABLE", correcto: false, porque: "La pérdida total del auto es daño emergente efectivo y avaluable." },
+        { texto: "PRESCRITA", correcto: false, porque: "El hecho es de esta mañana: los cuatro años del art. 2332 CC recién empiezan." },
+      ],
+      norma: "Art. 152 Ley 18.695; art. 42 inc. 2 Ley 18.575", fuente: "nuevo", hallazgo: "m09-falta-personal",
+    },
+    {
+      id: "m09-exp-prescrita", modulo: 9,
+      titulo: "La demanda que llegó tarde",
+      relato: "Llega una demanda por la caída de un árbol municipal sobre un auto. El hecho ocurrió hace cinco años y dos meses; no hubo reclamos ni gestiones antes. El abogado de la vecina dice que «contra el Estado no hay prescripción».",
+      documento: { tipo: "Demanda de indemnización de perjuicios", campos: [
+        { k: "Hecho", v: "Caída de árbol de la plaza sobre vehículo estacionado" },
+        { k: "Fecha del hecho", v: "Hace cinco años y dos meses" },
+        { k: "Gestiones previas", v: "Ninguna" },
+        { k: "Fundamento", v: "Art. 38 inc. 2 CPR: «responsabilidad constitucional e imprescriptible»" },
+        { k: "Monto", v: "$ 9.800.000" },
+      ] },
+      pregunta: "¿Qué excepción opones primero?",
+      sellos: [
+        { texto: "PRESCRIPCIÓN: 4 AÑOS, ART. 2332 CC", correcto: true, porque: "Desde Domic Bezic (2002) la CS aplica supletoriamente el art. 2332 CC: cuatro años desde el hecho dañoso. Pasaron más de cinco sin interrupción." },
+        { texto: "IMPRESCRIPTIBLE POR SER CONSTITUCIONAL", correcto: false, porque: "Esa era la tesis de Hexagon (1987), abandonada desde 2002; el art. 38 inc. 2 CPR es norma de competencia." },
+        { texto: "PRESCRIBE EN 5 AÑOS, ART. 2515 CC", correcto: false, porque: "La acción indemnizatoria extracontractual prescribe en cuatro años (art. 2332 CC), no en el plazo ordinario de cinco." },
+        { texto: "HAY FALTA DE SERVICIO: PAGAR", correcto: false, porque: "Antes de discutir el fondo, la acción ya está prescrita." },
+      ],
+      norma: "Art. 2332 CC; Domic Bezic con Fisco (2002, rol 4.753-2001)", fuente: "nuevo", hallazgo: "m09-prescripcion",
+    },
+    {
+      id: "m09-exp-valido", modulo: 9,
+      titulo: "El permiso denegado",
+      relato: "Un comerciante demanda «lucro cesante» porque la municipalidad le denegó un permiso para instalar un carro de comida en la plaza. El decreto está fundado en el informe negativo de Tránsito y fue notificado en plazo. La Alcaldesa teme «otro juicio perdido».",
+      documento: { tipo: "Decreto alcaldicio N.º 77 (denegatorio) y demanda", campos: [
+        { k: "Órgano", v: "Alcaldesa de Potestas" },
+        { k: "Dispone", v: "Deniega permiso de ocupación de bien nacional de uso público" },
+        { k: "Motivo", v: "Informe de Tránsito: el punto obstruye el cruce peatonal" },
+        { k: "Notificado el", v: "A los tres días de dictado" },
+        { k: "Recursos", v: "No se interpuso ninguno" },
+        { k: "Demanda", v: "Lucro cesante por «negocio frustrado»" },
+      ] },
+      pregunta: "¿Qué sello le pones?",
+      sellos: [
+        { texto: "VÁLIDO: SIN FALTA DE SERVICIO", correcto: true, porque: "Un acto legal, fundado y notificado no es un servicio que funcione mal: no hay falta de servicio ni daño antijurídico (art. 42 Ley 18.575; art. 152 Ley 18.695). Denegar conforme a derecho no se indemniza." },
+        { texto: "HAY FALTA DE SERVICIO: EL VECINO PERDIÓ PLATA", correcto: false, porque: "Perder una expectativa de negocio por una decisión legal no es daño causado por mal funcionamiento del servicio." },
+        { texto: "RESPONSABILIDAD POR ACTIVIDAD LÍCITA (GALLETUÉ)", correcto: false, porque: "Galletué exige un sacrificio patrimonial especial sobre un derecho existente; aquí no había derecho al permiso, sólo una solicitud." },
+        { texto: "INVALIDAR EL DECRETO Y PAGAR", correcto: false, porque: "No hay vicio que invalidar (art. 53 Ley 19.880): el decreto está motivado y dentro de la competencia municipal." },
+      ],
+      norma: "Art. 42 Ley 18.575; art. 152 Ley 18.695", fuente: "nuevo", hallazgo: "m09-no-asegurador",
+    },
+    {
+      id: "m09-exp-personal", modulo: 9,
+      titulo: "La pelea del domingo",
+      relato: "Un vecino demanda a la municipalidad porque un inspector municipal, en su día libre, con su auto particular y por una discusión de estacionamiento frente a su casa, le rompió el espejo del auto. «Es funcionario, así que paga el municipio», dice.",
+      documento: { tipo: "Demanda de indemnización de perjuicios", campos: [
+        { k: "Demandado", v: "Municipalidad de Potestas" },
+        { k: "Autor del hecho", v: "Inspector municipal, fuera de turno" },
+        { k: "Circunstancias", v: "Domingo, auto particular, discusión privada de vecinos" },
+        { k: "Medios del servicio", v: "Ninguno" },
+        { k: "Daño", v: "Espejo lateral, $ 180.000" },
+      ] },
+      pregunta: "¿Responde la municipalidad?",
+      sellos: [
+        { texto: "FALTA PERSONAL SIN VÍNCULO: NO RESPONDE LA MUNICIPALIDAD", correcto: true, porque: "La falta enteramente personal, fuera del cargo, sin medios del servicio y sin relación con sus funciones, no compromete al Estado (art. 42 inc. 2 Ley 18.575; Morales Gamboa, 2011). Que demande al inspector." },
+        { texto: "RESPONDE Y DESPUÉS REPITE", correcto: false, porque: "Eso aplica a la falta cometida en ejercicio o con ocasión del servicio; aquí no hay servicio de por medio." },
+        { texto: "HAY FALTA DE SERVICIO POR MALA SELECCIÓN DEL PERSONAL", correcto: false, porque: "No hay deficiencia del servicio municipal en una pelea privada de un domingo." },
+        { texto: "RESPONDE POR EL HECHO AJENO, ART. 2320 CC", correcto: false, porque: "El régimen del Estado es directo, no por el hecho ajeno, y además el hecho no ocurrió en sus funciones ni bajo su cuidado." },
+      ],
+      norma: "Art. 42 inc. 2 Ley 18.575; art. 152 Ley 18.695", fuente: "nuevo", hallazgo: "m09-falta-personal",
+    },
+    {
+      id: "m09-exp-imprudente", modulo: 9,
+      titulo: "La zanja a oscuras",
+      relato: "Otro hoyo, otra caída: esta vez la zanja tenía conos y cinta de día, pero de noche quedó sin luz ni cierre. El vecino cruzó por ahí a oscuras, mirando el celular, y cayó. El abogado del CDE que asesora al municipio dice «culpa exclusiva de la víctima».",
+      documento: { tipo: "Informe de la Dirección de Obras y demanda", campos: [
+        { k: "Obra", v: "Zanja de alcantarillado en calle Juridicidad" },
+        { k: "Señalización", v: "Conos y cinta; sin iluminación ni cierre nocturno" },
+        { k: "Hecho", v: "Caída a las 23:40, vecino caminando con el celular" },
+        { k: "Daño", v: "Fractura de muñeca" },
+        { k: "Fecha del hecho", v: "Hace dos meses" },
+      ] },
+      pregunta: "¿Cómo lo calificas?",
+      sellos: [
+        { texto: "FALTA DE SERVICIO CON REDUCCIÓN POR EXPOSICIÓN IMPRUDENTE", correcto: true, porque: "Dejar una zanja sin luz ni cierre de noche es un servicio que funcionó mal (art. 152 Ley 18.695); la imprudencia de la víctima reduce la indemnización, no la elimina (art. 2330 CC)." },
+        { texto: "CULPA EXCLUSIVA DE LA VÍCTIMA: NO RESPONDE", correcto: false, porque: "La imprudencia del vecino no borra la omisión municipal; sólo reduce el monto (art. 2330 CC)." },
+        { texto: "PAGAR TODO: EL MUNICIPIO ES RESPONSABLE OBJETIVO", correcto: false, porque: "No hay responsabilidad objetiva y la exposición imprudente debe descontarse." },
+        { texto: "PRESCRITA", correcto: false, porque: "Dos meses están lejos de los cuatro años del art. 2332 CC." },
+      ],
+      norma: "Art. 152 Ley 18.695; art. 2330 CC", fuente: "nuevo", hallazgo: "m09-no-asegurador",
+    },
+  ],
+};
+
+// PENDIENTE DE REVISIÓN: Tirado con Municipalidad de La Reina (1981), Hexagon con Fisco (1987),
+// Antuco (Ossa Infante con Fisco, 2015) y Figueroa Gallardo (2002) se citan por nombre y año según los
+// apuntes, sin rol (doctrina). Los roles de Ábalos (5.185), Galletué (16.743), Quintana con SAG
+// (2.213-2000), Domic Bezic (4.753-2001), Maullín (552-2008), Seguel (371-2008), Morales Gamboa
+// (7.919-2008), Esquerré (4.043-2013), Espinoza Marfull (4.390-2015), Carvajal Zamora (2.732-2015) y
+// Jaramillo Amoyao (52.961-2016) vienen de guia-rpe y no se contrastaron con el Poder Judicial.
+// La imprescriptibilidad de las acciones por violaciones de DD.HH. (Segunda Sala) se cita sin rol.
+// Las teorías de la causalidad y el estándar medio son doctrina/jurisprudencia sin norma expresa.

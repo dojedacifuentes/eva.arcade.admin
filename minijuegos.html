@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#1b1420" />
+  <title>POTESTAS · Banco de pruebas de minijuegos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Pixelify+Sans:wght@500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/estilos.css" />
+  <style>
+    /* Sólo para esta página de desarrollo: un fondo con algo de ciudad y el panel de lanzadores. */
+    #juego { background: radial-gradient(120% 90% at 50% 20%, #4a3a5c, #1b1420 70%), #1b1420; }
+    #juego::after { content: ""; position: absolute; inset: 0; opacity: 0.25; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 16px, transparent 16px 32px), repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 16px, transparent 16px 32px); }
+    #banco { position: fixed; inset: 0; overflow: auto; touch-action: pan-y; display: grid; place-items: center; padding: 16px; }
+    .banco-hoja { width: min(520px, 100%); background: var(--papel); border: 3px solid var(--borde); border-radius: 16px; padding: 16px; box-shadow: 0 6px 0 var(--borde); display: flex; flex-direction: column; gap: 10px; }
+    .banco-hoja h1 { margin: 0; font-family: var(--pixel); font-size: 22px; }
+    .banco-hoja p { margin: 0; font-size: 14px; opacity: 0.75; }
+    .banco-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .banco-botones .boton { width: 100%; }
+    .banco-op { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+    .banco-op label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+    #banco-res { margin: 0; min-height: 1.4em; font: 13px/1.4 ui-monospace, monospace; white-space: pre-wrap; background: #f3e6cf; border-radius: 8px; padding: 6px 8px; }
+  </style>
+</head>
+<body>
+  <div id="juego"></div>
+  <div id="banco">
+    <div class="banco-hoja">
+      <h1>Minijuegos · banco de pruebas</h1>
+      <p>Datos del banco de contenido (src/content/banco) o, si falta un módulo, ejemplos de muestra.</p>
+      <div class="banco-botones">
+        <button class="boton" data-j="mesa">La Mesa</button>
+        <button class="boton" data-j="cadena">La Cadena</button>
+        <button class="boton" data-j="columnas">Columnas</button>
+        <button class="boton" data-j="duelo">El Duelo</button>
+        <button class="boton" data-j="comision">La Comisión</button>
+        <button class="boton" data-j="reiniciar">Partida nueva</button>
+      </div>
+      <div class="banco-op">
+        <label><input type="checkbox" data-a="modoHistoria" /> Modo historia</label>
+        <label><input type="checkbox" data-a="menosMovimiento" /> Menos movimiento</label>
+        <label><input type="checkbox" data-a="letraGrande" /> Letra grande</label>
+        <label><input type="checkbox" data-a="contraste" /> Contraste</label>
+        <label><input type="checkbox" id="banco-hallazgo" checked /> Hallazgo al acertar (Mesa)</label>
+      </div>
+      <pre id="banco-res" aria-live="polite"></pre>
+    </div>
+  </div>
+  <div id="luz" aria-hidden="true"></div>
+
+  <div id="ui">
+    <header id="hud" hidden>
+      <div class="hud-izq">
+        <div class="hud-chip"><span id="hud-fecha"></span><span class="hud-sep">·</span><span id="hud-hora"></span></div>
+        <div id="objetivo" hidden><span class="objetivo-marca">★</span><span id="objetivo-texto"></span><button id="objetivo-ir" hidden aria-label="Ir directo">Ir ›</button></div>
+      </div>
+      <div class="hud-der">
+        <div class="hud-chip hud-dinero"><span class="moneda" aria-hidden="true"></span><span id="hud-dinero">$0</span></div>
+        <button id="hud-nivel" class="hud-boton" aria-label="Nivel"><span class="nivel-ico">⚖</span><span class="nivel-n">1</span></button>
+        <button id="hud-expediente" class="hud-boton" aria-label="Expediente">📁</button>
+        <button id="hud-sonido" class="hud-boton" aria-label="Sonido">♪</button>
+        <button id="hud-ajustes" class="hud-boton" aria-label="Ajustes">⚙</button>
+      </div>
+    </header>
+
+    <div id="meta-borde" hidden aria-hidden="true">➜</div>
+    <div id="ayuda" hidden></div>
+    <div id="indicador" hidden><span class="tecla">A</span><span id="indicador-texto"></span></div>
+
+    <aside id="telefono" hidden>
+      <img id="telefono-retrato" alt="" hidden />
+      <div><strong id="telefono-de"></strong><p id="telefono-texto"></p></div>
+    </aside>
+
+    <section id="dialogo" hidden role="dialog" aria-live="polite">
+      <img id="dialogo-retrato" alt="" hidden />
+      <div id="dialogo-eva" hidden><span id="simbolo-eva"></span></div>
+      <div class="dialogo-cuerpo">
+        <div id="dialogo-nombre"></div>
+        <p id="dialogo-texto"></p>
+      </div>
+      <span id="dialogo-sigue" aria-hidden="true">▼</span>
+      <button id="dialogo-saltar" hidden aria-label="Saltar el resto de la conversación">Saltar ⏭</button>
+    </section>
+
+    <div id="elecciones" hidden role="listbox"></div>
+
+    <div id="hallazgo" hidden>
+      <div class="hallazgo-carta">
+        <div class="hallazgo-cinta">Hallazgo jurídico</div>
+        <h3 id="hallazgo-titulo"></h3>
+        <p id="hallazgo-texto"></p>
+        <p id="hallazgo-norma"></p>
+        <p id="hallazgo-simple"></p>
+        <div id="hallazgo-pillaste" hidden>
+          <p class="pillaste-titulo">¿Lo pillaste? <small>(opcional)</small></p>
+          <p id="pillaste-texto"></p>
+          <div class="pillaste-botones"><button data-v="1">Verdadero <small>1</small></button><button data-v="0">Falso <small>2</small></button></div>
+          <p id="pillaste-resultado" aria-live="polite"></p>
+        </div>
+        <small id="hallazgo-cuenta"></small>
+        <span class="hallazgo-sigue">Toca para guardarlo en tu expediente</span>
+      </div>
+    </div>
+
+    <div id="mesa" hidden>
+      <div class="mesa-hoja">
+        <h3 id="mesa-titulo"></h3>
+        <div class="mesa-medidores">
+          <div id="medidor-hijo" class="medidor"><img alt="" /><div><b></b><span class="barra"><i></i></span></div><span class="cara"></span></div>
+          <div id="medidor-otro" class="medidor"><img alt="" /><div><b></b><span class="barra"><i></i></span></div><span class="cara"></span></div>
+        </div>
+        <div id="mesa-cuerpo"></div>
+        <p id="mesa-consejo"></p>
+        <button id="mesa-ok" class="boton grande"></button>
+      </div>
+    </div>
+    <div id="tiempo" hidden><p id="tiempo-texto"></p><p id="tiempo-sub"></p><p id="tiempo-dato" hidden></p></div>
+
+    <div id="expediente" hidden>
+      <div class="expediente-hoja">
+        <header><h2>Tu expediente</h2><button id="expediente-cerrar" aria-label="Cerrar">✕</button></header>
+        <div id="expediente-lista"></div>
+      </div>
+    </div>
+
+    <div id="pantalla" hidden></div>
+  </div>
+
+  <script type="module" src="/src/dev/minijuegos.ts"></script>
+</body>
+</html>
