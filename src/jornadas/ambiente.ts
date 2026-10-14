@@ -18,7 +18,7 @@ const GUARDIA: Apariencia = { piel: "#f7d7bd", pelo: "#5c3423", peinado: "corto"
 const SENORA: Apariencia = { piel: "#5f3b27", pelo: "#2b2026", peinado: "rizado", polera: "#f0b44c", pantalon: "#5c3423" };
 
 const VECINOS: Vecino[] = [
-  { id: "amb-palomas", nombre: "Don Efraín", a: PALOMA, mapa: "ciudad", punto: "vecino-4", dir: "izquierda", dice: (j) => [
+  { id: "amb-palomas", nombre: "Don Efraín", a: PALOMA, mapa: "ciudad", punto: "amb-2", dir: "izquierda", dice: (j) => [
     "Cuarenta años dándole de comer a las palomas. Ninguna ordenanza me ha parado. Todavía.",
     "Dicen que la Alcaldesa firma rápido. Yo firmo lento y me va igual.",
     "Si un decreto no dice por qué, ¿es como un chiste sin remate?",
@@ -32,7 +32,7 @@ const VECINOS: Vecino[] = [
     "El Tribunal Constitucional. Diez personas leyendo la misma ley. Qué paciencia.",
     "La avenida nueva. Ojalá le paguen bien a la Rosita.",
   ][j - 1] },
-  { id: "amb-estudiante", nombre: "Catalina", a: ESTUDIANTE, mapa: "ciudad", punto: "vecino-1", dir: "derecha", dice: (j) => [
+  { id: "amb-estudiante", nombre: "Catalina", a: ESTUDIANTE, mapa: "ciudad", punto: "amb-1", dir: "abajo", dice: (j) => [
     "Estudio Derecho. Primer año. «El Estado sólo puede lo que la ley le permite.» Ya me lo sé.",
     "Órgano, investidura, competencia. Lo repito en la ducha.",
     "Invalidar o revocar. Mi profe dice que es la pregunta favorita del examen.",
@@ -46,7 +46,7 @@ const VECINOS: Vecino[] = [
     "Inaplicabilidad: para un caso. Inconstitucionalidad: para todos. ¿Ves? Sí sé.",
     "Expropiación: con ley, con causa y con cheque. ¿Vas a la Corte? Te acompaño a mirar.",
   ][j - 1] },
-  { id: "amb-cartero", nombre: "El cartero", a: CARTERO, mapa: "ciudad", punto: "paradero", dir: "abajo", dice: (j) => [
+  { id: "amb-cartero", nombre: "El cartero", a: CARTERO, mapa: "ciudad", punto: "amb-3", dir: "abajo", dice: (j) => [
     "Traigo cuarenta decretos para la Oficina de Partes. Ninguno dice «urgente». Todos lo son.",
     "Una notificación por carta certificada. Al tercer día hábil ya está notificada, ¿sabía?",
     "Llevo veinte años repartiendo actos administrativos. Ni uno me ha dado las gracias.",

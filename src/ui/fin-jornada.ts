@@ -35,12 +35,20 @@ export function finJornada(n: number, titulo: string, antes: Foto, estrellas: nu
     ${nuevosH.length ? `<h3>Lo que aprendiste</h3>${lista(nuevosH.map((h) => h.titulo))}` : ""}
     ${nuevosP.length ? `<h3>Papeles nuevos en tu cajón</h3>${lista(nuevosP.map((p) => p.titulo))}` : ""}
     ${nuevosL.length ? `<h3>Logros</h3>${lista(nuevosL.map((l) => `${l.icono} ${l.titulo}`))}` : ""}
+    <div class="fc-compartir"><code></code><button class="boton" data-c="1">📋 Copiar</button></div>
     <div class="fc-botones">${conDesafio ? `<button class="boton grande" data-r="desafio">⚡ Desafío rápido</button>` : ""}<button class="boton${conDesafio ? "" : " grande"}" data-r="seguir">${ultima ? "Ver el final ›" : "Siguiente jornada ›"}</button></div>
   </div>`;
   raiz.querySelector("h2")!.textContent = titulo;
   // Textos con textContent (sin HTML de por medio).
   const textos = [...nuevosH.map((h) => h.titulo), ...nuevosP.map((p) => p.titulo), ...nuevosL.map((l) => `${l.icono} ${l.titulo}`)];
   raiz.querySelectorAll("li").forEach((li, i) => { li.textContent = textos[i]; });
+  const linea = `POTESTAS · Jornada ${n} · ${"★".repeat(estrellas)}${"☆".repeat(3 - estrellas)} · +${saber} Saber · ${nuevosH.length} hallazgos`;
+  raiz.querySelector(".fc-compartir code")!.textContent = linea;
+  raiz.querySelector<HTMLButtonElement>("[data-c]")!.addEventListener("click", async (ev) => {
+    const b = ev.currentTarget as HTMLButtonElement;
+    try { await navigator.clipboard.writeText(linea); b.textContent = "¡Copiado!"; } catch { b.textContent = "Cópialo a mano"; }
+    sonido.efecto("cobrar");
+  });
   document.getElementById("ui")!.append(raiz);
   sonido.efecto("hallazgo");
   confeti(innerWidth / 2, innerHeight * 0.25, 60);

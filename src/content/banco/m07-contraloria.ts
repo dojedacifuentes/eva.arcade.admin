@@ -199,6 +199,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "El oficio que la Alcaldesa quiere ignorar",
       relato: "Llega un oficio de la Contraloría Regional con un dictamen: la asignación que la Municipalidad paga a tres jefaturas no procede. La Alcaldesa Ruperta Cañas te dice: «Es la opinión del Contralor; nosotros tenemos la nuestra».",
       documento: { tipo: "Oficio de la Contraloría Regional", campos: [ { k: "Órgano", v: "Contraloría Regional" }, { k: "Materia", v: "Dictamen sobre procedencia de asignación a jefaturas municipales" }, { k: "Concluye", v: "La asignación no procede; debe cesar su pago" }, { k: "Origen", v: "Consulta de un concejal" }, { k: "Fundamento", v: "Arts. 6 y 9 Ley 10.336" } ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones al oficio?",
       sellos: [
         { texto: "ARCHIVAR: es una opinión no vinculante", correcto: false, porque: "Los informes del Contralor son obligatorios para los funcionarios en el caso concreto (art. 9 inc. final Ley 10.336)." },
@@ -213,6 +214,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "Decreto rumbo a toma de razón",
       relato: "La Jefa de Partes, Rosa Tapia, tiene listo un sobre para la Contraloría: un decreto alcaldicio que nombra a un jefe de departamento, «para su toma de razón, como corresponde».",
       documento: { tipo: "Decreto alcaldicio", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Nombra jefe del Departamento de Aseo" }, { k: "Afecta a", v: "Un funcionario municipal" }, { k: "Trámite propuesto", v: "Envío a Contraloría para toma de razón" } ] },
+      vicio: "Trámite propuesto",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "A TOMA DE RAZÓN: nombra a un funcionario", correcto: false, porque: "Las resoluciones municipales están exentas de toma de razón (art. 53 Ley 18.695)." },
@@ -226,6 +228,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "Jerárquico contra la Alcaldesa",
       relato: "Don Aurelio Pinto presenta un «recurso jerárquico» contra un decreto de la Alcaldesa, dirigido al Delegado Presidencial Regional, «que es su jefe». Lo presentó a los tres días de notificado.",
       documento: { tipo: "Recurso jerárquico", campos: [ { k: "Contra", v: "Decreto alcaldicio que deniega permiso de feria" }, { k: "Dirigido a", v: "Delegado Presidencial Regional" }, { k: "Presentado", v: "Al tercer día hábil desde la notificación" }, { k: "Pide", v: "Que el superior deje sin efecto el decreto" } ] },
+      vicio: "Dirigido a",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "ELEVAR AL DELEGADO PRESIDENCIAL", correcto: false, porque: "El alcalde no tiene superior jerárquico para estos efectos: no procede jerárquico contra sus actos (art. 59 Ley 19.880)." },
@@ -240,6 +243,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "Reposición en regla",
       relato: "La señora Marta Quilodrán presenta reposición contra el decreto que le negó la patente, ante la Alcaldesa, al cuarto día hábil. Pide dejarlo sin efecto y acompaña documentos nuevos.",
       documento: { tipo: "Recurso de reposición", campos: [ { k: "Contra", v: "Decreto alcaldicio que deniega patente comercial" }, { k: "Ante", v: "Alcaldesa Ruperta Cañas (mismo órgano)" }, { k: "Presentado", v: "Cuarto día hábil desde la notificación" }, { k: "Pide", v: "Dejar sin efecto el decreto y otorgar la patente" }, { k: "Acompaña", v: "Certificado de recepción final de obras" } ] },
+      vicio: null,
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "ADMITIR: resolver en no más de 30 días", correcto: true, porque: "Reposición dentro de cinco días ante el mismo órgano que dictó el acto; la autoridad tiene un plazo no superior a 30 días para resolver y puede modificar, reemplazar o dejar sin efecto el acto (art. 59 Ley 19.880)." },
@@ -254,6 +258,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "Revisión catorce meses después",
       relato: "Un vecino pide la revisión de un decreto firme por «manifiesto error de hecho»: dice que la Dirección de Obras midió mal su terreno. El decreto se dictó hace catorce meses.",
       documento: { tipo: "Recurso extraordinario de revisión", campos: [ { k: "Contra", v: "Decreto alcaldicio firme sobre línea de edificación" }, { k: "Causal invocada", v: "Letra b): manifiesto error de hecho determinante" }, { k: "Dictado hace", v: "14 meses" }, { k: "Ante", v: "Alcaldesa (no hay superior jerárquico)" }, { k: "Sentencia judicial", v: "No hay" } ] },
+      vicio: "Dictado hace",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "ADMITIR: el error de hecho es causal", correcto: false, porque: "La causal existe, pero el plazo de un año en la letra b) se cuenta desde el día siguiente a la dictación, y ya pasaron catorce meses (art. 60 Ley 19.880)." },
@@ -268,6 +273,7 @@ export const BANCO_M07: BancoModulo = {
       titulo: "Invalidar lo de hace tres años",
       relato: "La unidad de control interno detectó que un permiso de edificación otorgado hace dos años y tres meses era ilegal: lo firmó un funcionario sin facultades. La Alcaldesa quiere invalidarlo hoy.",
       documento: { tipo: "Proyecto de decreto invalidatorio", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Invalida permiso de edificación" }, { k: "Vicio", v: "Firmado por funcionario sin competencia" }, { k: "Permiso notificado hace", v: "2 años y 3 meses" }, { k: "Audiencia del interesado", v: "Programada" } ] },
+      vicio: "Permiso notificado hace",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "INVALIDAR: el vicio es grave", correcto: false, porque: "La potestad invalidatoria debe ejercerse dentro de dos años desde la notificación o publicación; vencido el plazo, no procede por esta vía (art. 53 Ley 19.880)." },

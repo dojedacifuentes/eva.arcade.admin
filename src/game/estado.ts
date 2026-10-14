@@ -33,6 +33,8 @@ export type Estado = {
   mesa?: { resueltos: number; aciertos: number; mejorRacha: number };
   /** Repaso espaciado: por afirmación, cuántas veces se vio, cuántas se falló y cuándo toca de nuevo. */
   repaso?: Record<string, { vistos: number; fallos: number; prox: number }>;
+  /** Consecuencias: confianza de los vecinos y respaldo de la Alcaldesa (0 a 100). */
+  medidores?: { confianza: number; respaldo: number };
   /** Estrellas por jornada (0 a 3), según aciertos. */
   estrellas?: Record<number, number>;
 };

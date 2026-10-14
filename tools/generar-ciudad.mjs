@@ -144,6 +144,8 @@ const puntos = [
   P("fuente", "fuente", 32, 22.2),
   P("plaza", "punto", 32, 25.5),
   P("vecino-1", "punto", 21.5, 19.5), P("vecino-2", "punto", 42.5, 19.5), P("vecino-3", "punto", 24.5, 26.2), P("vecino-4", "punto", 39.5, 26.2),
+  // Vecinos de ambiente: puntos propios, lejos de los de la historia.
+  P("amb-1", "punto", 27.5, 17.2), P("amb-2", "punto", 44.5, 23.6), P("amb-3", "punto", 7.5, 28.5),
   P("hoyo", "punto", 34.5, 45.2),
   P("franja", "punto", 23.5, 56.2),
   P("paradero", "punto", 12.5, 28.5),

@@ -212,6 +212,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Firma", v: "Falta" },
         { k: "Resolución de Partes", v: "«Rechazada de plano»" },
       ] },
+      vicio: "Firma",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "RECHAZO CORRECTO: sin firma no hay solicitud", correcto: false, porque: "La firma es un requisito (art. 30 e), pero su falta no autoriza el rechazo de plano." },
@@ -233,6 +234,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Vínculo", v: "Hermano del socio principal (consanguinidad, segundo grado)" },
         { k: "Comunicación al superior", v: "Ninguna" },
       ] },
+      vicio: "Vínculo",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: el informe es técnico y la patente cumple", correcto: false, porque: "El art. 12 no mira si el informe es bueno: mira quién lo hizo." },
@@ -254,6 +256,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Procedimiento de oficio por el primer piso", v: "No se inició" },
         { k: "Recursos", v: "Indicados" },
       ] },
+      vicio: "Dispone",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: si el primer piso es irregular, Obras debe ordenar demoler", correcto: false, porque: "Puede perseguirlo, pero no dentro del procedimiento que el vecino abrió para otra cosa." },
@@ -274,6 +277,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Propuesta de Rentas", v: "«Rechazar por incompetencia y archivar»" },
         { k: "Información a la interesada", v: "No prevista" },
       ] },
+      vicio: "Propuesta de Rentas",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "RECHAZAR Y ARCHIVAR: Potestas no tiene competencia", correcto: false, porque: "Es cierto que no la tiene; pero la ley dice qué hacer con la solicitud, y no es archivarla." },
@@ -294,6 +298,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Norma legal o reglamentaria que lo exija", v: "Ninguna" },
         { k: "Firma", v: "Jefa de la Oficina de Partes" },
       ] },
+      vicio: "Norma legal o reglamentaria que lo exija",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDA: la Municipalidad organiza su propia ventanilla", correcto: false, porque: "Organiza la ventanilla, pero no puede agregar formalidades que la ley prohíbe exigir." },
@@ -316,6 +321,7 @@ export const BANCO_M04: BancoModulo = {
         { k: "Recursos", v: "Reposición en cinco días ante la misma Dirección; jerárquico ante la Alcaldesa" },
         { k: "Notificación prevista", v: "Dentro de cinco días, con texto íntegro" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO", correcto: true, porque: "Solicitud completa (art. 30), instrucción con los informes necesarios (arts. 34 y 37), resolución fundada que se ajusta a lo pedido sin agravar (art. 41), con los recursos, el órgano y el plazo, y notificación prevista en cinco días con texto íntegro (art. 45). Pasa la autopsia." },

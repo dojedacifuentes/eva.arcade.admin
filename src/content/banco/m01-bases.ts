@@ -215,6 +215,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Ministro de fe", v: "Secretario Municipal" },
         { k: "Fecha", v: "3 de marzo" },
       ] },
+      vicio: "Delegación invocada",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: la Alcaldesa estaba ausente y alguien tenía que firmar", correcto: false, porque: "La ausencia no habilita a nadie. Si la Alcaldesa está ausente opera la subrogación (art. 62 Ley 18.695) o una delegación previa; ninguna de las dos existe aquí." },
@@ -235,6 +236,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Firma", v: "Alcaldesa" },
         { k: "Ministro de fe", v: "Secretario Municipal" },
       ] },
+      vicio: "Art. 9 de la ordenanza",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: el Concejo la aprobó y la aplica el juzgado de policía local", correcto: false, porque: "El procedimiento está bien, pero el contenido no: la ley pone un tope a las multas de ordenanza." },
@@ -256,6 +258,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Firma", v: "Alcaldesa" },
         { k: "Ministro de fe", v: "Secretario Municipal" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO", correcto: true, porque: "Órgano competente (la municipalidad administra los bienes nacionales de uso público de la comuna, art. 5 c), autoridad con atribución (otorgar permisos, art. 63 g), investidura regular (la Alcaldesa) y forma (decreto alcaldicio para un caso particular, art. 12, con ministro de fe). No necesita acuerdo del Concejo: es un permiso, no una concesión." },
@@ -276,6 +279,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Firma", v: "Director de Tránsito" },
         { k: "Acuerdo del Concejo", v: "No consta" },
       ] },
+      vicio: "Dispone",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: la municipalidad puede aplicar tributos locales", correcto: false, porque: "Puede aplicar los tributos que la ley le permita, dentro de los marcos legales y con acuerdo del concejo (art. 5 h y 65 e Ley 18.695). No puede crearlos, y menos una dirección por resolución." },
@@ -297,6 +301,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Acuerdo del Concejo", v: "No se pidió" },
         { k: "Firma", v: "Alcaldesa" },
       ] },
+      vicio: "Acuerdo del Concejo",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: hubo licitación pública y firma la Alcaldesa", correcto: false, porque: "La licitación resuelve cómo se eligió al contratista, no la autorización para contratar por ese monto." },
@@ -318,6 +323,7 @@ export const BANCO_M01: BancoModulo = {
         { k: "Vínculo", v: "El socio principal es cuñado del Director (afinidad en segundo grado)" },
         { k: "Abstención", v: "No la comunicó" },
       ] },
+      vicio: "Vínculo",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: la oferta era la mejor y el informe es técnico", correcto: false, porque: "Que la oferta sea buena no limpia la implicancia. La probidad mira quién decide, no sólo qué se decide." },

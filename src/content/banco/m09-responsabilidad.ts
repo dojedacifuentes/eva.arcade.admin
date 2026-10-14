@@ -193,6 +193,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Fundamento", v: "Art. 152 Ley 18.695; art. 42 Ley 18.575" },
         { k: "Fecha del hecho", v: "Hace cinco meses" },
       ] },
+      vicio: "Hecho",
       pregunta: "¿Qué le informas a la Alcaldesa?",
       sellos: [
         { texto: "HAY FALTA DE SERVICIO", correcto: true, porque: "La municipalidad administra la vereda (art. 5 letra c) Ley 18.695) y un hoyo sin señalizar tres semanas es un servicio que funcionó mal o tarde: responde por falta de servicio (art. 152 Ley 18.695), con daño y causalidad acreditables." },
@@ -213,6 +214,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Daño", v: "Auto del vecino con pérdida total; sin lesionados" },
         { k: "Pide", v: "Que la municipalidad pague el auto" },
       ] },
+      vicio: "Conductor",
       pregunta: "¿Quién responde ante el vecino?",
       sellos: [
         { texto: "LA MUNICIPALIDAD RESPONDE Y REPITE CONTRA EL CHOFER", correcto: true, porque: "La falta personal cometida en ejercicio del servicio compromete a la municipalidad; después puede repetir contra el funcionario (art. 152 Ley 18.695; art. 42 inc. 2 Ley 18.575; Morales Gamboa, 2011)." },
@@ -233,6 +235,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Fundamento", v: "Art. 38 inc. 2 CPR: «responsabilidad constitucional e imprescriptible»" },
         { k: "Monto", v: "$ 9.800.000" },
       ] },
+      vicio: "Fecha del hecho",
       pregunta: "¿Qué excepción opones primero?",
       sellos: [
         { texto: "PRESCRIPCIÓN: 4 AÑOS, ART. 2332 CC", correcto: true, porque: "Desde Domic Bezic (2002) la CS aplica supletoriamente el art. 2332 CC: cuatro años desde el hecho dañoso. Pasaron más de cinco sin interrupción." },
@@ -254,6 +257,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Recursos", v: "No se interpuso ninguno" },
         { k: "Demanda", v: "Lucro cesante por «negocio frustrado»" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: SIN FALTA DE SERVICIO", correcto: true, porque: "Un acto legal, fundado y notificado no es un servicio que funcione mal: no hay falta de servicio ni daño antijurídico (art. 42 Ley 18.575; art. 152 Ley 18.695). Denegar conforme a derecho no se indemniza." },
@@ -274,6 +278,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Medios del servicio", v: "Ninguno" },
         { k: "Daño", v: "Espejo lateral, $ 180.000" },
       ] },
+      vicio: "Circunstancias",
       pregunta: "¿Responde la municipalidad?",
       sellos: [
         { texto: "FALTA PERSONAL SIN VÍNCULO: NO RESPONDE LA MUNICIPALIDAD", correcto: true, porque: "La falta enteramente personal, fuera del cargo, sin medios del servicio y sin relación con sus funciones, no compromete al Estado (art. 42 inc. 2 Ley 18.575; Morales Gamboa, 2011). Que demande al inspector." },
@@ -294,6 +299,7 @@ export const BANCO_M09: BancoModulo = {
         { k: "Daño", v: "Fractura de muñeca" },
         { k: "Fecha del hecho", v: "Hace dos meses" },
       ] },
+      vicio: "Señalización",
       pregunta: "¿Cómo lo calificas?",
       sellos: [
         { texto: "FALTA DE SERVICIO CON REDUCCIÓN POR EXPOSICIÓN IMPRUDENTE", correcto: true, porque: "Dejar una zanja sin luz ni cierre de noche es un servicio que funcionó mal (art. 152 Ley 18.695); la imprudencia de la víctima reduce la indemnización, no la elimina (art. 2330 CC)." },

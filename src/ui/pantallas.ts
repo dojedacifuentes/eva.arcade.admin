@@ -10,6 +10,7 @@ import { HALLAZGOS } from "../content/hallazgos";
 import { LOGROS } from "../content/logros";
 import { BANCOS } from "../content/banco";
 import { nivel } from "../juego/progreso";
+import { epilogo } from "../jornadas/consecuencias";
 
 const capa = () => document.getElementById("pantalla")!;
 
@@ -27,7 +28,7 @@ async function ocultar() {
   gsap.set(c, { opacity: 1 });
 }
 
-export type Opcion = "nueva" | "continuar" | "jornadas" | "ajustes" | "creditos";
+export type Opcion = "nueva" | "continuar" | "jornadas" | "ajustes" | "creditos" | "urgencia";
 /** Título. Devuelve qué eligió el jugador. */
 export function titulo(hayPartida: boolean): Promise<Opcion> {
   const c = mostrar(`
@@ -39,6 +40,7 @@ export function titulo(hayPartida: boolean): Promise<Opcion> {
         ${hayPartida ? `<button class="boton grande" data-r="continuar">Continuar</button>` : ""}
         <button class="boton ${hayPartida ? "" : "grande"}" data-r="nueva">${hayPartida ? "Nueva partida" : "Comenzar"}</button>
         <div class="titulo-fila"><button class="boton" data-r="jornadas">Jornadas</button><button class="boton" data-r="ajustes" aria-label="Ajustes">⚙ Ajustes</button></div>
+        <button class="boton titulo-urgencia" data-r="urgencia">⚡ Turno de urgencia</button>
       </div>
       <p class="titulo-pie">Derecho Administrativo y Público chileno · Un juego de EVA · <button class="enlace" data-r="creditos">Créditos y fuentes</button></p>
     </div>`);
@@ -200,6 +202,7 @@ export function fin(): Promise<"desafio" | "titulo"> {
       <p class="fin-marca">Potestas</p>
       <h1>Fin</h1>
       <p class="fin-lema">El poder tiene límites. Ahora sabes dónde.</p>
+      <p class="fin-epilogo"></p>
       <div class="fin-datos">
         <div><strong>${nv.n}</strong><span>${nv.titulo}</span></div>
         <div><strong>${d.saber ?? 0}</strong><span>Saber</span></div>
@@ -214,6 +217,7 @@ export function fin(): Promise<"desafio" | "titulo"> {
       </div>
       <p class="titulo-pie">Derecho Administrativo y Público chileno · Un juego de EVA · Revisado contra la ley vigente en octubre de 2026</p>
     </div>`);
+  c.querySelector(".fin-epilogo")!.textContent = epilogo();
   gsap.from(c.querySelectorAll(".fin > *"), { opacity: 0, y: 16, duration: 0.6, stagger: 0.15, ease: "power2.out" });
   return new Promise((r) => {
     c.querySelectorAll<HTMLButtonElement>("button[data-r]").forEach((b) => b.addEventListener("click", () => { sonido.efecto("elegir"); ocultar().then(() => r(b.dataset.r as "desafio" | "titulo")); }));

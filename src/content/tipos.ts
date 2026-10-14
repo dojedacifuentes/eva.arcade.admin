@@ -52,6 +52,12 @@ export type Expediente = {
   relato: string;
   documento: { tipo: string; campos: { k: string; v: string }[] };
   pregunta: string;
+  /**
+   * Dónde está el problema: la `k` del campo del documento que lo muestra, o `null`
+   * si el documento está en orden. La Mesa lo usa en el paso «¿Dónde está el
+   * problema?»; si falta (undefined), ese paso se salta.
+   */
+  vicio?: string | null;
   sellos: Sello[];
   norma: string; fuente: Fuente;
   /** Qué hallazgo se descubre al resolverlo bien (opcional). */

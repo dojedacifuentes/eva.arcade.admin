@@ -13,11 +13,9 @@ export const GUIONES: Guion[] = [
       lugar: "municipalidad", objetivo: "Primer día: preséntate ante la Alcaldesa", quien: ALCALDESA, punto: "alcaldesa",
       extras: [{ p: DIRECTOR, punto: "director", dir: "izquierda" }],
       dichos: [
-        ["alcaldesa", "¡Por fin! La abogada nueva. O el abogado. Da igual: hay trabajo."],
-        ["alcaldesa", "Quiero cobrar un impuesto a las bicicletas, cerrar la feria y multar a los perros que ladran. Hoy."],
-        ["director", "Alcaldesa… antes de firmar, que lo revise Jurídica."],
-        ["yo", "¿Y quién dice que la Municipalidad puede hacer todo eso?"],
-        ["alcaldesa", "Yo. Soy la Alcaldesa."],
+        ["alcaldesa", "¡Por fin, la abogada nueva! Quiero un impuesto a las bicicletas y cerrar la feria. Hoy."],
+        ["yo", "¿Y qué ley le permite eso a la Municipalidad?"],
+        ["alcaldesa", "Ninguna. Soy la Alcaldesa."],
       ],
       eva: ["Primera regla de Potestas: una persona puede hacer todo lo que la ley no le prohíbe. El Estado, solo lo que la ley le permite.", "La Alcaldesa todavía no se entera. Tú sí."],
     },
@@ -38,7 +36,7 @@ export const GUIONES: Guion[] = [
       despues: [["vecino", "Ahora entiendo por qué me mandan de una ventanilla a otra. Gracias, mijo."]],
     },
     jefe: {
-      lugar: "municipalidad", objetivo: "Vuelve donde la Alcaldesa: defiende tu informe", quien: ALCALDESA, punto: "alcaldesa", tipo: "duelo",
+      lugar: "municipalidad", objetivo: "Vuelve donde la Alcaldesa: defiende tu informe", quien: ALCALDESA, punto: "alcaldesa", tipo: "duelo", mania: "Todo lo resuelve con «porque soy la Alcaldesa».",
       extras: [{ p: DIRECTOR, punto: "director", dir: "izquierda" }],
       dichos: [["alcaldesa", "¿Me está diciendo que no puedo? Convénzame. Tiene cinco preguntas."]],
       despues: [["alcaldesa", "Está bien. Nada de impuesto a las bicicletas. Pero la feria la vemos el lunes."], ["director", "Eso, abogada, se llama sobrevivir al primer día."]],
@@ -99,7 +97,7 @@ export const GUIONES: Guion[] = [
       despues: [["fiscal", "Audiencia, dos años, decisión fundada. Lo anoto en la pizarra."]],
     },
     jefe: {
-      lugar: "municipalidad", objetivo: "Defiende tu informe ante la Alcaldesa", quien: ALCALDESA, punto: "alcaldesa", tipo: "duelo",
+      lugar: "municipalidad", objetivo: "Defiende tu informe ante la Alcaldesa", quien: ALCALDESA, punto: "alcaldesa", tipo: "duelo", mania: "Todo lo resuelve con «porque soy la Alcaldesa».",
       extras: [{ p: OBRAS, punto: "director", dir: "izquierda" }],
       dichos: [["alcaldesa", "¿Por qué no puedo borrar el permiso? Explíquemelo, que yo pago su sueldo. Bueno, los vecinos."]],
       despues: [["alcaldesa", "Entonces el parque va en otra parte. Pero que conste que me gusta el parque."], ["obras", "Y a mí que no me invaliden lo bien hecho."]],
@@ -161,7 +159,7 @@ export const GUIONES: Guion[] = [
       despues: [["rosa", "Denuncia, cinco días, certificado. Lo voy a anotar en el refrigerador."]],
     },
     jefe: {
-      lugar: "juridica", objetivo: "Una abogada reclama un plazo vencido", quien: ABOGADA, punto: "colega", tipo: "duelo",
+      lugar: "juridica", objetivo: "Una abogada reclama un plazo vencido", quien: ABOGADA, punto: "colega", tipo: "duelo", mania: "Cita fallos de memoria. A veces, de una memoria muy creativa.",
       extras: [{ p: DIRECTOR, punto: "director" }],
       dichos: [["abogada", "Mi cliente presentó su recurso a tiempo. Ustedes lo rechazaron por extemporáneo. Defiéndase."]],
       despues: [["abogada", "Bien contados los días. Esta vez."], ["director", "Los plazos son la mitad del Derecho Administrativo. La otra mitad también."]],
@@ -192,7 +190,7 @@ export const GUIONES: Guion[] = [
       despues: [["vecino", "Así que retirar el puesto no es castigo: es poner orden. Igual me molesta."]],
     },
     jefe: {
-      lugar: "fiscalizacion", objetivo: "Audiencia de descargos", quien: ABOGADA, punto: "multado", tipo: "duelo",
+      lugar: "fiscalizacion", objetivo: "Audiencia de descargos", quien: ABOGADA, punto: "multado", tipo: "duelo", mania: "Cita fallos de memoria. A veces, de una memoria muy creativa.",
       extras: [{ p: FISCAL, punto: "inspectora" }],
       dichos: [["abogada", "Represento al dueño del local. Vengo a que la multa se caiga. Prepárese."]],
       despues: [["fiscal", "Una sola sanción, bien fundada. Ya entendí."], ["abogada", "Mi cliente pagará la que corresponde. Una."]],
@@ -250,7 +248,7 @@ export const GUIONES: Guion[] = [
       despues: [["rosa", "Primero el alcalde, después la Corte. Como en la vida: primero se conversa."]],
     },
     jefe: {
-      lugar: "corte", objetivo: "Alegato en la Corte de Apelaciones", quien: ABOGADA, punto: "rival", tipo: "duelo",
+      lugar: "corte", objetivo: "Alegato en la Corte de Apelaciones", quien: ABOGADA, punto: "rival", tipo: "duelo", mania: "Cita fallos de memoria. A veces, de una memoria muy creativa.",
       juez: { p: MINISTRA, punto: "ministra" },
       dichos: [["ministra", "Tiene la palabra la abogada de la Municipalidad. Breve, por favor."], ["abogada", "La Municipalidad actuó fuera de la ley. Voy a demostrarlo."]],
       despues: [["ministra", "Se tiene presente. La Corte resolverá."], ["abogada", "Buen alegato. Nos vemos en la próxima."]],
@@ -281,7 +279,7 @@ export const GUIONES: Guion[] = [
       despues: [["obras", "Mañana tapamos el hoyo. Hoy mismo, mejor."]],
     },
     jefe: {
-      lugar: "juzgado", objetivo: "Audiencia en el Juzgado Civil", quien: ABOGADA, punto: "rival", tipo: "duelo",
+      lugar: "juzgado", objetivo: "Audiencia en el Juzgado Civil", quien: ABOGADA, punto: "rival", tipo: "duelo", mania: "Cita fallos de memoria. A veces, de una memoria muy creativa.",
       juez: { p: JUEZA, punto: "jueza" },
       extras: [{ p: VECINO, punto: "vecino" }],
       dichos: [["jueza", "Causa por indemnización de perjuicios contra la Municipalidad de Potestas. Comiencen."], ["abogada", "Mi cliente cayó por un hoyo que todos conocían. Eso es falta de servicio."]],
@@ -313,7 +311,7 @@ export const GUIONES: Guion[] = [
       despues: [["contralor", "Con audiencia y dentro de plazo. Así me gusta."]],
     },
     jefe: {
-      lugar: "corte", objetivo: "La Corte revisa una nulidad de derecho público", quien: ABOGADA, punto: "rival", tipo: "duelo",
+      lugar: "corte", objetivo: "La Corte revisa una nulidad de derecho público", quien: ABOGADA, punto: "rival", tipo: "duelo", mania: "Cita fallos de memoria. A veces, de una memoria muy creativa.",
       juez: { p: MINISTRA, punto: "ministra" },
       dichos: [["abogada", "Pido que se declare la nulidad de derecho público del decreto. Y que la Municipalidad pague."], ["ministra", "Escuchemos a la Municipalidad."]],
       despues: [["ministra", "La Corte tiene presentes ambas posiciones."], ["abogada", "La nulidad no prescribe. La plata sí: eso me lo enseñó usted."]],
@@ -371,7 +369,7 @@ export const GUIONES: Guion[] = [
       despues: [["rosa", "Primero el pago, después las máquinas. Eso lo voy a gritar si hace falta."]],
     },
     jefe: {
-      lugar: "juzgado", objetivo: "Reclamo de monto en el Juzgado Civil", quien: CDE, punto: "rival", tipo: "duelo",
+      lugar: "juzgado", objetivo: "Reclamo de monto en el Juzgado Civil", quien: CDE, punto: "rival", tipo: "duelo", mania: "Siempre trae una defensa más.",
       juez: { p: JUEZA, punto: "jueza" },
       extras: [{ p: ROSA, punto: "vecino" }],
       dichos: [["jueza", "Reclamo del monto provisional de la indemnización. El Fisco tiene la palabra."], ["cde", "El monto es justo. La señora no ha probado más daño."]],

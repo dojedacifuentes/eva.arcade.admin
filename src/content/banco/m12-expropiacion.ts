@@ -207,6 +207,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Monto provisional", v: "No indica" },
         { k: "Comisión de peritos", v: "No se constituyó" },
       ] },
+      vicio: "Norma invocada",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "NULO: SIN LEY QUE AUTORICE LA EXPROPIACIÓN", correcto: true, porque: "Nadie puede ser privado de su propiedad sino en virtud de una ley general o especial que autorice la expropiación, con causa calificada por el legislador (art. 19 N.º 24 inc. 3 CPR). Una ordenanza no es ley, y además falta la comisión de peritos y el monto provisional (arts. 4 y 6 DL 2.186)." },
@@ -228,6 +229,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Forma de pago", v: "De contado, en dinero efectivo" },
         { k: "Fecha", v: "Hoy; publicación en extracto programada dentro de 90 días" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: CUMPLE EL ART. 6 DEL DL 2.186", correcto: true, porque: "Tiene fecha, individualización del bien y rol de avalúo, ley y causa, propietario, monto provisional con comisión y fecha del informe, y forma de pago (art. 6 DL 2.186); la publicación dentro de noventa días perfecciona la notificación (art. 7)." },
@@ -248,6 +250,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Toma de posesión material", v: "Aún no se produce" },
         { k: "Tribunal", v: "Juzgado Civil de Potestas" },
       ] },
+      vicio: "Publicación del acto",
       pregunta: "¿Qué informas al tribunal, como abogado de la municipalidad?",
       sellos: [
         { texto: "LEGALIDAD EXTEMPORÁNEA (30 DÍAS, ART. 9); EL MONTO AÚN SE PUEDE RECLAMAR (ART. 12)", correcto: true, porque: "El reclamo de legalidad vence a los treinta días desde la publicación y el derecho se extingue (art. 9 DL 2.186). El reclamo del monto corre hasta treinta días después de la toma de posesión material (art. 12), así que esa parte sigue viva." },
@@ -268,6 +271,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Acuerdo con los expropiados", v: "No hay" },
         { k: "Autorización judicial", v: "No se pidió" },
       ] },
+      vicio: "Pago o consignación",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "NO: LA TOMA DE POSESIÓN ES PREVIO PAGO (19 N.º 24; ARTS. 20 Y 21)", correcto: true, porque: "La toma de posesión material tiene lugar previo pago del total de la indemnización (art. 19 N.º 24 inc. 3 CPR). Sin acuerdo, hay que consignar la cuota de contado ante el tribunal y pedir al juez la autorización (arts. 17, 20 y 21 DL 2.186)." },
@@ -288,6 +292,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Publicación del acto", v: "Hace 10 días" },
         { k: "Pretensión", v: "Que le expropien todo o le paguen el sitio completo" },
       ] },
+      vicio: "Resto",
       pregunta: "¿Qué le recomiendas?",
       sellos: [
         { texto: "PEDIR LA EXPROPIACIÓN TOTAL (ART. 9 b) DENTRO DE LOS 30 DÍAS", correcto: true, porque: "Cuando la parte no expropiada carece por sí sola de significación económica, el expropiado puede pedir al juez la expropiación total, dentro de treinta días desde la publicación (art. 9 letra b) DL 2.186). Quedan veinte días." },
@@ -308,6 +313,7 @@ export const BANCO_M12: BancoModulo = {
         { k: "Plazo", v: "Dentro del art. 12" },
         { k: "Perito designado", v: "Sí" },
       ] },
+      vicio: "Pide",
       pregunta: "¿Qué sello le pones a la partida de daño moral?",
       sellos: [
         { texto: "SÓLO DAÑO PATRIMONIAL EFECTIVAMENTE CAUSADO (19 N.º 24; ART. 38 DL 2.186)", correcto: true, porque: "La indemnización expropiatoria es el daño patrimonial efectivamente causado, consecuencia directa e inmediata de la expropiación (art. 19 N.º 24 CPR; art. 38 DL 2.186). El valor del inmueble se discute con peritos; el daño moral queda fuera." },

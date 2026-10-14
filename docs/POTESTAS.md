@@ -35,6 +35,22 @@ que se expropia…) y el Derecho se descubre jugando. EVA acompaña, comenta y a
 Cada jornada dura 10–15 minutos, se puede elegir desde el título y trae su Derecho temprano: el
 primer hallazgo llega antes del segundo minuto.
 
+## El pulso de una jornada (versión fluida, 12-10-2026)
+
+| Hora | Parte | Qué se hace |
+|---|---|---|
+| 09:00 | Encargo | Apareces en el lugar y la conversación empieza sola (3 líneas máx.). Apuesta EVA en el acto. |
+| 11:00 | Mesa | Tres expedientes, más un caso que vuelve si antes timbraste uno mal. |
+| 15:00 | Terreno | Misión caminando en las jornadas 5 (carrera), 6 (inspección), 9 (investigación) y 12 (recorrido); en las demás, un minijuego con alguien. |
+| 16:30 | Urgentes | Suena el teléfono: dos expedientes más, ahí mismo, sin caminar. |
+| 17:40 | Jefe | Contrainterrogatorio estilo Ace Attorney («¡Objeción!» + presentar el hallazgo) o comisión oral. |
+| 19:45 | Cierre | Directo a la ciudad de noche; EVA cierra y comenta los medidores. |
+
+«Ir ›» (o F) lleva directo al siguiente lugar: caminar es opcional (salvo en la carrera).
+Consecuencias: dos medidores en el HUD (confianza de los vecinos 🏘 y respaldo de la Alcaldesa 🏛);
+los errores de la Mesa vuelven como recursos; el final cambia según los medidores
+(`src/jornadas/consecuencias.ts`). Turno de urgencia (título): Mesa infinita con tres vidas y récord.
+
 ## Sistemas de juego
 
 **Mundo** (igual que el Familia RPG, mejorado): ciudad 2D vista desde arriba, WASD/flechas o joystick

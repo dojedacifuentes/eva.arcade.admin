@@ -7,8 +7,8 @@ import { sonido } from "../ui/sonido";
 import { ajustes, aplicarAjustes } from "../juego/ajustes";
 import { estado, nuevaPartida } from "../game/estado";
 import { BANCOS } from "../content/banco";
-import { CDE } from "../content/personajes";
-import type { Cadena, Columnas, Expediente, Hallazgo, Oral, PreguntaQuiz } from "../content/tipos";
+import { CDE, JUEZA } from "../content/personajes";
+import type { Afirmacion, Cadena, Columnas, Expediente, Hallazgo, Oral, PreguntaQuiz } from "../content/tipos";
 import { HALLAZGOS } from "../content/hallazgos";
 import { mesa } from "../ui/mesa";
 import { cadena } from "../ui/cadena";
@@ -164,6 +164,17 @@ const HALLAZGO_MUESTRA: Hallazgo = {
   norma: "Ley 19.880, arts. 11 y 41", simple: "«Porque sí» no es un fundamento.",
 };
 
+// El duelo: 6 declaraciones de un mismo módulo (3 ciertas y 3 falsas, alternadas),
+// las falsas de hallazgos distintos, y todos los hallazgos de ese módulo como pruebas.
+const testimonio = () => {
+  const b = BANCOS.find((x) => x.modulo === 9) ?? BANCOS.find((x) => x.afirmaciones.filter((a) => !a.verdad).length >= 3 && x.afirmaciones.filter((a) => a.verdad).length >= 3);
+  if (!b) return { afirmaciones: [] as Afirmacion[], hallazgos: [HALLAZGO_MUESTRA] };
+  const distintas = (l: Afirmacion[], fuera: string[] = []) => l.filter((a, k) => !fuera.includes(a.hallazgo) && l.findIndex((x) => x.hallazgo === a.hallazgo) === k).slice(0, 3);
+  const falsas = distintas(b.afirmaciones.filter((a) => !a.verdad));
+  const ciertas = distintas(b.afirmaciones.filter((a) => a.verdad), falsas.map((a) => a.hallazgo));
+  const afirmaciones = ciertas.flatMap((c, k) => [c, falsas[k]]).filter(Boolean);
+  return { afirmaciones, hallazgos: b.hallazgos };
+};
 // ── Datos: el banco si existe; si no, los ejemplos ─────────────────────────
 const del = <T>(f: (b: (typeof BANCOS)[number]) => T[]) => BANCOS.flatMap(f);
 const datos = {
@@ -173,6 +184,7 @@ const datos = {
   quiz: del((b) => b.quiz).filter((q) => q.opciones.length >= 3).length >= 3 ? del((b) => b.quiz).filter((q) => q.opciones.length >= 3).slice(0, 4) : QUIZ,
   oral: del((b) => b.orales)[0] ?? ORAL,
   rival: { nombre: CDE.nombre, cargo: CDE.cargo, a: CDE.a },
+  duelo: testimonio(),
 };
 
 // ── Montaje ────────────────────────────────────────────────────────────────
@@ -196,11 +208,47 @@ const lanzar: Record<string, () => Promise<unknown>> = {
       await ui.hallazgo(h, 12, 1);
     },
   }),
+  // Turno de urgencia: la Mesa sin fin, con tres corazones (expedientes al azar de todo el banco).
+  urgencia: () => {
+    const todos = del((b) => b.expedientes).length ? del((b) => b.expedientes) : EXPEDIENTES;
+    let ultimo = "";
+    return mesa({
+      titulo: "Turno de urgencia",
+      expedientes: [],
+      infinito: {
+        vidas: 3,
+        generar: () => {
+          let ex = todos[Math.floor(Math.random() * todos.length)];
+          if (ex.id === ultimo && todos.length > 1) ex = todos[(todos.indexOf(ex) + 1) % todos.length];
+          ultimo = ex.id;
+          return ex;
+        },
+      },
+    });
+  },
   cadena: () => cadena(datos.cadena),
   columnas: () => columnas(datos.columnas),
-  duelo: () => duelo({ rival: datos.rival, preguntas: datos.quiz, titulo: "Duelo con el CDE" }),
+  duelo: () => {
+    // Para ver las dos caras del Expediente: la mitad de las pruebas ya investigadas.
+    if (estado) for (const h of datos.duelo.hallazgos.slice(0, Math.ceil(datos.duelo.hallazgos.length / 2))) if (!estado.hallazgos.includes(h.id)) estado.hallazgos.push(h.id);
+    return duelo({
+      rival: datos.rival, juez: { nombre: JUEZA.nombre, a: JUEZA.a },
+      afirmaciones: datos.duelo.afirmaciones, hallazgos: datos.duelo.hallazgos,
+      titulo: "Duelo con el CDE", mania: "Siempre traigo una defensa más, colega.",
+    });
+  },
   comision: () => comision(datos.oral),
 };
+
+// El botón del Turno de urgencia (la página no lo trae): junto a «La Mesa».
+{
+  const m = document.querySelector<HTMLButtonElement>("[data-j=\"mesa\"]");
+  const u = document.createElement("button");
+  u.className = "boton";
+  u.dataset.j = "urgencia";
+  u.textContent = "Turno de urgencia";
+  m?.after(u);
+}
 
 document.querySelectorAll<HTMLButtonElement>("[data-j]").forEach((b) => b.addEventListener("click", async () => {
   const j = b.dataset.j!;

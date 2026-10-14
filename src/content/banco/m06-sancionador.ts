@@ -205,6 +205,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "La multa que firmó la Alcaldesa",
       relato: "El Director de Fiscalización, Benito Muñoz, trae un decreto listo para la firma: multa de 3 UTM a la fuente de soda «El Decreto» por ruidos, según la ordenanza de convivencia. «Así no esperamos al juzgado», dice.",
       documento: { tipo: "Decreto alcaldicio", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Aplica multa de 3 UTM por infracción a la ordenanza de ruidos" }, { k: "Infractor", v: "Fuente de soda «El Decreto»" }, { k: "Fundamento", v: "Ordenanza municipal N.º 12, art. 8" }, { k: "Procedimiento", v: "Acta de fiscalización" } ] },
+      vicio: "Órgano",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: la multa está dentro de las 5 UTM", correcto: false, porque: "El tope es correcto, pero el órgano no: las multas de las ordenanzas las aplican los juzgados de policía local (art. 12 Ley 18.695)." },
@@ -219,6 +220,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "Clausura por denuncias",
       relato: "Varios vecinos se quejaron de un taller mecánico. La Alcaldesa quiere clausurarlo «como sanción ejemplar» hoy mismo. No hubo cargos, ni descargos, ni inspección: sólo las denuncias.",
       documento: { tipo: "Decreto alcaldicio", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Clausura definitiva del taller «Frenos Pérez» como sanción" }, { k: "Motivo", v: "«Reiteradas denuncias de vecinos»" }, { k: "Cargos formulados", v: "Ninguno" }, { k: "Descargos", v: "No se abrió plazo" }, { k: "Inspección", v: "No consta" } ] },
+      vicio: "Cargos formulados",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDO: la Alcaldesa dirige la comuna", correcto: false, porque: "Dirigir la comuna no exime de un procedimiento racional y justo antes de sancionar (art. 19 N.º 3 CPR)." },
@@ -232,6 +234,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "Por si la primera fue poca",
       relato: "El juzgado de policía local ya multó al local «La Última Instancia» por venta de alcohol fuera de horario. La Alcaldesa quiere «reforzar» con otra multa municipal por el mismo hecho y la misma infracción.",
       documento: { tipo: "Decreto alcaldicio", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Aplica multa adicional por venta de alcohol fuera de horario" }, { k: "Hecho", v: "El mismo ya sancionado por el JPL el mes pasado" }, { k: "Fundamento", v: "La misma infracción de la ordenanza" }, { k: "Motivo declarado", v: "«La primera multa fue insuficiente»" } ] },
+      vicio: "Hecho",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDO: dos órganos, dos multas", correcto: false, porque: "Mismo hecho, mismo fundamento: non bis in idem (art. 19 N.º 3 CPR, doctrina). Además, la Municipalidad no aplica multas de ordenanza (art. 12 Ley 18.695)." },
@@ -246,6 +249,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "Multa sin película",
       relato: "Una resolución de la Dirección de Fiscalización impone 50 UTM a una constructora. En los «considerandos» dice: «Que se verificó una infracción». Nada más. Ni fecha, ni lugar, ni norma, ni por qué 50.",
       documento: { tipo: "Resolución sancionatoria", campos: [ { k: "Órgano", v: "Dirección de Fiscalización" }, { k: "Dispone", v: "Multa de 50 UTM a Constructora Columna Ltda." }, { k: "Considerandos", v: "«Que se verificó una infracción»" }, { k: "Hechos", v: "No se describen" }, { k: "Norma infringida", v: "No se cita" }, { k: "Graduación", v: "Sin explicación" } ] },
+      vicio: "Considerandos",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDA: los actos se presumen legales", correcto: false, porque: "La presunción de legalidad no suple la motivación exigida a los actos que afectan derechos (art. 11 inc. 2 Ley 19.880)." },
@@ -259,6 +263,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "Un sumario como corresponde",
       relato: "El Secretario Municipal te pasa el sumario contra un funcionario de Tránsito: cargos notificados, descargos presentados, prueba rendida, vista del fiscal y resolución fundada que aplica censura por los hechos acusados. Notificada.",
       documento: { tipo: "Resolución que afina sumario administrativo", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Cargos", v: "Formulados y notificados: atrasos reiterados en marzo" }, { k: "Descargos", v: "Presentados dentro de plazo" }, { k: "Prueba", v: "Rendida; registros de asistencia" }, { k: "Dispone", v: "Censura, por atrasos reiterados en marzo" }, { k: "Motivación", v: "Hechos acreditados, norma infringida, gravedad y atenuantes" }, { k: "Notificado el", v: "Sí, personalmente" } ] },
+      vicio: null,
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDO", correcto: true, porque: "Cargos, descargos, prueba, resolución fundada sobre los mismos hechos de los cargos y notificación: es el procedimiento disciplinario como manda el Estatuto (arts. 121 y 140 Ley 18.834) y el art. 19 N.º 3 CPR. La censura es la medida más leve del catálogo." },
@@ -273,6 +278,7 @@ export const BANCO_M06: BancoModulo = {
       titulo: "Cargos por una cosa, castigo por otra",
       relato: "Otro sumario: el fiscal formuló cargos por atrasos. La Alcaldesa, leyendo el expediente, «descubrió» que el funcionario además trataba mal a los usuarios y quiere destituirlo por eso, sin nuevos cargos.",
       documento: { tipo: "Proyecto de resolución", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Cargos formulados", v: "Atrasos reiterados" }, { k: "Hechos por los que se sanciona", v: "Mal trato a usuarios" }, { k: "Nuevos cargos notificados", v: "No" }, { k: "Dispone", v: "Destitución" } ] },
+      vicio: "Hechos por los que se sanciona",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDO: los hechos constan en el expediente", correcto: false, porque: "Constar no basta: ningún funcionario puede ser sancionado por hechos que no han sido materia de cargos (art. 140 Ley 18.834)." },

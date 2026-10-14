@@ -71,6 +71,13 @@ export class Mundo extends Phaser.Scene {
   alMoverse?: () => void;
   /** Lo que la historia agrega a un lugar cada vez que se carga (el hogar que se llena). */
   decorar?: (m: Mundo) => void;
+  /**
+   * Atajo del objetivo: si la historia lo pone, «Ir ›» (o F) lleva directo al
+   * destino (entrar a otro edificio sin cruzar la ciudad). Siempre visible.
+   */
+  atajo: (() => void) | null = null;
+  /** true: sin viaje rápido (una carrera contra el reloj se corre de verdad). */
+  sinAtajo = false;
   /** false: la historia no deja salir del interior todavía. */
   puedeSalir = true;
   private saliendo = false;
@@ -428,6 +435,13 @@ export class Mundo extends Phaser.Scene {
     });
   }
 
+  /** «Ir ›»: el atajo de la historia si lo hay; si no, el viaje rápido a la flecha. */
+  irRapido() {
+    if (this.sinAtajo || this.quieto || ui.ocupado()) return;
+    if (this.atajo) { const a = this.atajo; this.atajo = null; a(); return; }
+    this.viajar();
+  }
+
   /** Escucha a la interfaz: quién habla (da un saltito) y cuándo se abre un hallazgo (acercamiento). */
   private escucharUi() {
     if (Mundo.escuchando) return;
@@ -529,12 +543,12 @@ export class Mundo extends Phaser.Scene {
     // «Ir ›»: aparece cuando el objetivo está lejos.
     this.botonIr ??= document.getElementById("objetivo-ir") as HTMLButtonElement;
     if (this.botonIr && !this.botonIr.onclick) {
-      this.botonIr.onclick = (ev) => { ev.stopPropagation(); this.viajar(); };
-      addEventListener("keydown", (ev) => { if (ev.code === "KeyF" && !this.botonIr!.hidden) this.viajar(); });
+      this.botonIr.onclick = (ev) => { ev.stopPropagation(); this.irRapido(); };
+      addEventListener("keydown", (ev) => { if (ev.code === "KeyF" && !this.botonIr!.hidden) this.irRapido(); });
     }
     if (this.botonIr) {
       const p = this.metaPos?.();
-      this.botonIr.hidden = !p || this.quieto || ui.ocupado() || Math.hypot(p.x - this.jugador.x, p.y - this.jugador.y) < 80;
+      this.botonIr.hidden = this.sinAtajo || this.quieto || ui.ocupado() || (this.atajo ? false : !p || Math.hypot(p.x - this.jugador.x, p.y - this.jugador.y) < 80);
     }
     if (ui.ocupado() || this.quieto) { this.jugador.detener(); ui.indicar(null); this.marca?.setVisible(false); this.quietoMs = 0; return; }
     const { dx, dy } = controles.direccion();

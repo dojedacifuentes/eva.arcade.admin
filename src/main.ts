@@ -15,6 +15,8 @@ import { jugarJornada } from "./jornadas/motor";
 import { guion } from "./jornadas/guiones";
 import { decorar } from "./jornadas/ambiente";
 import { BANCOS } from "./content/banco";
+import { mesa } from "./ui/mesa";
+import { pintarMedidores } from "./jornadas/consecuencias";
 
 ui.montar();
 aplicarAjustes();
@@ -43,6 +45,19 @@ const juego = new Phaser.Game({
 // Para las pruebas automáticas (tools/pruebas): el banco, para saber qué responder.
 (window as unknown as { __potestas: unknown }).__potestas = { BANCOS };
 
+/**
+ * Turno de urgencia: expedientes al azar de los doce módulos, sin historia,
+ * con tres vidas y récord. Para repasar cinco minutos antes de una prueba.
+ * Si no hay partida, se juega con una de visita (el Saber igual se guarda).
+ */
+async function turnoUrgencia() {
+  if (!cargar()) nuevaPartida({ nombre: "Visita", sexo: "mujer", apariencia: { piel: "#c98d63", pelo: "#2b2026", peinado: "largo", polera: "#3b3f4f", pantalon: "#2b2026" } });
+  const todos = BANCOS.flatMap((b) => b.expedientes);
+  let ultimo = "";
+  const generar = () => { let ex = todos[Math.floor(Math.random() * todos.length)]; for (let k = 0; k < 5 && ex.id === ultimo; k++) ex = todos[Math.floor(Math.random() * todos.length)]; ultimo = ex.id; return ex; };
+  await mesa({ titulo: "⚡ Turno de urgencia", expedientes: [generar()], infinito: { vidas: 3, generar } });
+}
+
 /** Elige desde dónde se juega: continuar, una partida nueva o una jornada suelta. */
 async function elegirPartida() {
   const previa = cargar();
@@ -50,6 +65,7 @@ async function elegirPartida() {
     const opcion = await titulo(!!previa && previa.paso !== "j1-inicio");
     if (opcion === "ajustes") { await ui.ajustes(); continue; }
     if (opcion === "creditos") { await creditos(); continue; }
+    if (opcion === "urgencia") { await turnoUrgencia(); continue; }
     if (opcion === "jornadas") {
       const n = await jornadas();
       if (n === null) continue;
@@ -74,6 +90,7 @@ async function partida() {
   migrarProgreso();
   pintarNivel();
   pintarNuevo();
+  pintarMedidores();
   // La ciudad se armó detrás del título: se rehace con la partida (y el jugador entra a la plaza).
   await new Promise<void>((r) => { mundo.events.once("mapa-listo", () => r()); mundo.scene.restart({ mapa: "ciudad" }); });
   mundo.comenzar(e().apariencia, mundo.punto("inicio"), "abajo");

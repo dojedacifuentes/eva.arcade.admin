@@ -187,6 +187,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Calidad de la municipalidad", v: "Parte demandada" },
         { k: "Propuesta de la Alcaldesa", v: "Pedir la inconstitucionalidad de la ley" },
       ] },
+      vicio: "Propuesta de la Alcaldesa",
       pregunta: "¿Qué vía propones?",
       sellos: [
         { texto: "REQUERIR LA INAPLICABILIDAD (ART. 93 N.º 6): SOMOS PARTE EN GESTIÓN PENDIENTE", correcto: true, porque: "La municipalidad es parte de una gestión pendiente y el precepto puede ser decisivo: puede requerir la inaplicabilidad (art. 93 N.º 6 e inc. 11 CPR). La inconstitucionalidad viene después, por acción pública, y exige inaplicabilidad previa (N.º 7)." },
@@ -206,6 +207,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Precepto impugnado", v: "Ley publicada el mes pasado" },
         { k: "Fundamento", v: "«Podría afectarnos en el futuro»" },
       ] },
+      vicio: "Gestión pendiente",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "INADMISIBLE: NO HAY GESTIÓN PENDIENTE", correcto: true, porque: "La inaplicabilidad exige una gestión pendiente ante un tribunal ordinario o especial, en la que el precepto pueda ser decisivo (art. 93 N.º 6 e inc. 11 CPR). Sin juicio no hay caso concreto." },
@@ -225,6 +227,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Fundamento", v: "«Vulnera mi derecho a trabajar»" },
         { k: "Requirente", v: "Un vecino" },
       ] },
+      vicio: "Acto impugnado",
       pregunta: "¿Qué le explicas?",
       sellos: [
         { texto: "EL TC NO REVISA DECRETOS ALCALDICIOS: CONTRALORÍA, RECLAMO DE ILEGALIDAD O TRIBUNALES", correcto: true, porque: "El TC conoce de decretos sólo en los N.º 9 y N.º 16 del art. 93, que se refieren a decretos del Presidente y decretos supremos, y los requieren el Presidente, las Cámaras o un cuarto de sus miembros. Un decreto alcaldicio se impugna por las vías administrativas y judiciales." },
@@ -244,6 +247,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Pagos anteriores", v: "Cinco años de aportes bajo la ley derogada" },
         { k: "Consulta", v: "¿Se devuelven?" },
       ] },
+      vicio: "Pagos anteriores",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "NO: SIN EFECTO RETROACTIVO (ART. 94)", correcto: true, porque: "El precepto se entiende derogado desde la publicación de la sentencia en el Diario Oficial, «la que no producirá efecto retroactivo» (art. 94 inc. 3 CPR). Desde ayer no se paga más; lo anterior no se devuelve por esta vía." },
@@ -265,6 +269,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Petición accesoria", v: "Suspensión del procedimiento" },
         { k: "Tribunal", v: "Tribunal Constitucional" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: CUMPLE LOS REQUISITOS DE ADMISIBILIDAD", correcto: true, porque: "Hay gestión pendiente ante un tribunal, el precepto puede ser decisivo, la impugnación está fundada razonablemente y lo presenta una parte (art. 93 N.º 6 e inc. 11 CPR). La sala puede además suspender el procedimiento." },
@@ -284,6 +289,7 @@ export const BANCO_M11: BancoModulo = {
         { k: "Materia", v: "Orden de demolición de un cierre en bien nacional de uso público" },
         { k: "Situación", v: "Ambos se atribuyen la competencia" },
       ] },
+      vicio: "Situación",
       pregunta: "¿Quién resuelve la contienda?",
       sellos: [
         { texto: "CONTIENDA DE COMPETENCIA: TRIBUNAL CONSTITUCIONAL (ART. 93 N.º 12)", correcto: true, porque: "El TC resuelve las contiendas de competencia entre las autoridades políticas o administrativas y los tribunales de justicia que no correspondan al Senado; la deduce cualquiera de las autoridades o tribunales en conflicto (art. 93 N.º 12 CPR)." },

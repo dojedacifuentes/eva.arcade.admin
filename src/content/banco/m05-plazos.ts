@@ -181,6 +181,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "La notificación fantasma",
       relato: "Don Aurelio Pinto llega furioso: la Dirección de Obras le rechazó un permiso y «lo notificó por correo», pero él nunca recibió nada. En el expediente no hay constancia de envío.",
       documento: { tipo: "Resolución de la Dirección de Obras", campos: [ { k: "Órgano", v: "Dirección de Obras Municipales" }, { k: "Dispone", v: "Rechaza solicitud de permiso de edificación" }, { k: "Firma", v: "Director de Obras" }, { k: "Fecha", v: "Totalmente tramitada hace 20 días" }, { k: "Notificado el", v: "«Por correo electrónico» (sin constancia de envío ni de acceso)" } ] },
+      vicio: "Notificado el",
       pregunta: "¿Qué sello le pones a esta resolución?",
       sellos: [
         { texto: "VÁLIDA Y EFICAZ: el plazo ya venció", correcto: false, porque: "Sin constancia de notificación no hay fecha cierta desde la cual contar nada (arts. 45 y 46 Ley 19.880)." },
@@ -195,6 +196,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "La reposición «atrasada»",
       relato: "La Jefa de Partes, Rosa Tapia, quiere rechazar de plano una reposición: «la notificaron el miércoles 1 y la presentó el miércoles 8, ¡siete días!». Contó el sábado y el domingo.",
       documento: { tipo: "Recurso de reposición", campos: [ { k: "Contra", v: "Decreto alcaldicio que deniega patente" }, { k: "Notificado el", v: "Miércoles 1 (electrónica, ya practicada)" }, { k: "Presentado el", v: "Miércoles 8, 11:40 h" }, { k: "Ante", v: "Alcaldesa Ruperta Cañas (mismo órgano)" }, { k: "Pide", v: "Dejar sin efecto el decreto" } ] },
+      vicio: null,
       pregunta: "¿Está dentro del plazo?",
       sellos: [
         { texto: "EXTEMPORÁNEA: pasaron siete días", correcto: false, porque: "Los sábados, domingos y festivos son inhábiles y no se cuentan (art. 25 Ley 19.880)." },
@@ -208,6 +210,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "El silencio que no gritó",
       relato: "La señora Marta Quilodrán pidió hace ocho meses un permiso para su kiosco y nadie le respondió. Trae redactado un «certificado de silencio positivo» para que lo firmes. Nunca denunció el incumplimiento.",
       documento: { tipo: "Solicitud de certificado", campos: [ { k: "Solicitud original", v: "Permiso para kiosco en la plaza, hace ocho meses" }, { k: "Estado", v: "Sin resolver" }, { k: "Denuncia del incumplimiento", v: "Ninguna" }, { k: "Pide", v: "Certificar que la solicitud se entiende aceptada" } ] },
+      vicio: "Denuncia del incumplimiento",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "CERTIFICAR: pasaron más de seis meses", correcto: false, porque: "El art. 27 limita la duración del procedimiento; no produce silencio positivo por sí solo (art. 64 Ley 19.880)." },
@@ -222,6 +225,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "La reposición sin respuesta",
       relato: "Un vecino presentó reposición contra un decreto hace 40 días hábiles. La Alcaldesa no ha resuelto. Él pide un certificado para «ir a tribunales de una vez».",
       documento: { tipo: "Solicitud de certificado", campos: [ { k: "Recurso", v: "Reposición contra decreto alcaldicio" }, { k: "Presentado hace", v: "40 días hábiles" }, { k: "Plazo para resolver", v: "30 días (art. 59)" }, { k: "Estado", v: "Sin resolución" }, { k: "Pide", v: "Certificado de que no fue resuelto en plazo" } ] },
+      vicio: "Presentado hace",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "SILENCIO POSITIVO: la reposición se entiende acogida", correcto: false, porque: "Las impugnaciones de actos administrativos tienen silencio negativo (art. 65 Ley 19.880)." },
@@ -235,6 +239,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "Carta certificada en regla",
       relato: "El Secretario Municipal te muestra un decreto notificado por carta certificada: el vecino había pedido por formulario esa forma porque no usa correo electrónico. Hay constancia de la recepción en correos.",
       documento: { tipo: "Decreto alcaldicio y constancia de notificación", campos: [ { k: "Órgano", v: "Alcaldesa Ruperta Cañas" }, { k: "Dispone", v: "Deniega permiso de ocupación de bien nacional de uso público" }, { k: "Forma pedida", v: "Carta certificada, por formulario del interesado" }, { k: "Recepción en correos", v: "Lunes 7" }, { k: "Se entiende notificado", v: "Jueves 10 (tercer día)" }, { k: "Contenido", v: "Texto íntegro del decreto" } ] },
+      vicio: null,
       pregunta: "¿Cómo se timbra esta notificación?",
       sellos: [
         { texto: "VÁLIDA: notificación bien practicada", correcto: true, porque: "Quien carece de medios electrónicos puede pedir otra forma; la carta certificada se entiende practicada al tercer día desde la recepción en la oficina de correos y lleva el texto íntegro (arts. 45 y 46 Ley 19.880)." },
@@ -249,6 +254,7 @@ export const BANCO_M05: BancoModulo = {
       titulo: "Más tiempo, pero tarde",
       relato: "El Director de Tránsito pide ampliar en diez días el plazo de diez que tenía para informar. El plazo venció el viernes pasado. «Es por una buena causa», dice.",
       documento: { tipo: "Solicitud de ampliación de plazo", campos: [ { k: "Órgano", v: "Dirección de Tránsito" }, { k: "Plazo original", v: "10 días para informe" }, { k: "Venció el", v: "Viernes pasado" }, { k: "Pide", v: "Ampliación de 10 días" }, { k: "Presentada el", v: "Lunes siguiente" } ] },
+      vicio: "Presentada el",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "CONCEDER: hay buenas razones", correcto: false, porque: "En ningún caso puede ampliarse un plazo ya vencido (art. 26 Ley 19.880)." },

@@ -193,6 +193,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Legalidad del permiso", v: "Otorgado conforme al plan regulador; sin vicios" },
         { k: "Antigüedad", v: "8 meses; obras iniciadas" },
       ] },
+      vicio: "Materia",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "REVOCAR: la Administración siempre puede cambiar de opinión", correcto: false, porque: "Puede, pero no sobre actos que crearon derechos adquiridos legítimamente." },
@@ -213,6 +214,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Notificación del decreto N.º 702", v: "Hace 3 años y 2 meses" },
         { k: "Audiencia previa", v: "Se dio" },
       ] },
+      vicio: "Notificación del decreto N.º 702",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "INVALIDAR: el vicio es real y hubo audiencia", correcto: false, porque: "El vicio es real, pero la potestad invalidatoria tiene plazo." },
@@ -234,6 +236,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Audiencia previa al interesado", v: "No consta" },
         { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
       ] },
+      vicio: "Audiencia previa al interesado",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: el permiso era ilegal y está dentro de los dos años", correcto: false, porque: "Las dos condiciones se cumplen, pero falta la tercera: la audiencia." },
@@ -255,6 +258,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Terceros afectados", v: "Ninguno" },
         { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: efecto retroactivo favorable que no lesiona a terceros", correcto: true, porque: "Art. 52 Ley 19.880: los actos no tienen efecto retroactivo «salvo cuando produzcan consecuencias favorables para los interesados y no lesionen derechos de terceros». Aquí se cumplen las dos condiciones." },
@@ -276,6 +280,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Recursos", v: "Indicados" },
         { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
       ] },
+      vicio: "Afectado",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "NULO: un dato erróneo vicia el acto", correcto: false, porque: "Sólo los vicios esenciales que causan perjuicio anulan (art. 13 inc. 3)." },
@@ -297,6 +302,7 @@ export const BANCO_M03: BancoModulo = {
         { k: "Ejecución material", v: "Hoy, 8:00 h" },
         { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
       ] },
+      vicio: "Notificación al propietario",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: los actos causan inmediata ejecutoriedad", correcto: false, porque: "La ejecutoriedad es inmediata, pero los efectos frente al destinatario nacen con la notificación." },

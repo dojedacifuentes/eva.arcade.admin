@@ -10,7 +10,7 @@
  "tileheight": 16,
  "infinite": false,
  "nextlayerid": 8,
- "nextobjectid": 38,
+ "nextobjectid": 41,
  "properties": [
   {
    "name": "nombre",
@@ -15312,7 +15312,7 @@
    "visible": true,
    "objects": [
     {
-     "id": 37,
+     "id": 40,
      "name": "fuente",
      "type": "",
      "x": 472,
@@ -15425,13 +15425,49 @@
      "rotation": 0,
      "visible": true,
      "point": true,
+     "name": "amb-1",
+     "type": "punto",
+     "x": 440,
+     "y": 275.2
+    },
+    {
+     "id": 22,
+     "width": 0,
+     "height": 0,
+     "rotation": 0,
+     "visible": true,
+     "point": true,
+     "name": "amb-2",
+     "type": "punto",
+     "x": 712,
+     "y": 377.6
+    },
+    {
+     "id": 23,
+     "width": 0,
+     "height": 0,
+     "rotation": 0,
+     "visible": true,
+     "point": true,
+     "name": "amb-3",
+     "type": "punto",
+     "x": 120,
+     "y": 456
+    },
+    {
+     "id": 24,
+     "width": 0,
+     "height": 0,
+     "rotation": 0,
+     "visible": true,
+     "point": true,
      "name": "hoyo",
      "type": "punto",
      "x": 552,
      "y": 723.2
     },
     {
-     "id": 22,
+     "id": 25,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15443,7 +15479,7 @@
      "y": 899.2
     },
     {
-     "id": 23,
+     "id": 26,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15455,7 +15491,7 @@
      "y": 456
     },
     {
-     "id": 24,
+     "id": 27,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15484,7 +15520,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 28,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15513,7 +15549,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 29,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15542,7 +15578,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 30,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15571,7 +15607,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 31,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15600,7 +15636,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 32,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15629,7 +15665,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 33,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15658,7 +15694,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 34,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15687,7 +15723,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 35,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15716,7 +15752,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 36,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15750,7 +15786,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 37,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15779,7 +15815,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 38,
      "width": 0,
      "height": 0,
      "rotation": 0,
@@ -15813,7 +15849,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 39,
      "width": 0,
      "height": 0,
      "rotation": 0,

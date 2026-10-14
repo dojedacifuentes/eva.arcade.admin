@@ -199,6 +199,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "Protección fuera de hora",
       relato: "Don Aurelio Pinto quiere recurrir de protección contra el decreto que le clausuró el local. Lo notificaron hace 45 días; él «estuvo ocupado». Te pide que firmes el escrito como su abogado.",
       documento: { tipo: "Borrador de recurso de protección", campos: [ { k: "Contra", v: "Decreto alcaldicio de clausura" }, { k: "Derecho invocado", v: "Art. 19 N.º 21 (libertad económica)" }, { k: "Notificado hace", v: "45 días corridos" }, { k: "Tribunal", v: "Corte de Apelaciones" }, { k: "Pide", v: "Dejar sin efecto la clausura" } ] },
+      vicio: "Notificado hace",
       pregunta: "¿Qué sello le pones al borrador?",
       sellos: [
         { texto: "PRESENTAR: la Constitución no fija plazo", correcto: false, porque: "La Constitución no lo fija, pero el Auto Acordado de la Corte Suprema establece 30 días corridos; a los 45 está vencido." },
@@ -213,6 +214,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "Directo a la Corte",
       relato: "La junta de vecinos reclama por ilegalidad contra un decreto que cerró una calle para una feria privada. Lo presentaron directamente en la Corte de Apelaciones, al día 10 desde la publicación. La Alcaldesa pregunta si debe contestar.",
       documento: { tipo: "Reclamo de ilegalidad", campos: [ { k: "Contra", v: "Decreto alcaldicio que cierra calle para feria privada" }, { k: "Reclamante", v: "Junta de vecinos (interés general de la comuna)" }, { k: "Presentado ante", v: "Corte de Apelaciones" }, { k: "Día", v: "10 desde la publicación" }, { k: "Reclamo previo ante el alcalde", v: "No" } ] },
+      vicio: "Reclamo previo ante el alcalde",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "BIEN PRESENTADO: la Corte conoce el reclamo", correcto: false, porque: "La Corte conoce sólo después del rechazo del reclamo por el alcalde, expreso o ficto (art. 151 letra d) Ley 18.695)." },
@@ -226,6 +228,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "Dos puertas a la vez",
       relato: "La señora Marta Quilodrán presentó reposición contra el decreto que le negó la patente y, tres días después, demandó lo mismo en el juzgado civil. La Alcaldesa pregunta si debe resolver la reposición.",
       documento: { tipo: "Expediente de reposición", campos: [ { k: "Recurso", v: "Reposición contra decreto que deniega patente" }, { k: "Presentado", v: "Día 3 desde la notificación" }, { k: "Demanda civil", v: "Misma pretensión, presentada tres días después" }, { k: "Estado de la reposición", v: "Pendiente, dentro de los 30 días para resolver" } ] },
+      vicio: "Demanda civil",
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "RESOLVER LA REPOSICIÓN: son vías independientes", correcto: false, porque: "Deducida acción jurisdiccional, la Administración debe inhibirse de conocer cualquier reclamación sobre la misma pretensión (art. 54 inc. 3 Ley 19.880)." },
@@ -239,6 +242,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "El decreto de hace cinco años",
       relato: "Un vecino descubre que en 2021 un decreto alcaldicio, firmado por un funcionario sin facultades, le canceló un permiso de ocupación de bien nacional de uso público. Quiere anularlo. Ya no hay plazo de protección, ni de reclamo de ilegalidad, ni de invalidación.",
       documento: { tipo: "Consulta de la Alcaldesa", campos: [ { k: "Acto", v: "Decreto de 2021 que cancela permiso" }, { k: "Vicio", v: "Firmado por funcionario sin competencia" }, { k: "Notificado hace", v: "5 años" }, { k: "Plazos vencidos", v: "Protección (30 días), reclamo de ilegalidad (30 + 15), invalidación (2 años)" }, { k: "Pregunta", v: "¿Qué acción queda?" } ] },
+      vicio: "Vicio",
       pregunta: "¿Qué acción le indicas?",
       sellos: [
         { texto: "RECURSO DE REVISIÓN", correcto: false, porque: "La incompetencia no es causal del art. 60 Ley 19.880 y el año ya pasó." },
@@ -253,6 +257,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "Reclamo en regla",
       relato: "El Secretario Municipal te pasa un reclamo de ilegalidad presentado ante la Alcaldesa por un comerciante agraviado: identifica el decreto, la norma infringida, cómo se infringió y el perjuicio. Llegó al día 20 desde la notificación.",
       documento: { tipo: "Reclamo de ilegalidad ante el alcalde", campos: [ { k: "Reclamante", v: "Comerciante agraviado por la resolución" }, { k: "Contra", v: "Decreto alcaldicio que caduca permiso de kiosco" }, { k: "Presentado", v: "Día 20 desde la notificación administrativa" }, { k: "Contenido", v: "Acto, norma infringida, forma de la infracción y perjuicio" }, { k: "Pide", v: "Dejar sin efecto el decreto" } ] },
+      vicio: null,
       pregunta: "¿Qué sello corresponde?",
       sellos: [
         { texto: "VÁLIDO: tramitar y resolver en 15 días", correcto: true, porque: "El agraviado puede reclamar ante el alcalde dentro de 30 días desde la notificación (art. 151 letra b) Ley 18.695) y el escrito trae lo que exige la letra d). Si la Alcaldesa no se pronuncia en 15 días, se entiende rechazado y se abre la vía ante la Corte." },
@@ -267,6 +272,7 @@ export const BANCO_M08: BancoModulo = {
       titulo: "La licitación perdida",
       relato: "Constructora Columna Ltda. perdió una licitación municipal y sostiene que la adjudicación fue arbitraria. Su abogado pregunta por el pasillo si «va por protección o por reclamo de ilegalidad». Supo de la adjudicación hace cuatro días hábiles.",
       documento: { tipo: "Consulta", campos: [ { k: "Acto", v: "Resolución de adjudicación de licitación pública municipal" }, { k: "Reclamo", v: "Adjudicación arbitraria durante el procedimiento de contratación" }, { k: "Conocido hace", v: "4 días hábiles" }, { k: "Pretensión", v: "Impugnar la adjudicación" } ] },
+      vicio: "Acto",
       pregunta: "¿Qué vía le indicas?",
       sellos: [
         { texto: "TRIBUNAL DE CONTRATACIÓN PÚBLICA: demanda en 10 días hábiles", correcto: true, porque: "El Tribunal de Contratación Pública conoce la acción de impugnación contra actos u omisiones ilegales o arbitrarios ocurridos en los procedimientos de contratación con organismos del Estado (art. 24 N.º 1 Ley 19.886); la demanda se deduce en el plazo fatal de diez días hábiles desde que se conoció o debió conocer la ilegalidad (art. 24 ter)." },

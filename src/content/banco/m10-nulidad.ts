@@ -209,6 +209,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Notificado el", v: "Hace tres años y un mes" },
         { k: "Estado", v: "Subvención pagada y rendida" },
       ] },
+      vicio: "Notificado el",
       pregunta: "¿Qué le respondes a la Alcaldesa?",
       sellos: [
         { texto: "NO SE PUEDE INVALIDAR: PASARON LOS DOS AÑOS; LA VÍA ES JUDICIAL", correcto: true, porque: "La potestad invalidatoria sólo puede ejercerse dentro de dos años desde la notificación o publicación (art. 53 Ley 19.880). Después, sólo queda pedir la nulidad de derecho público ante el juez (art. 7 inc. 3 CPR), cuya acción es imprescriptible según Domic Bezic." },
@@ -229,6 +230,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Notificado el", v: "Hace cuatro meses" },
         { k: "Vicio", v: "Investidura irregular (art. 7 inc. 1 CPR)" },
       ] },
+      vicio: "Firma",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "INVALIDAR: FALTA INVESTIDURA (ART. 7 CPR, ART. 53)", correcto: true, porque: "Actuó alguien sin investidura regular: vicio del art. 7 inc. 1 CPR, que no es de mera forma. Estamos dentro de los dos años, así que la Dirección Jurídica propone invalidar, previa audiencia del interesado (art. 53 Ley 19.880)." },
@@ -250,6 +252,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Publicado", v: "Sí, en el sitio electrónico municipal" },
         { k: "Vicio", v: "Ninguno" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: SIN VICIO; CAMBIARLO ES REVOCAR, NO INVALIDAR", correcto: true, porque: "No hay nada contrario a derecho que invalidar (art. 53). Un acto válido que dejó de convenir se deja sin efecto por revocación, por mérito u oportunidad (art. 61 Ley 19.880); aquí no hay derechos adquiridos que lo impidan." },
@@ -270,6 +273,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Notificado el", v: "Hace dos meses; primer pago realizado" },
         { k: "Motivo de la revocación", v: "Cambio de prioridades presupuestarias" },
       ] },
+      vicio: "Motivo de la revocación",
       pregunta: "¿Procede revocar?",
       sellos: [
         { texto: "NO PROCEDE: DERECHOS ADQUIRIDOS LEGÍTIMAMENTE (ART. 61 a)", correcto: true, porque: "La revocación no procede contra actos declarativos o creadores de derechos adquiridos legítimamente (art. 61 letra a) Ley 19.880). Las becas se otorgaron conforme a las bases: son derechos adquiridos." },
@@ -290,6 +294,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Fundamento", v: "Art. 7 inc. 3 CPR" },
         { k: "Tribunal", v: "Juzgado Civil de Potestas" },
       ] },
+      vicio: "Pide",
       pregunta: "¿Qué informas sobre la prescripción?",
       sellos: [
         { texto: "LA NULIDAD NO PRESCRIBE; LAS DEVOLUCIONES SÍ (DOMIC BEZIC)", correcto: true, porque: "Según la CS desde Domic Bezic (2002), la acción de nulidad de derecho público es imprescriptible, pero las acciones patrimoniales derivadas prescriben según el Código Civil: se discute la nulidad y se opone prescripción a las devoluciones antiguas." },
@@ -310,6 +315,7 @@ export const BANCO_M10: BancoModulo = {
         { k: "Norma infringida", v: "Art. 12 Ley 18.695: multas hasta 5 UTM" },
         { k: "Resto del texto", v: "Horarios, prohibiciones y fiscalización, sin vicio" },
       ] },
+      vicio: "Art. 3",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "INVALIDACIÓN PARCIAL: SÓLO EL ARTÍCULO VICIADO", correcto: true, porque: "La invalidación puede ser parcial y no afecta las disposiciones independientes (art. 53 inc. 2 Ley 19.880). Estamos dentro de los dos años; se corrige el art. 3 (art. 12 Ley 18.695) y se conserva el resto." },

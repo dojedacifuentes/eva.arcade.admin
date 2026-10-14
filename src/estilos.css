@@ -746,3 +746,17 @@ body:has(#apuesta) .boton-a, body:has(#apuesta) .joy-zona { display: none; }
 body.menos-movimiento .ficha-estudio .cara { transition: none; }
 /* El HUD de Potestas no muestra dinero. */
 .hud-dinero { display: none !important; }
+
+/* Consecuencias: confianza de los vecinos y respaldo de la Alcaldesa. */
+.hud-medidores { gap: 10px; padding: 4px 9px; }
+.hud-medidores .med { display: inline-flex; align-items: center; gap: 4px; }
+.hud-medidores .med i { font-style: normal; font-size: 14px; }
+.hud-medidores .med b { font-family: "Silkscreen", var(--pixel); font-size: 13px; min-width: 2ch; }
+.hud-medidores .med[data-nivel="alto"] b { color: #9be38a; }
+.hud-medidores .med[data-nivel="medio"] b { color: #ffe39a; }
+.hud-medidores .med[data-nivel="bajo"] b { color: #ff9a8a; }
+.flota.menos { color: #ff9a8a; }
+.fin-epilogo { max-width: 560px; margin: 4px auto 10px; color: #f3e6cf; font-size: 16px; line-height: 1.45; text-align: center; }
+.titulo-urgencia { background: linear-gradient(#c0463b, #9e2f27) !important; color: #fff !important; }
+.fc-compartir { margin-top: 10px; display: flex; gap: 6px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.fc-compartir code { font-family: var(--texto); background: var(--papel); border: 2px solid var(--borde); border-radius: 8px; padding: 4px 8px; font-size: 13px; }

@@ -12,7 +12,7 @@
   const visible = (s) => { const e = $(s); return !!e && !e.hidden && e.offsetParent !== null; };
   const tecla = async (code) => { dispatchEvent(new KeyboardEvent("keydown", { code, key: code })); await w(40); dispatchEvent(new KeyboardEvent("keyup", { code, key: code })); };
   const hasta = async (f, t = 15000) => { const t0 = performance.now(); while (performance.now() - t0 < t) { const v = f(); if (v) return v; await w(80); } return null; };
-  const fotos = new Set(window.__fotos ?? ["titulo", "decreto", "cartel", "ciudad", "dialogo", "eva", "apuesta", "mesa", "mesa-timbre", "cadena", "columnas", "duelo", "comision", "fin", "expediente"]);
+  const fotos = new Set(window.__fotos ?? ["titulo", "decreto", "cartel", "ciudad", "dialogo", "eva", "apuesta", "mesa", "mesa-timbre", "cadena", "columnas", "mision", "urgentes", "duelo", "comision", "fin", "expediente"]);
   const foto = async (n) => { if (fotos.has(n)) { fotos.delete(n); await window.capturar(n); } };
   const log = [];
   const B = () => window.__potestas.BANCOS.find((b) => b.modulo === N);
@@ -31,21 +31,30 @@
   }
 
   const mundo = () => window.juego.scene.getScene("mundo");
+  const t0 = performance.now(); let ultimoPaso = "";
   let pasos = 0, quieto = 0, errorMesa = !!window.__errores, errorCol = !!window.__errores;
   while (pasos++ < 900) {
     const d = JSON.parse(localStorage.getItem("eva-potestas:partida") || "{}");
+    if (d.paso && d.paso !== ultimoPaso) { ultimoPaso = d.paso; log.push(`${Math.round((performance.now() - t0) / 1000)}s ${d.paso}`); }
     if (d.paso === `fin-j${N}` || visible("#fin-capitulo")) { log.push("FIN DE JORNADA"); break; }
     // ── Minijuegos ──
     if ($(".mj-capa")) {
       quieto = 0;
       const cap = $(".mj-capa");
       // Botones de cierre o continuar (resultados, «Siguiente»).
-      const seguir = [...cap.querySelectorAll("button")].find((b) => b.offsetParent && !b.disabled && /Siguiente|Seguir|Continuar|Terminar|Volver|Listo/i.test(b.textContent));
+      const seguir = [...cap.querySelectorAll("button")].find((b) => !b.closest(".mj-exp") && b.offsetParent && !b.disabled && /Siguiente|Seguir|Continuar|Terminar|Listo|Ver resultado|Rematar|Cerrar/i.test(b.textContent));
       if (seguir) { await w(500); seguir.click(); await w(500); continue; }
       if (cap.classList.contains("mj-mesa")) {
-        const mat = $(".mj-doc-mat")?.textContent?.replace("MAT.: ", "") ?? "";
-        const ex = B().expedientes.find((x) => x.titulo === mat);
-        const btns = [...cap.querySelectorAll(".mj-sello-btn")].filter((b) => !b.disabled);
+        const mat = $(".mj-doc-mat")?.textContent?.replace("MAT.: ", "").replace(/^Vuelve: /, "") ?? "";
+        const ex = window.__potestas.BANCOS.flatMap((x) => x.expedientes).find((x) => x.titulo === mat);
+        // Paso 1: ¿dónde está el problema?
+        const filas = [...cap.querySelectorAll(".mj-campo")].filter((b) => !b.disabled && b.offsetParent);
+        if (ex && filas.length && ex.vicio !== undefined && ![...cap.querySelectorAll(".mj-sello-btn")].some((b) => !b.disabled && b.offsetParent)) {
+          await w(600); await foto("mesa");
+          const fila = ex.vicio === null ? [...cap.querySelectorAll("button")].find((b) => b.textContent.includes("Todo en orden")) : filas.find((b) => b.querySelector(".mj-campo-k")?.textContent === ex.vicio);
+          (fila ?? filas[0]).click(); await w(1300); continue;
+        }
+        const btns = [...cap.querySelectorAll(".mj-sello-btn")].filter((b) => !b.disabled && b.offsetParent);
         if (ex && btns.length) {
           await w(700); await foto("mesa");
           const ok = ex.sellos.find((s) => s.correcto).texto;
@@ -76,16 +85,21 @@
           }
         }
       }
-      if (cap.querySelector(".mj-opcion")) {
-        const ops = [...cap.querySelectorAll(".mj-opcion")];
-        if (ops.every((b) => !b.disabled) && !cap.querySelector(".mj-opciones")?.hidden) {
-          const boc = cap.querySelector(".mj-bocadillo");
-          const q = B().quiz.find((x) => (boc?.getAttribute("aria-label") || "").includes(x.texto));
-          if (q) {
-            await w(500); await foto("duelo");
-            const b = ops.find((x) => x.querySelector(".mj-opcion-t").textContent === q.opciones[q.correcta]);
-            (b ?? ops[0]).click(); await w(900); continue;
-          }
+      if (cap.classList.contains("mj-duelo")) {
+        // Contrainterrogatorio: dejar pasar lo cierto; objetar lo falso y presentar el hallazgo que lo desmiente.
+        const exp = cap.querySelector(".mj-exp");
+        const boc = cap.querySelector(".mj-declaracion");
+        const texto = (boc?.getAttribute("aria-label") || "").replace(/^[^:]*:s*/, "");
+        const af = window.__potestas.BANCOS.flatMap((x) => x.afirmaciones).find((x) => x.texto === texto);
+        if (exp && !exp.hidden && af) {
+          const h = window.__potestas.BANCOS.flatMap((x) => x.hallazgos).find((x) => x.id === af.hallazgo);
+          const carta = [...exp.querySelectorAll(".mj-prueba")].find((c) => c.querySelector(".mj-prueba-t")?.textContent === h?.titulo);
+          if (carta) { carta.click(); await w(250); exp.querySelector(".mj-presentar")?.click(); await w(2500); continue; }
+        }
+        const pasar = cap.querySelector(".mj-dejar"), objetar = cap.querySelector(".mj-objetar");
+        if (af && pasar && objetar && !pasar.disabled && pasar.offsetParent) {
+          await w(600); await foto("duelo");
+          (af.verdad ? pasar : objetar).click(); await w(af.verdad ? 900 : 700); continue;
         }
       }
       if (cap.querySelector(".mj-idea")) {
@@ -99,6 +113,7 @@
       }
       await w(250); continue;
     }
+    if (visible("#telefono")) { await w(300); await foto("urgentes"); await w(400); continue; }
     if (visible("#tiempo")) { await w(700); await foto("cartel"); $("#tiempo").click(); await w(500); continue; }
     if (visible("#hallazgo")) { await w(700); await tecla("KeyE"); await w(500); continue; }
     if ($("#apuesta")) { await w(500); await foto("apuesta"); $("#apuesta .apuesta-op")?.click(); await w(1800); continue; }
@@ -111,7 +126,10 @@
     }
     // Libre: ir a la flecha.
     const m = mundo(), j = m?.jugador;
-    const meta = m?.metaPos ? m.metaPos() : null;
+    // Pistas de una misión (inspección e investigación no tienen flecha): ir a la primera que quede.
+    const pista = m ? [...m.interactivos].find(([k]) => k.startsWith("pista-")) : null;
+    const meta = pista ? pista[1].pos() : m?.metaPos ? m.metaPos() : null;
+    if (pista) await foto("mision");
     if (j && meta) {
       if (m.mapa === "ciudad") await foto("ciudad");
       // Junto al objetivo, mirándolo, y usar.

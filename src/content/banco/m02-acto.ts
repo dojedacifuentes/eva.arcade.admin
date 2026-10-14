@@ -211,6 +211,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Fecha de la resolución", v: "29 de agosto" },
         { k: "Fundamento", v: "Informe de Obras desfavorable por uso de suelo" },
       ] },
+      vicio: "Decreto de subrogancia",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: el fondo está bien fundado", correcto: false, porque: "Que el motivo sea bueno no reemplaza al firmante: los requisitos del art. 7 CPR son copulativos." },
@@ -232,6 +233,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Firma", v: "Alcaldesa; Secretario Municipal" },
         { k: "Recursos", v: "No indica" },
       ] },
+      vicio: "Considerando",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: la Alcaldesa puede rechazar sin dar explicaciones", correcto: false, porque: "Puede rechazar, pero no sin explicar: es un acto que afecta derechos y resuelve una solicitud." },
@@ -253,6 +255,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Recursos", v: "Reposición ante la Alcaldesa en cinco días; en subsidio, no procede jerárquico" },
         { k: "Firma", v: "Alcaldesa; Secretario Municipal como ministro de fe" },
       ] },
+      vicio: null,
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO", correcto: true, porque: "Órgano competente, autoridad con atribución (art. 63 g), motivos de derecho y de hecho expresados, objeto lícito y determinado, forma completa con ministro de fe e indicación de recursos (art. 41). Contra los actos del alcalde no procede jerárquico: la reposición agota la vía administrativa (art. 59 inc. 4)." },
@@ -274,6 +277,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Sumario", v: "No hay" },
         { k: "Firma", v: "Alcaldesa" },
       ] },
+      vicio: "Antecedente",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: destinar funcionarios es una atribución de la Alcaldesa", correcto: false, porque: "La atribución existe, pero toda potestad tiene un fin; usarla para otro la vicia." },
@@ -294,6 +298,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Decreto alcaldicio que lo ejecute", v: "No se dictó" },
         { k: "Pago", v: "Transferido por la DAF con cargo al acta" },
       ] },
+      vicio: "Decreto alcaldicio que lo ejecute",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "VÁLIDO: el acuerdo del Concejo es el acto administrativo", correcto: false, porque: "El acuerdo es la decisión del órgano pluripersonal, pero la ley exige un acto de la autoridad ejecutiva para llevarlo a efecto." },
@@ -314,6 +319,7 @@ export const BANCO_M02: BancoModulo = {
         { k: "Efecto práctico", v: "Impide obtener permiso de edificación" },
         { k: "Recursos indicados", v: "Ninguno («no es un acto»)" },
       ] },
+      vicio: "Recursos indicados",
       pregunta: "¿Qué sello le pones?",
       sellos: [
         { texto: "NO ES ACTO: sólo informa, no decide", correcto: false, porque: "La ley no exige que el acto decida: basta que sea una declaración de juicio, constancia o conocimiento en ejercicio de competencias." },
