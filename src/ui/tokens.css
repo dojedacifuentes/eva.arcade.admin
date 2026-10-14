@@ -1,0 +1,32 @@
+/* Identidad visual de POTESTAS: «la papelería del Estado».
+   Cada tarjeta es un objeto real de una oficina pública chilena (carátula de
+   expediente, oficio con membrete, ficha de índice, acta, timbre de goma),
+   no un rectángulo genérico. Estos tokens los comparten todas las pantallas. */
+:root {
+  /* Papel */
+  --oficio: #f4ecd8;          /* papel oficio ahuesado */
+  --oficio-2: #e9dcc0;        /* papel más viejo / sombra del papel */
+  --oficio-linea: #c9b892;    /* renglones y perforaciones */
+  --carton: #c79a5b;          /* carpeta de cartón (carátula) */
+  --carton-2: #a87a3d;
+  /* Tintas */
+  --tinta-azul: #1f3b73;      /* lápiz pasta azul, firmas */
+  --tinta-negra: #1d1a22;
+  --tinta-roja: #b3261e;      /* timbre «RECHAZADO», objeción */
+  --tinta-verde: #2f6b45;     /* timbre «APROBADO», «TOMADO RAZÓN» */
+  --tinta-morada: #5a3b8c;    /* timbre de oficina de partes */
+  /* República */
+  --rep-azul: #1c3f94;
+  --rep-rojo: #d52b1e;
+  --rep-blanco: #f7f5ef;
+  --franja: linear-gradient(90deg, var(--rep-azul) 0 33.3%, var(--rep-blanco) 33.3% 66.6%, var(--rep-rojo) 66.6% 100%);
+  /* Escritorio */
+  --pano: #1e3a2f;            /* paño verde del escritorio */
+  --pano-2: #16291f;
+  --madera: #5b3a24;
+  --laton: #c9a24a;           /* placas y botones de bronce */
+  /* Tipos */
+  --maquina: "Courier Prime", "Courier New", ui-monospace, monospace; /* máquina de escribir */
+  /* Timbre de goma: rotado, tinta irregular */
+  --timbre-rot: -8deg;
+}

@@ -75,6 +75,37 @@ export type Hallazgo = {
   simple: string;
 };
 
+/** Calendario: contar un plazo de días hábiles y tocar el día en que vence. */
+export type Plazo = {
+  id: string; modulo: number; titulo: string;
+  /** Qué pasó y qué plazo corre (1–2 frases). */
+  relato: string;
+  /** Mes que muestra el calendario (`mes` de 0 a 11). */
+  anio: number; mes: number;
+  /** Día del mes en que se notificó (el plazo corre desde el día siguiente). */
+  inicio: number;
+  /** Feriados de ese mes (además de sábados y domingos). */
+  feriados: { dia: number; nombre: string }[];
+  /** Largo del plazo, en días hábiles. */
+  dias: number;
+  /** Respuesta: día del mes en que vence. */
+  vence: number;
+  porque: string; norma: string; fuente: Fuente;
+};
+
+/** Armar un acto: poner cada trozo en su parte del documento y descartar los que sobran. */
+export type Armado = {
+  id: string; modulo: number; titulo: string;
+  /** Encabezado del documento, p. ej. «Decreto Alcaldicio N.º 1.913». */
+  tipo: string;
+  relato: string;
+  /** Las partes en orden, con el trozo correcto de cada una. */
+  partes: { parte: string; texto: string; porque: string }[];
+  /** Trozos que no van en este acto y por qué. */
+  sobran: { texto: string; porque: string }[];
+  norma: string; fuente: Fuente;
+};
+
 /** El banco de un módulo. */
 export type BancoModulo = {
   modulo: number;
@@ -86,4 +117,8 @@ export type BancoModulo = {
   columnas: Columnas[];
   cadenas: Cadena[];
   expedientes: Expediente[];
+  /** Modalidades extra (opcionales): calendario de plazos, armar el acto, cinta contrarreloj. */
+  plazos?: Plazo[];
+  armados?: Armado[];
+  cintas?: Columnas[];
 };

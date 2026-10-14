@@ -32,3 +32,17 @@ Juego 2D de Derecho Administrativo y Público chileno (EVA ARCADE). Repo públic
 
 - Publicar en Vercel (proyecto nuevo en la cuenta del propietario; preset Vite, raíz `./`).
 - Enlazar desde EVA ARCADE (`eva.proyecto01`, regla del «sí» del propietario).
+
+## En pausa (14-10-2026, a pedido del propietario)
+
+Pidió: rivales distintos en cada contrainterrogatorio (incluido el Contralor), modalidades de juego nuevas,
+más fluidez y un diseño de tarjetas menos genérico. Quedó hecho sólo el andamiaje:
+- `src/ui/tokens.css`: identidad «la papelería del Estado» (papel oficio, cartón, tintas, tricolor, paño verde,
+  fuente de máquina de escribir Courier Prime, ya cargada en `index.html`).
+- `src/content/tipos.ts`: tipos `Plazo` (calendario de días hábiles), `Armado` (armar el decreto) y `cintas`
+  (toma de razón contrarreloj), opcionales en `BancoModulo`. Sin componentes ni contenido todavía.
+Plan al retomar: rivales nuevos (Concejal Morales j3, Don Braulio j6, Contralor Ossandón en duelo j7,
+Abogado Kevin Soto j9, Abogado Larraín j10; Riquelme queda en j5 y j8) con lentes/bigote/calvo en
+`characters.ts`; las tres modalidades reemplazan a los «urgentes» en j2 (armado), j5 (calendario) y j7 (cinta);
+rediseño de tarjetas (carátula de expediente, fichas de índice, acta de cierre con timbres, sala de audiencia)
+y cola de avisos para que no se encimen. Faltan por probar las jornadas 3, 4, 7, 8, 10, 11 y el móvil.
