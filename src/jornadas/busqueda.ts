@@ -90,7 +90,7 @@ export async function buscar(m: Mundo, b: Busqueda): Promise<{ aciertos: number;
 
         m.bloquear(false);
         pintar();
-        if (carrera) { if (pendientes.size) ponerSiguiente(); }
+        if (carrera || b.tipo === "recorrido") { m.meta(null); if (pendientes.size) ponerSiguiente(); }
         if (!pendientes.size) listo();
       }, 22);
       if (carrera || b.tipo === "recorrido") m.meta(pos);

@@ -121,12 +121,13 @@ export function jornadas(): Promise<number | null> {
   });
 }
 
+const CORBATAS = ["#8a2e2e", "#2f5fa8", "#3f6b5a", "#d9a94f", "#7a2e5a", "#f4f1ea"];
 const TRAJES = ["#3b3f4f", "#2b2026", "#3d4a7a", "#5c3423", "#4f86c6", "#9a4a2c", "#5fa37a", "#d46a9b"];
 
 /** Crear personaje: una sola pantalla, todo con un toque. Eres la abogada o el abogado nuevo de la Municipalidad. */
 export function creacion(): Promise<Identidad> {
   let sexo: Sexo = "mujer";
-  const a: Apariencia = { piel: PIELES[2], pelo: PELOS[0], peinado: "largo", polera: TRAJES[0], pantalon: "#2b2026" };
+  const a: Apariencia = { piel: PIELES[2], pelo: PELOS[0], peinado: "largo", polera: TRAJES[0], pantalon: "#2b2026", corbata: CORBATAS[0] };
   const muestras = (id: string, colores: string[]) => `<div class="muestras" data-k="${id}">${colores.map((col) => `<button style="--c:${col}" data-v="${col}" aria-label="${col}"></button>`).join("")}</div>`;
   const c = mostrar(`
     <div class="creacion-fondo"><div class="creacion ficha">
@@ -146,6 +147,7 @@ export function creacion(): Promise<Identidad> {
             ${muestras("pelo", PELOS)}
           </div>
           <div class="campo">Traje ${muestras("polera", TRAJES)}</div>
+          <div class="campo">Corbata o pañuelo ${muestras("corbata", CORBATAS)}</div>
         </div>
       </div>
       <button class="boton grande" id="c-listo">Firmar y asumir el cargo</button>
@@ -172,9 +174,9 @@ export function creacion(): Promise<Identidad> {
   const azar = <T,>(l: readonly T[]) => l[Math.floor(Math.random() * l.length)];
   c.querySelector("#c-dado")!.addEventListener("click", () => {
     (c.querySelector("#c-nombre") as HTMLInputElement).value = azar(NOMBRES[sexo]);
-    a.piel = azar(PIELES); a.pelo = azar(PELOS); a.polera = azar(TRAJES);
+    a.piel = azar(PIELES); a.pelo = azar(PELOS); a.polera = azar(TRAJES); a.corbata = azar(CORBATAS);
     a.peinado = azar(sexo === "mujer" ? (["largo", "mono", "rizado", "corto"] as Peinado[]) : (["corto", "rizado", "largo"] as Peinado[]));
-    for (const k of ["piel", "pelo", "polera", "peinado"] as const) activar(c.querySelector(`[data-k="${k}"]`)!, a[k]);
+    for (const k of ["piel", "pelo", "polera", "peinado", "corbata"] as const) activar(c.querySelector(`[data-k="${k}"]`)!, a[k] ?? "");
     sonido.efecto("elegir");
     pintar();
     gsap.fromTo("#vista-figura", { rotation: -12, scale: 0.85 }, { rotation: 0, scale: 1, duration: 0.4, ease: "back.out(3)" });

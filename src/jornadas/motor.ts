@@ -204,7 +204,7 @@ export async function jugarJornada(m: Mundo, g: Guion): Promise<number> {
 
   await paso("cartel", async () => {
     aLas(m, 8, 55);
-    sonido.musica("musica-barrio");
+    sonido.musica("musica-potestas");
     await ui.tiempo(`Jornada ${n}`, `${mod.titulo} · ${mod.lema}`);
   });
 
@@ -236,8 +236,10 @@ export async function jugarJornada(m: Mundo, g: Guion): Promise<number> {
     m.bloquear(true);
     if (g.mesa.dichos.length) await conversar(g.mesa.dichos.slice(0, 1), g.mesa.con ? [g.mesa.con.p] : []);
     const vuelve = casoQueVuelve(n);
+    sonido.musica("musica-mesa");
     await timbrar(`Mesa · ${mod.titulo}`, [...(vuelve ? [vuelve] : []), ...exps.slice(0, 3)]);
     fichas(0, 0.4);
+    sonido.musica("musica-potestas");
     m.bloquear(false);
   });
 
@@ -268,7 +270,9 @@ export async function jugarJornada(m: Mundo, g: Guion): Promise<number> {
     // Los urgentes llegan donde estés: sin caminar.
     m.bloquear(true);
     await ui.telefono("Marisol · Oficina de Partes", `Llegaron ${quedan.length} expedientes urgentes. Te los mando al celular: tímbralos ahí mismo.`);
+    sonido.musica("musica-urgencia");
     await timbrar("Urgentes de la tarde", quedan);
+    sonido.musica("musica-potestas");
     m.bloquear(false);
   });
 
@@ -296,7 +300,7 @@ export async function jugarJornada(m: Mundo, g: Guion): Promise<number> {
     if (g.jefe.despues.length) await conversar(g.jefe.despues.slice(0, 2), [g.jefe.quien, ...(g.jefe.juez ? [g.jefe.juez.p] : []), ...(g.jefe.extras ?? []).map((x) => x.p)]);
     fichas(0.7, 1);
     m.bloquear(false);
-    sonido.musica("musica-barrio");
+    sonido.musica("musica-potestas");
   });
 
   await paso("cierre", async () => {

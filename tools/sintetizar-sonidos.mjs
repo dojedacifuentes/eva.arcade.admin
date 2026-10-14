@@ -184,3 +184,65 @@ guardar("cobrar", tono(tono(buffer(0.35), { dur: 0.07, f: nota(83), vol: 0.22, a
   }
   guardar("musica-cuna", b, "80k");
 }
+
+// ── POTESTAS ───────────────────────────────────────────────────────────────
+// «Plaza de la Constitución»: marcha cívica alegre (Fa mayor, 112 bpm), metales de 8 bits y redoblante.
+{
+  const bpm = 112, negra = 60 / bpm, compas = negra * 4, compases = 16;
+  const b = buffer(compas * compases);
+  const acordes = [[53, 57, 60], [58, 62, 65], [48, 52, 55], [53, 57, 60], [50, 53, 57], [58, 62, 65], [48, 52, 55], [53, 57, 60]];
+  for (let c = 0; c < compases; c++) {
+    const ac = acordes[Math.floor(c / 2) % acordes.length], t0 = c * compas;
+    // bajo de marcha: tónica y quinta alternadas
+    [0, 1, 2, 3].forEach((q) => tono(b, { ini: t0 + q * negra, dur: negra * 0.6, f: nota(ac[q % 2 ? 2 : 0] - 12), onda: "triangulo", vol: 0.24, r: 0.06 }));
+    // acordes en el contratiempo (como una banda)
+    [0.5, 1.5, 2.5, 3.5].forEach((q) => ac.forEach((n) => tono(b, { ini: t0 + q * negra, dur: negra * 0.3, f: nota(n + 12), onda: "cuadrada", ancho: 0.25, vol: 0.035, r: 0.04 })));
+    // redoblante: dos golpes y un redoble al final de cada dos compases
+    [1, 3].forEach((q) => tono(b, { ini: t0 + q * negra, dur: 0.07, f: 0, onda: "ruido", vol: 0.09 }));
+    if (c % 2 === 1) for (let k = 0; k < 4; k++) tono(b, { ini: t0 + 3.5 * negra + k * negra / 8, dur: 0.03, f: 0, onda: "ruido", vol: 0.05 });
+  }
+  const mel = [
+    [72, 1], [72, 0.5], [74, 0.5], [76, 1], [72, 1], [77, 1.5], [76, 0.5], [74, 2],
+    [74, 1], [74, 0.5], [76, 0.5], [77, 1], [74, 1], [79, 1.5], [77, 0.5], [76, 2],
+    [76, 1], [77, 0.5], [79, 0.5], [81, 1], [77, 1], [79, 1], [76, 1], [74, 2],
+    [72, 1], [74, 0.5], [76, 0.5], [77, 1], [79, 1], [77, 2], [0, 2],
+    [72, 1], [72, 0.5], [74, 0.5], [76, 1], [72, 1], [77, 1.5], [76, 0.5], [74, 2],
+    [74, 1], [74, 0.5], [76, 0.5], [77, 1], [74, 1], [79, 1.5], [77, 0.5], [76, 2],
+    [81, 1], [79, 0.5], [77, 0.5], [76, 1], [74, 1], [72, 1], [76, 1], [74, 2],
+    [77, 4], [0, 4],
+  ];
+  let t = 0;
+  for (const [n, d] of mel) { if (n) { tono(b, { ini: t, dur: d * negra * 0.85, f: nota(n), onda: "cuadrada", ancho: 0.5, vol: 0.09, a: 0.01, r: 0.08 }); tono(b, { ini: t, dur: d * negra * 0.85, f: nota(n - 12), onda: "triangulo", vol: 0.12, r: 0.08 }); } t += d * negra; }
+  guardar("musica-potestas", b, "80k");
+}
+// «La Mesa»: oficina tranquila (Do mayor, 100 bpm): piano eléctrico de 8 bits y una máquina de escribir.
+{
+  const bpm = 100, negra = 60 / bpm, compas = negra * 4, compases = 8;
+  const b = buffer(compas * compases);
+  const acordes = [[48, 52, 55, 59], [45, 48, 52, 55], [50, 53, 57, 60], [43, 47, 50, 53]];
+  for (let c = 0; c < compases; c++) {
+    const ac = acordes[c % 4], t0 = c * compas;
+    tono(b, { ini: t0, dur: negra * 1.8, f: nota(ac[0] - 12), onda: "triangulo", vol: 0.2, r: 0.2 });
+    tono(b, { ini: t0 + 2 * negra, dur: negra * 1.8, f: nota(ac[2] - 12), onda: "triangulo", vol: 0.18, r: 0.2 });
+    for (let k = 0; k < 8; k++) tono(b, { ini: t0 + k * negra / 2, dur: negra * 0.35, f: nota(ac[[0, 2, 1, 3][k % 4]] + 12), onda: "seno", vol: 0.07, r: 0.12 });
+    // teclas de la máquina de escribir, a veces
+    for (let k = 0; k < 8; k++) if ((k * 7 + c * 3) % 5 < 3) tono(b, { ini: t0 + k * negra / 2 + 0.02, dur: 0.018, f: 0, onda: "ruido", vol: 0.05 });
+    if (c % 2 === 1) tono(b, { ini: t0 + 3.6 * negra, dur: 0.12, f: nota(96), onda: "seno", vol: 0.05, r: 0.1 }); // ¡ding!
+  }
+  guardar("musica-mesa", b, "80k");
+}
+// «Urgente»: tensión (La menor, 138 bpm): bajo pulsante y un reloj.
+{
+  const bpm = 138, negra = 60 / bpm, compas = negra * 4, compases = 8;
+  const b = buffer(compas * compases);
+  const raices = [45, 45, 41, 43, 45, 45, 41, 40];
+  for (let c = 0; c < compases; c++) {
+    const r0 = raices[c], t0 = c * compas;
+    for (let k = 0; k < 8; k++) tono(b, { ini: t0 + k * negra / 2, dur: negra * 0.35, f: nota(r0 - 12 + (k % 4 === 3 ? 12 : 0)), onda: "cuadrada", ancho: 0.25, vol: 0.09, r: 0.03 });
+    for (let k = 0; k < 4; k++) tono(b, { ini: t0 + k * negra, dur: 0.02, f: 2400, onda: "cuadrada", vol: k % 2 ? 0.03 : 0.05 });
+    tono(b, { ini: t0, dur: compas * 0.9, f: nota(r0 + 12), onda: "triangulo", vol: 0.06, a: 0.2, r: 0.3, vibrato: 0.006 });
+  }
+  guardar("musica-urgencia", b, "80k");
+}
+// Un timbre de goma que cae sobre el papel.
+{ const b = buffer(0.32); tono(b, { dur: 0.05, f: 0, onda: "ruido", vol: 0.3 }); tono(b, { ini: 0.005, dur: 0.22, f: 150, f2: 60, onda: "seno", vol: 0.4, r: 0.15 }); guardar("timbre", b); }

@@ -546,7 +546,7 @@ export function mesa(o: OpcionesMesa): Promise<ResultadoMesa> {
       }
       const giro = bien ? -6 - Math.random() * 5 : 5 + Math.random() * 5;
       await gsap.fromTo(t, { xPercent: -50, yPercent: -50, scale: 2.4, rotation: giro - 20, opacity: 0 }, { scale: 1, rotation: giro, opacity: 0.94, duration: 0.22, ease: "power4.in" });
-      sonido.efecto(bien ? "papel" : "golpe");
+      sonido.efecto("timbre"); if (!bien) sonido.efecto("golpe");
       sacudir(hoja);
       gsap.fromTo(t.querySelectorAll(".mj-gota"), { scale: 0 }, { scale: 1, duration: 0.18, stagger: 0.02 });
       return t;

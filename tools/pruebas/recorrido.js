@@ -89,7 +89,7 @@
         // Contrainterrogatorio: dejar pasar lo cierto; objetar lo falso y presentar el hallazgo que lo desmiente.
         const exp = cap.querySelector(".mj-exp");
         const boc = cap.querySelector(".mj-declaracion");
-        const texto = (boc?.getAttribute("aria-label") || "").replace(/^[^:]*:s*/, "");
+        const texto = (boc?.getAttribute("aria-label") || "").replace(/^[^:]*:\s*/, "");
         const af = window.__potestas.BANCOS.flatMap((x) => x.afirmaciones).find((x) => x.texto === texto);
         if (exp && !exp.hidden && af) {
           const h = window.__potestas.BANCOS.flatMap((x) => x.hallazgos).find((x) => x.id === af.hallazgo);

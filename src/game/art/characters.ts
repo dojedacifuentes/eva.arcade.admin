@@ -16,6 +16,8 @@ export type Apariencia = {
   polera: string;
   pantalon: string;
   zapatos?: string;
+  /** Traje formal: cuello de camisa y corbata (o pañuelo) de este color. */
+  corbata?: string;
 };
 
 export const PIELES = ["#f7d7bd", "#eab68f", "#c98d63", "#94603f", "#5f3b27"];
@@ -150,6 +152,12 @@ function cuadro(g: CanvasRenderingContext2D, ox: number, a: Apariencia, vista: V
       ? paso === 0 || paso === 2 ? PIERNAS_PERFIL.quieto : PIERNAS_PERFIL.paso
       : paso === 1 ? PIERNAS_FRENTE.izq : paso === 3 ? PIERNAS_FRENTE.der : PIERNAS_FRENTE.quieto;
   plantilla(g, piernas, pal, ox, 19);
+  // Traje: cuello blanco y corbata, sólo de frente (de perfil, un borde de cuello).
+  if (a.corbata && vista === "frente") {
+    g.fillStyle = "#f4f1ea"; g.fillRect(ox + 6, 13 + bob, 1, 2); g.fillRect(ox + 9, 13 + bob, 1, 2);
+    g.fillStyle = a.corbata; g.fillRect(ox + 7, 13 + bob, 2, 1); g.fillRect(ox + 7, 14 + bob, 2, 3);
+    g.fillStyle = tono(a.corbata, -0.3); g.fillRect(ox + 8, 14 + bob, 1, 3);
+  } else if (a.corbata && vista === "perfil") { g.fillStyle = "#f4f1ea"; g.fillRect(ox + 8, 13 + bob, 2, 1); }
   plantilla(g, pelo, pal, ox, bob);
 }
 
@@ -179,6 +187,7 @@ export function retrato(a: Apariencia, escala = 6): string {
   const pal = paleta(a);
   plantilla(g, CABEZA_FRENTE, pal, 0, 2);
   plantilla(g, ["....OTTTTTTO....", "...OtTTTTTTtO..."], pal, 0, 15);
+  if (a.corbata) { g.fillStyle = "#f4f1ea"; g.fillRect(6, 15, 1, 1); g.fillRect(9, 15, 1, 1); g.fillStyle = a.corbata; g.fillRect(7, 15, 2, 1); }
   plantilla(g, PEINADOS[a.peinado].frente, pal, 0, 2);
   const big = lienzo(16 * escala, 16 * escala);
   big.g.drawImage(c, 0, 0, 16 * escala, 16 * escala);

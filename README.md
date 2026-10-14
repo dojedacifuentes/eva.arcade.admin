@@ -18,6 +18,7 @@ Reúne y ordena seis repos de apuntes (`ACTO-ADMIN`, `procedimiento-admin`, `gui
 npm install
 npx vite --port 5176      # http://127.0.0.1:5176
 npm run build             # tipos + compilación de producción
+npm run probar -- 1 5 9    # juega solas esas jornadas (capturas en docs/capturas/jN)
 ```
 
 Stack: Phaser 3.90, TypeScript, Vite, GSAP, Howler. Sin backend: el progreso se guarda en el navegador.

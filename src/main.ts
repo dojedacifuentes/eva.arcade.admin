@@ -55,7 +55,9 @@ async function turnoUrgencia() {
   const todos = BANCOS.flatMap((b) => b.expedientes);
   let ultimo = "";
   const generar = () => { let ex = todos[Math.floor(Math.random() * todos.length)]; for (let k = 0; k < 5 && ex.id === ultimo; k++) ex = todos[Math.floor(Math.random() * todos.length)]; ultimo = ex.id; return ex; };
+  sonido.musica("musica-urgencia");
   await mesa({ titulo: "⚡ Turno de urgencia", expedientes: [generar()], infinito: { vidas: 3, generar } });
+  sonido.musica(null);
 }
 
 /** Elige desde dónde se juega: continuar, una partida nueva o una jornada suelta. */

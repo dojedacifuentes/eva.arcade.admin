@@ -3,8 +3,8 @@
 // Los archivos salen de tools/sintetizar-sonidos.mjs.
 import { Howl, Howler } from "howler";
 
-type Efecto = "elegir" | "mover" | "pagar" | "cobrar" | "telefono" | "objetivo" | "eva" | "hallazgo" | "tiempo" | "papel" | "puerta" | "corazon" | "golpe" | "grieta" | "campana" | "escuchar" | "latido" | "tijera" | "llanto" | "pujar";
-const EFECTOS: Efecto[] = ["elegir", "mover", "pagar", "cobrar", "telefono", "objetivo", "eva", "hallazgo", "tiempo", "papel", "puerta", "corazon", "golpe", "grieta", "campana", "escuchar", "latido", "tijera", "llanto", "pujar"];
+type Efecto = "elegir" | "mover" | "pagar" | "cobrar" | "telefono" | "objetivo" | "eva" | "hallazgo" | "tiempo" | "papel" | "puerta" | "corazon" | "golpe" | "grieta" | "campana" | "escuchar" | "timbre";
+const EFECTOS: Efecto[] = ["elegir", "mover", "pagar", "cobrar", "telefono", "objetivo", "eva", "hallazgo", "tiempo", "papel", "puerta", "corazon", "golpe", "grieta", "campana", "escuchar", "timbre"];
 
 const ruta = (n: string) => `assets/audio/${n}.mp3`;
 const sonidos = new Map<string, Howl>();

@@ -3,3 +3,5 @@ dist
 *.log
 assets-fuente/descargas
 .potestas-verif
+# Capturas de las pruebas automáticas (se regeneran con npm run probar)
+docs/capturas/j*/

@@ -9,7 +9,7 @@ import { BANCOS } from "./banco";
 type Yo = { nombre: string; sexo: Sexo; apariencia: Apariencia };
 const YO_BASE: Yo = {
   nombre: "Valentina", sexo: "mujer",
-  apariencia: { piel: "#c98d63", pelo: "#2b2026", peinado: "largo", polera: "#3b3f4f", pantalon: "#2b2026" },
+  apariencia: { piel: "#c98d63", pelo: "#2b2026", peinado: "largo", polera: "#3b3f4f", pantalon: "#2b2026", corbata: "#8a2e2e" },
 };
 
 /** Una partida lista para empezar la jornada `n` (1 a 12), con tu identidad si la hay. */
